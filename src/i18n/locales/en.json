@@ -1,0 +1,290 @@
+{
+  "header": {
+    "packages": "Packages",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "portfolio": "Portfolio",
+    "freeAssessment": "Free Assessment",
+    "about": "About Me",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "title": "Fixed prices. Predictable results.",
+    "subtitle": "Videos that actually generate leads.",
+    "description": "With over 3 years of experience in video production, I help businesses grow with videos that convert. From concept to delivery - everything under one roof.",
+    "ctaPrimary": "Start Free Assessment",
+    "ctaSecondary": "View Our Packages"
+  },
+  "stats": {
+    "clients": "Satisfied Businesses",
+    "yearsContent": "Years of Content Creation Experience",
+    "yearsVideo": "Years of Video Production"
+  },
+  "packages": {
+    "title": "Monthly",
+    "titleHighlight": "Packages",
+    "subtitle": "Choose the package that fits your content strategy",
+    "package1": "Package 1",
+    "package2": "Package 2",
+    "package3": "Package 3",
+    "perMonth": "/month",
+    "perVideo": "per video",
+    "videosPerMonth": "videos per month",
+    "features": {
+      "filmingIncluded": "Filming included",
+      "editingIncluded": "Editing included",
+      "scriptsIncluded": "Scripts included",
+      "filmingOnLocation": "Filming on location",
+      "captionsIncluded": "Captions included if needed"
+    },
+    "extras": "Extras",
+    "socialMedia": "Social Media Management",
+    "socialMediaFeatures": {
+      "stories": "Stories",
+      "scheduledPosts": "Scheduled posts",
+      "engagement": "Community engagement",
+      "analyticsReport": "Monthly analytics report",
+      "contentPlanning": "Strategic content planning",
+      "dmResponses": "Respond to DMs if needed"
+    },
+    "addOns": {
+      "droneAvailable": "Drone videography available"
+    },
+    "requestButton": "Request Quote"
+  },
+  "services": {
+    "title": "Single",
+    "titleHighlight": "Services",
+    "subtitle": "One-time video production for special occasions",
+    "additionalTitle": "Additional Services",
+    "singleVideo": {
+      "title": "Single Video",
+      "features": [
+        "Filming included",
+        "Editing included",
+        "Scripts included",
+        "Filming on location",
+        "Captions included if needed"
+      ]
+    },
+    "aftermovie": {
+      "title": "Aftermovie/Opening",
+      "features": [
+        "Filming included",
+        "Editing included",
+        "Filming on location",
+        "Captions included if needed"
+      ]
+    },
+    "drone": {
+      "title": "Drone/FPV Video",
+      "from": "from",
+      "features": [
+        "Filming with drone on location",
+        "Video planning on location",
+        "Editing included"
+      ],
+      "alternativeFeatures": [
+        "Filming with drone on location",
+        "Video planning on location",
+        "Professional FPV drone",
+        "Editing included"
+      ],
+      "save": "Save €166! 🎉"
+    },
+    "filming": {
+      "title": "Video Shooting Without Editing",
+      "perHour": "/hour",
+      "features": [
+        "Filming on location",
+        "Canon EOS R8 professional camera",
+        "Stabilizer included"
+      ]
+    },
+    "editing": {
+      "title": "Video Editing",
+      "features": [
+        "Remote editing",
+        "Professional software",
+        "Fast delivery"
+      ]
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "features": [
+        "4x stories per week",
+        "Scheduled posts",
+        "4x community engagement per day",
+        "Monthly analytics report",
+        "Strategic content planning",
+        "Respond to DMs if needed"
+      ],
+      "note": "* You film your own content, we edit and post (max 1 hour editing per video)"
+    }
+  },
+  "website": {
+    "title": "Website",
+    "titleHighlight": "Development",
+    "subtitle": "Professional custom websites",
+    "service": {
+      "title": "Website Development",
+      "from": "from",
+      "features": [
+        "Professional web design",
+        "Responsive websites",
+        "SEO optimized",
+        "Fully custom websites"
+      ]
+    }
+  },
+  "whyUs": {
+    "title": "Why",
+    "titleHighlight": "Devo Media",
+    "subtitle": "Professional social media videos with creative content creation",
+    "features": {
+      "camera": {
+        "title": "Professional Camera",
+        "description": "Professional camera for high-quality footage"
+      },
+      "drone": {
+        "title": "Drone & FPV",
+        "description": "Spectacular aerial shots and dynamic footage"
+      },
+      "scripts": {
+        "title": "Scripts Included",
+        "description": "Complete scriptwriting for your videos"
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Efficient workflow and timely delivery"
+      },
+      "editing": {
+        "title": "Professional Editing",
+        "description": "High-quality post-production"
+      },
+      "pricing": {
+        "title": "Fixed Prices",
+        "description": "Transparent and fair pricing"
+      }
+    }
+  },
+  "clients": {
+    "title": "Trusted by",
+    "titleHighlight": "30+ Businesses"
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Contact us today and discover how we can strengthen your brand",
+    "button": "Get In Touch"
+  },
+  "faq": {
+    "title": "Frequently Asked",
+    "titleHighlight": "Questions"
+  },
+  "footer": {
+    "tagline": "Professional video production that converts",
+    "contact": "Contact",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "disclaimer": "Disclaimer",
+    "rights": "All rights reserved"
+  },
+  "trustBadges": {
+    "response": {
+      "title": "We respond within 48 hours",
+      "description": "Fast response time"
+    },
+    "guarantee": {
+      "title": "Satisfaction Guarantee",
+      "description": "Or money back"
+    }
+  },
+  "stickyCta": {
+    "message": "Ready for professional video production?",
+    "button": "Get In Touch",
+    "buttonMobile": "Contact"
+  },
+  "skipToContent": "Skip to main content",
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish"
+  },
+  "assessment": {
+    "cta": "💡 Not sure which package? Take our free 3-minute assessment"
+  },
+  "portfolio": {
+    "convinced": "Convinced?",
+    "subtitle": "Check out our work and the results we've achieved for clients, or discover which video strategy is perfect for you",
+    "freeAssessment": "Free Assessment",
+    "viewPortfolio": "View Portfolio",
+    "viewResults": "View Results",
+    "trustedBy": "Trusted by businesses"
+  },
+  "faqData": {
+    "title": "Find answers to the most frequently asked questions about our services",
+    "q1": {
+      "question": "What exactly does Devo Media do?",
+      "answer": "Devo Media is a full-service content and marketing agency specializing in social media management, video production, drone footage, and website development. We help brands and entrepreneurs become visible with content that truly makes an impact."
+    },
+    "q2": {
+      "question": "Who is Devo Media suitable for?",
+      "answer": "Our services are suitable for businesses, artists, and organizations that want to grow their brand in a professional and consistent manner. Whether you're a local entrepreneur or an emerging brand, we offer packages that grow with your ambitions."
+    },
+    "q3": {
+      "question": "How does the collaboration work?",
+      "answer": "We start with an introductory meeting where we discuss goals, style, and target audience. Then we create a content strategy, plan shooting days, and proceed to production and delivery. Everything is coordinated step by step so the final result perfectly matches your brand."
+    },
+    "q4": {
+      "question": "What's included in the video packages?",
+      "answer": "Depending on the chosen package, this includes: Strategy and concept development, Recordings with professional cameras and lighting, Drone and FPV footage if needed, Editing, color correction, SFX/VFX, Subtitling (captions), and Optimization for Instagram, TikTok and YouTube."
+    },
+    "q5": {
+      "question": "Can I also order individual videos?",
+      "answer": "Yes, you can. However, we usually recommend a minimum package of 4–6 videos, because volume and consistency are essential to achieve results on social media."
+    },
+    "q6": {
+      "question": "What does a collaboration with Devo Media cost?",
+      "answer": "Our prices vary depending on the package and content frequency. We offer flexible packages starting from €500 per month and grow with your business. All prices are fixed and non-negotiable, but may be adjusted in the future based on market developments or production requirements."
+    },
+    "q7": {
+      "question": "How long does it take before the content is ready?",
+      "answer": "On average, we deliver videos within 5–10 working days after the shooting day. For larger productions (such as events or aftermovies), we agree on the delivery time in advance."
+    },
+    "q8": {
+      "question": "Does Devo Media also deliver photos or only video?",
+      "answer": "We specialize in video and drone content, but can add photography to a package if desired. This is discussed in advance during the planning phase."
+    },
+    "q9": {
+      "question": "What if I have specific wishes?",
+      "answer": "No problem, every project is custom work. We discuss your vision, target audience and style and ensure everything aligns with your brand identity."
+    },
+    "q10": {
+      "question": "How can I get started with Devo Media?",
+      "answer": "Simple: send us a message via info@devomedia.nl or via Instagram. We'll schedule a brief conversation to discuss your goals and then prepare a personalized proposal that fits your brand and budget."
+    }
+  },
+  "footerTagline": "Professional content creation in the Netherlands",
+  "buttons": {
+    "selectPackage": "Select Package",
+    "requestQuote": "Request Quote",
+    "regular": "Regular",
+    "specialOffer": "Special Offer",
+    "discoverOffer": "Discover our Special Offer!",
+    "saveAmount": "Save €166! 🎉",
+    "videoOnly": "Video Only",
+    "withSocialMedia": "With Social Media",
+    "extraOptions": "Extra options:",
+    "extra": "Extra:",
+    "popular": "Popular",
+    "from": "from"
+  }
+}

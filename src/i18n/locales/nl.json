@@ -1,0 +1,290 @@
+{
+  "header": {
+    "packages": "Pakketten",
+    "services": "Diensten",
+    "whyUs": "Waarom Ons",
+    "portfolio": "Portfolio",
+    "freeAssessment": "Gratis Assessment",
+    "about": "Over Mij",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "title": "Vaste prijzen. Voorspelbare resultaten.",
+    "subtitle": "Video's die daadwerkelijk leads opleveren.",
+    "description": "Met meer dan 3 jaar ervaring in videoproductie help ik bedrijven groeien met video's die converteren. Van concept tot oplevering - alles onder één dak.",
+    "ctaPrimary": "Start Gratis Assessment",
+    "ctaSecondary": "Bekijk Onze Pakketten"
+  },
+  "stats": {
+    "clients": "Tevreden Bedrijven",
+    "yearsContent": "Jaar Content Creatie Ervaring",
+    "yearsVideo": "Jaar Videoproductie"
+  },
+  "packages": {
+    "title": "Maandelijkse",
+    "titleHighlight": "Pakketten",
+    "subtitle": "Kies het pakket dat past bij jouw content strategie",
+    "package1": "Pakket 1",
+    "package2": "Pakket 2",
+    "package3": "Pakket 3",
+    "perMonth": "/maand",
+    "perVideo": "per video",
+    "videosPerMonth": "videos per maand",
+    "features": {
+      "filmingIncluded": "Filmen inbegrepen",
+      "editingIncluded": "Editen inbegrepen",
+      "scriptsIncluded": "Scripts inbegrepen",
+      "filmingOnLocation": "Filmen op locatie",
+      "captionsIncluded": "Captions inbegrepen indien nodig"
+    },
+    "extras": "Extra's",
+    "socialMedia": "Social Media Management",
+    "socialMediaFeatures": {
+      "stories": "Stories",
+      "scheduledPosts": "Geplande posts",
+      "engagement": "Community engagement",
+      "analyticsReport": "Maandelijkse analytics report",
+      "contentPlanning": "Strategische content planning",
+      "dmResponses": "Reageren op DM's indien nodig"
+    },
+    "addOns": {
+      "droneAvailable": "Dronevideografie beschikbaar"
+    },
+    "requestButton": "Vraag Aan"
+  },
+  "services": {
+    "title": "Losse",
+    "titleHighlight": "Diensten",
+    "subtitle": "Eenmalige videoproductie voor speciale gelegenheden",
+    "additionalTitle": "Aanvullende Diensten",
+    "singleVideo": {
+      "title": "Single Video",
+      "features": [
+        "Filmen inbegrepen",
+        "Editen inbegrepen",
+        "Scripts inbegrepen",
+        "Filmen op locatie",
+        "Captions inbegrepen indien nodig"
+      ]
+    },
+    "aftermovie": {
+      "title": "Aftermovie/Opening",
+      "features": [
+        "Filmen inbegrepen",
+        "Editen inbegrepen",
+        "Filmen op locatie",
+        "Captions inbegrepen indien nodig"
+      ]
+    },
+    "drone": {
+      "title": "Drone/FPV Video",
+      "from": "vanaf",
+      "features": [
+        "Filmen met de drone op locatie",
+        "Video planning op locatie",
+        "Editen inbegrepen"
+      ],
+      "alternativeFeatures": [
+        "Filmen met drone op locatie",
+        "Video planning op locatie",
+        "Professionele FPV drone",
+        "Editen inbegrepen"
+      ],
+      "save": "Bespaar €166! 🎉"
+    },
+    "filming": {
+      "title": "Video Maken Zonder Editen",
+      "perHour": "/uur",
+      "features": [
+        "Filmen op locatie",
+        "Canon EOS R8 professionele camera",
+        "Stabilizer inbegrepen"
+      ]
+    },
+    "editing": {
+      "title": "Video Editen",
+      "features": [
+        "Remote editen",
+        "Professionele software",
+        "Snelle levering"
+      ]
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "features": [
+        "4x per week stories",
+        "Geplande posts",
+        "4x per dag engagement met community",
+        "Maandelijkse analytics report",
+        "Strategische content planning",
+        "Reageren op DM's indien nodig"
+      ],
+      "note": "* Je filmt je eigen content, wij editen en posten (max 1 uur editing per video)"
+    }
+  },
+  "website": {
+    "title": "Website",
+    "titleHighlight": "Ontwikkeling",
+    "subtitle": "Professionele websites op maat",
+    "service": {
+      "title": "Website Development",
+      "from": "vanaf",
+      "features": [
+        "Professioneel webdesign",
+        "Responsive websites",
+        "SEO geoptimaliseerd",
+        "Volledig maatwerk websites"
+      ]
+    }
+  },
+  "whyUs": {
+    "title": "Waarom",
+    "titleHighlight": "Devo Media",
+    "subtitle": "Professionele social media video's met creatieve content creatie",
+    "features": {
+      "camera": {
+        "title": "Professionele camera",
+        "description": "Professionele camera voor hoogwaardige beelden"
+      },
+      "drone": {
+        "title": "Drone & FPV",
+        "description": "Spectaculaire luchtopnames en dynamische shots"
+      },
+      "scripts": {
+        "title": "Scripts Inbegrepen",
+        "description": "Volledige scriptwriting voor je videos"
+      },
+      "delivery": {
+        "title": "Snelle Levering",
+        "description": "Efficiënte workflow en tijdige oplevering"
+      },
+      "editing": {
+        "title": "Professioneel Editen",
+        "description": "Hoogwaardige post-productie"
+      },
+      "pricing": {
+        "title": "Vaste Prijzen",
+        "description": "Transparante en eerlijke tarieven"
+      }
+    }
+  },
+  "clients": {
+    "title": "Vertrouwd door",
+    "titleHighlight": "30+ Bedrijven"
+  },
+  "cta": {
+    "title": "Klaar om te beginnen?",
+    "subtitle": "Neem vandaag nog contact op en ontdek hoe wij jouw merk kunnen versterken",
+    "button": "Neem Contact Op"
+  },
+  "faq": {
+    "title": "Veelgestelde",
+    "titleHighlight": "Vragen"
+  },
+  "footer": {
+    "tagline": "Professionele videoproductie die converteert",
+    "contact": "Contact",
+    "terms": "Algemene Voorwaarden",
+    "privacy": "Privacyverklaring",
+    "cookies": "Cookieverklaring",
+    "disclaimer": "Disclaimer",
+    "rights": "Alle rechten voorbehouden"
+  },
+  "trustBadges": {
+    "response": {
+      "title": "We reageren binnen 48 uur",
+      "description": "Snelle reactietijd"
+    },
+    "guarantee": {
+      "title": "Tevredenheidsgarantie",
+      "description": "Of geld terug"
+    }
+  },
+  "stickyCta": {
+    "message": "Klaar voor professionele videoproductie?",
+    "button": "Neem Contact Op",
+    "buttonMobile": "Contact"
+  },
+  "skipToContent": "Spring naar hoofdinhoud",
+  "common": {
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "close": "Sluiten",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "submit": "Versturen",
+    "back": "Terug",
+    "next": "Volgende",
+    "finish": "Voltooien"
+  },
+  "assessment": {
+    "cta": "💡 Niet zeker welk pakket? Doe onze gratis 3-minuten assessment"
+  },
+  "portfolio": {
+    "convinced": "Overtuigd?",
+    "subtitle": "Bekijk ons werk en de resultaten die we voor klanten hebben behaald, of ontdek welke video strategie perfect bij jou past",
+    "freeAssessment": "Gratis Assessment",
+    "viewPortfolio": "Bekijk Portfolio",
+    "viewResults": "Bekijk Resultaten",
+    "trustedBy": "Bedrijven die ons vertrouwen"
+  },
+  "faqData": {
+    "title": "Vind antwoorden op de meest gestelde vragen over onze diensten",
+    "q1": {
+      "question": "Wat doet Devo Media precies?",
+      "answer": "Devo Media is een full-service content- en marketingbureau gespecialiseerd in social media management, videoproductie, drone-opnames, en website-ontwikkeling. Wij helpen merken en ondernemers om zichtbaar te worden met content die écht impact maakt."
+    },
+    "q2": {
+      "question": "Voor wie is Devo Media geschikt?",
+      "answer": "Onze diensten zijn geschikt voor bedrijven, artiesten en organisaties die hun merk willen laten groeien op een professionele en consistente manier. Of je nu een lokale ondernemer bent of een opkomend merk, wij bieden pakketten die meegroeien met jouw ambities."
+    },
+    "q3": {
+      "question": "Hoe werkt de samenwerking?",
+      "answer": "We starten met een kennismakingsgesprek waarin we doelen, stijl en doelgroep bespreken. Daarna stellen we een contentstrategie op, plannen we de draaidagen, en gaan we over tot productie en levering. Alles wordt stap voor stap afgestemd zodat het eindresultaat precies past bij jouw merk."
+    },
+    "q4": {
+      "question": "Wat is inbegrepen in de videopakketten?",
+      "answer": "Afhankelijk van het gekozen pakket omvat dit: Strategie en conceptontwikkeling, Opnames met professionele camera's en belichting, Drone- en FPV-opnames indien nodig, Montage, kleurcorrectie, SFX/VFX, Ondertiteling (captions), en Optimalisatie voor Instagram, TikTok en YouTube."
+    },
+    "q5": {
+      "question": "Kan ik ook losse video's afnemen?",
+      "answer": "Ja, dat kan. Toch adviseren we meestal een minimumpakket van 4–6 video's, omdat volume en consistentie essentieel zijn om resultaat te behalen op social media."
+    },
+    "q6": {
+      "question": "Wat kost een samenwerking met Devo Media?",
+      "answer": "Onze prijzen variëren afhankelijk van het pakket en de frequentie van de content. We bieden flexibele pakketten vanaf €500 per maand en groeien mee met jouw onderneming. Alle prijzen zijn vast en niet onderhandelbaar, maar kunnen in de toekomst worden aangepast op basis van marktontwikkelingen of productievereisten."
+    },
+    "q7": {
+      "question": "Hoe lang duurt het voordat de content klaar is?",
+      "answer": "Gemiddeld leveren wij video's binnen 5–10 werkdagen na de draaidag. Bij grotere producties (zoals events of aftermovies) stemmen we de levertijd vooraf af."
+    },
+    "q8": {
+      "question": "Levert Devo Media ook foto's of enkel video?",
+      "answer": "Wij zijn gespecialiseerd in video- en drone-content, maar kunnen indien gewenst ook fotografie toevoegen aan een pakket. Dit wordt vooraf besproken tijdens de planningsfase."
+    },
+    "q9": {
+      "question": "Wat als ik specifieke wensen heb?",
+      "answer": "Geen probleem, elk project is maatwerk. We bespreken jouw visie, doelgroep en stijl en zorgen ervoor dat alles in lijn ligt met je merkidentiteit."
+    },
+    "q10": {
+      "question": "Hoe kan ik starten met Devo Media?",
+      "answer": "Eenvoudig: stuur ons een bericht via info@devomedia.nl of via Instagram. We plannen een kort gesprek om jouw doelen te bespreken en stellen vervolgens een persoonlijk voorstel op dat past bij jouw merk en budget."
+    }
+  },
+  "footerTagline": "Professionele content creatie in Nederland",
+  "buttons": {
+    "selectPackage": "Selecteer Pakket",
+    "requestQuote": "Vraag Aan",
+    "regular": "Regular",
+    "specialOffer": "Special Offer",
+    "discoverOffer": "Ontdek onze Special Offer!",
+    "saveAmount": "Bespaar €166! 🎉",
+    "videoOnly": "Alleen Video",
+    "withSocialMedia": "Met Social Media",
+    "extraOptions": "Extra opties:",
+    "extra": "Extra:",
+    "popular": "Populair",
+    "from": "vanaf"
+  }
+}
