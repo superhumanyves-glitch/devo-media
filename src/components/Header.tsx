@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import HeaderLeadForm from "@/components/HeaderLeadForm";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
@@ -88,9 +89,15 @@ const Header = () => {
             </button>
           </Link>
           <LanguageSwitcher />
-          <Button 
-            variant="default" 
+          {/* Inline lead capture — primary conversion CTA on wide screens */}
+          <div className="hidden xl:block">
+            <HeaderLeadForm variant="inline" />
+          </div>
+          {/* Fallback contact button on narrower desktop widths */}
+          <Button
+            variant="default"
             size="sm"
+            className="xl:hidden"
             onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: '' } }))}
           >
             {t('header.contact')}
@@ -112,7 +119,12 @@ const Header = () => {
             <SheetHeader>
               <SheetTitle>{t('header.menu')}</SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-6 mt-8">
+            {/* Quick lead capture at the top of the mobile menu */}
+            <div className="mt-6 mb-2 rounded-2xl border border-border bg-accent/40 p-4">
+              <p className="text-sm font-semibold mb-3">{t('header.lead.mobileTitle')}</p>
+              <HeaderLeadForm variant="stacked" onSuccess={() => undefined} />
+            </div>
+            <nav className="flex flex-col gap-6 mt-6">
               <button 
                 onClick={() => scrollToSection('pakketten')} 
                 className="text-lg text-foreground hover:text-primary transition-all duration-200 text-left hover:translate-x-2 animate-slide-in-left"
