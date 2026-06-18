@@ -14,7 +14,34 @@
     "subtitle": "Videos that actually generate leads.",
     "description": "With over 3 years of experience in video production, I help businesses grow with videos that convert. From concept to delivery - everything under one roof.",
     "ctaPrimary": "Start Free Assessment",
-    "ctaSecondary": "View Our Packages"
+    "ctaSecondary": "View Our Packages",
+    "quote": {
+      "title": "Get a free quote",
+      "subtitle": "Tell us what you need and we'll reply within 48 hours.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@company.com",
+      "serviceLabel": "What do you need?",
+      "servicePlaceholder": "Choose a service",
+      "services": {
+        "package8": "Monthly package — 8 videos",
+        "package12": "Monthly package — 12 videos",
+        "package16": "Monthly package — 16 videos",
+        "singleVideo": "Single video",
+        "drone": "Drone / FPV video",
+        "socialMedia": "Social media management",
+        "website": "Website development",
+        "other": "Something else / not sure yet"
+      },
+      "cta": "Get My Free Quote",
+      "sending": "Sending...",
+      "reassurance": "✓ No obligations · Response within 48 hours",
+      "messageTemplate": "Quote request via the homepage. Interested in: {{service}}.",
+      "successTitle": "Thanks — request received!",
+      "successBody": "We'll get back to you within 48 hours with your personalized quote.",
+      "error": "Something went wrong. Please try again."
+    }
   },
   "stats": {
     "clients": "Satisfied Businesses",

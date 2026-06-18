@@ -14,7 +14,34 @@
     "subtitle": "Video's die daadwerkelijk leads opleveren.",
     "description": "Met meer dan 3 jaar ervaring in videoproductie help ik bedrijven groeien met video's die converteren. Van concept tot oplevering - alles onder één dak.",
     "ctaPrimary": "Start Gratis Assessment",
-    "ctaSecondary": "Bekijk Onze Pakketten"
+    "ctaSecondary": "Bekijk Onze Pakketten",
+    "quote": {
+      "title": "Vraag een gratis offerte aan",
+      "subtitle": "Vertel ons wat je nodig hebt en we reageren binnen 48 uur.",
+      "nameLabel": "Naam",
+      "namePlaceholder": "Je naam",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "jij@bedrijf.nl",
+      "serviceLabel": "Wat heb je nodig?",
+      "servicePlaceholder": "Kies een dienst",
+      "services": {
+        "package8": "Maandelijks pakket — 8 videos",
+        "package12": "Maandelijks pakket — 12 videos",
+        "package16": "Maandelijks pakket — 16 videos",
+        "singleVideo": "Losse video",
+        "drone": "Drone / FPV video",
+        "socialMedia": "Social media management",
+        "website": "Website ontwikkeling",
+        "other": "Iets anders / nog niet zeker"
+      },
+      "cta": "Ontvang Mijn Gratis Offerte",
+      "sending": "Versturen...",
+      "reassurance": "✓ Vrijblijvend · Reactie binnen 48 uur",
+      "messageTemplate": "Offerteaanvraag via de homepage. Interesse in: {{service}}.",
+      "successTitle": "Bedankt — aanvraag ontvangen!",
+      "successBody": "We nemen binnen 48 uur contact met je op met je persoonlijke offerte.",
+      "error": "Er ging iets mis. Probeer het opnieuw."
+    }
   },
   "stats": {
     "clients": "Tevreden Bedrijven",
