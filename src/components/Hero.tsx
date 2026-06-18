@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ArrowRight, ClipboardCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
@@ -74,12 +75,24 @@ const Hero = () => {
             </p>
           </article>
 
-          {/* Quote form */}
+          {/* Animation + quote form */}
           <aside
-            className="order-1 lg:order-2 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto animate-fade-in"
+            className="order-1 lg:order-2 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto flex flex-col items-center gap-4 sm:gap-6 animate-fade-in"
             style={{ animationDelay: '100ms' }}
-            aria-label="Vraag een gratis offerte aan"
+            aria-label="Geanimeerde illustratie van videoproductie en gratis offerte aanvragen"
           >
+            <div className="h-[180px] sm:h-[240px] lg:h-[280px] w-full">
+              <DotLottieReact
+                src="https://lottie.host/1037025e-a9f1-48e4-b240-6a8596479358/2t7vm62ITa.lottie"
+                loop
+                autoplay
+                style={{
+                  width: '100%',
+                  height: '100%'
+                }}
+                aria-hidden="true"
+              />
+            </div>
             <HeroQuoteForm />
           </aside>
         </div>
