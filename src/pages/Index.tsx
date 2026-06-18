@@ -80,20 +80,20 @@ const Index = () => {
   const packageSocialMediaFeatures = [t('packages.socialMediaFeatures.stories'), t('packages.socialMediaFeatures.scheduledPosts'), t('packages.socialMediaFeatures.engagement'), t('packages.socialMediaFeatures.analyticsReport'), t('packages.socialMediaFeatures.contentPlanning'), t('packages.socialMediaFeatures.dmResponses')];
   const monthlyPackages = [{
     title: t('packages.package1'),
-    videoCount: `6 ${t('packages.videosPerMonth')}`,
+    videoCount: `8 ${t('packages.videosPerMonth')}`,
     features: packageFeatures,
     extras: [t('packages.addOns.droneAvailable')],
     socialMediaFeatures: packageSocialMediaFeatures
   }, {
     title: t('packages.package2'),
-    videoCount: `9-10 ${t('packages.videosPerMonth')}`,
+    videoCount: `12 ${t('packages.videosPerMonth')}`,
     features: packageFeatures,
     extras: [t('packages.addOns.droneAvailable')],
     featured: true,
     socialMediaFeatures: packageSocialMediaFeatures
   }, {
     title: t('packages.package3'),
-    videoCount: `12-13 ${t('packages.videosPerMonth')}`,
+    videoCount: `16 ${t('packages.videosPerMonth')}`,
     features: packageFeatures,
     extras: [t('packages.addOns.droneAvailable')],
     socialMediaFeatures: packageSocialMediaFeatures
