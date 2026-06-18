@@ -7,19 +7,7 @@
     "freeAssessment": "Free Assessment",
     "about": "About Me",
     "contact": "Contact",
-    "menu": "Menu",
-    "lead": {
-      "placeholder": "Your email",
-      "cta": "Free Quote",
-      "sending": "Sending...",
-      "success": "Thanks! We'll be in touch within 48h.",
-      "invalidEmail": "Enter a valid email",
-      "error": "Something went wrong. Please try again.",
-      "mobileTitle": "Get a free quote",
-      "defaultName": "Website lead",
-      "defaultMessage": "Quick quote request submitted via the website header. Please get in touch.",
-      "workType": "Quick lead"
-    }
+    "menu": "Menu"
   },
   "hero": {
     "title": "Fixed prices. Predictable results.",

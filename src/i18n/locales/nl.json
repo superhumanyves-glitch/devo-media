@@ -7,19 +7,7 @@
     "freeAssessment": "Gratis Assessment",
     "about": "Over Mij",
     "contact": "Contact",
-    "menu": "Menu",
-    "lead": {
-      "placeholder": "Je e-mailadres",
-      "cta": "Gratis Offerte",
-      "sending": "Versturen...",
-      "success": "Bedankt! We nemen binnen 48u contact op.",
-      "invalidEmail": "Vul een geldig e-mailadres in",
-      "error": "Er ging iets mis. Probeer het opnieuw.",
-      "mobileTitle": "Vraag een gratis offerte aan",
-      "defaultName": "Website lead",
-      "defaultMessage": "Snelle offerteaanvraag via de website header. Neem alsjeblieft contact op.",
-      "workType": "Snelle lead"
-    }
+    "menu": "Menu"
   },
   "hero": {
     "title": "Vaste prijzen. Voorspelbare resultaten.",
