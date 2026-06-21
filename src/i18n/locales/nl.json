@@ -51,34 +51,117 @@
   "packages": {
     "title": "Maandelijkse",
     "titleHighlight": "Pakketten",
-    "subtitle": "Kies het pakket dat past bij jouw content strategie",
-    "package1": "Pakket 1",
-    "package2": "Pakket 2",
-    "package3": "Pakket 3",
+    "subtitle": "Flexibele contentpakketten rond short-form video voor Instagram Reels, TikTok en YouTube Shorts — met of zonder social media management.",
     "perMonth": "/maand",
     "perVideo": "per video",
     "videosPerMonth": "videos per maand",
-    "features": {
-      "filmingIncluded": "Filmen inbegrepen",
-      "editingIncluded": "Editen inbegrepen",
-      "scriptsIncluded": "Scripts inbegrepen",
-      "filmingOnLocation": "Filmen op locatie",
-      "captionsIncluded": "Captions inbegrepen indien nodig"
-    },
+    "includedTitle": "Inbegrepen",
+    "contentTypesTitle": "Content types",
+    "suitableForTitle": "Geschikt voor",
     "extras": "Extra's",
     "socialMedia": "Social Media Management",
+    "smmIntro": {
+      "title": "Met of zonder social media management",
+      "subtitle": "Elk pakket kun je kiezen mét of zonder beheer. Zo bepaal je zelf of je alleen content ontvangt of dat wij ook het plaatsen, plannen en optimaliseren overnemen.",
+      "withoutTitle": "Zonder management",
+      "withoutText": "Wij leveren je video's professioneel en klaar om te posten, met basis advies over plaatsing. Jij bepaalt zelf wanneer je plaatst en beheert je social media.",
+      "withTitle": "Met management",
+      "withText": "Wij nemen ook het plannen, plaatsen en optimaliseren over: captions, hashtags, stories, engagement en maandelijkse rapportage. Zo blijf je consistent zichtbaar zonder dagelijks beheer."
+    },
     "socialMediaFeatures": {
-      "stories": "Stories",
-      "scheduledPosts": "Geplande posts",
+      "contentPlanning": "Maandelijkse contentplanning",
+      "scheduling": "Inplannen en plaatsen van content",
+      "captions": "Caption writing met duidelijke call-to-actions",
+      "hashtags": "Hashtag- en keyword ondersteuning",
+      "stories": "Stories op basis van de samenwerking",
       "engagement": "Community engagement",
-      "analyticsReport": "Maandelijkse analytics report",
-      "contentPlanning": "Strategische content planning",
-      "dmResponses": "Reageren op DM's indien nodig"
+      "dmSupport": "Basis DM-support indien afgesproken",
+      "analyticsReport": "Maandelijkse analytics rapportage",
+      "contentAnalysis": "Analyse van best presterende content",
+      "optimization": "Optimalisatieadvies voor de volgende maand"
     },
     "addOns": {
       "droneAvailable": "Dronevideografie beschikbaar"
     },
-    "requestButton": "Vraag Aan"
+    "requestButton": "Vraag Aan",
+    "starter": {
+      "name": "Content Starter",
+      "tagline": "Voor bedrijven die willen starten met consistente zichtbaarheid op social media.",
+      "videoCount": "8 short-form video's per maand",
+      "included": [
+        "1 content shoot per maand",
+        "Professionele montage",
+        "Basis kleurcorrectie en sound design",
+        "Muziekselectie passend bij de video",
+        "Scripts of contentstructuur per video",
+        "Geoptimaliseerd voor Reels, TikTok en YouTube Shorts",
+        "Basis contentrichting voor de maand",
+        "1 revisieronde per video"
+      ],
+      "contentTypes": [
+        "Product- of dienstvideo's",
+        "Behind-the-scenes",
+        "Korte promotievideo's",
+        "Simpele talking videos",
+        "Sfeerbeelden",
+        "Introductie van aanbod, locatie of team"
+      ],
+      "suitableFor": "Bedrijven die professioneel willen starten met social media content en maandelijks zichtbaar willen blijven met duidelijke, verzorgde video's."
+    },
+    "growth": {
+      "name": "Content Growth",
+      "tagline": "Voor bedrijven die structureel willen groeien met strategische en consistente content.",
+      "videoCount": "12 short-form video's per maand",
+      "included": [
+        "1 grotere of 2 kleinere content shoots per maand",
+        "Professionele montage met sterke hooks en pacing",
+        "Kleurcorrectie, muziek en sound design",
+        "Scripts op basis van doelgroep, aanbod en merk",
+        "Trendonderzoek en contentideeën",
+        "Maandelijkse contentplanning",
+        "Geoptimaliseerd voor Reels, TikTok en YouTube Shorts",
+        "1 tot 2 revisierondes per video"
+      ],
+      "contentTypes": [
+        "Educatieve video's",
+        "Promotievideo's",
+        "Storytelling content",
+        "Behind-the-scenes",
+        "Klantbeleving of testimonials",
+        "Trendgerichte video's",
+        "Product- of dienstuitleg",
+        "Vertrouwen opbouwende content"
+      ],
+      "suitableFor": "Bedrijven die consistent willen posten, meer bereik willen opbouwen en hun merk sterker willen positioneren op social media."
+    },
+    "authority": {
+      "name": "Content Authority",
+      "tagline": "Voor bedrijven die content willen gebruiken als een serieus groeisysteem.",
+      "videoCount": "16 short-form video's per maand",
+      "included": [
+        "2 content shoots per maand of 1 uitgebreide productiedag",
+        "Geavanceerde montage met sterke storytelling",
+        "Sterke hooks, pacing, sound design en visuele opbouw",
+        "Volledige scripts en creatieve concepten",
+        "Trendonderzoek en concurrentie-inzichten",
+        "Maandelijkse contentstrategie en contentkalender",
+        "Analyse van best presterende content + optimalisatieadvies",
+        "Geoptimaliseerd voor Reels, TikTok en YouTube Shorts",
+        "2 revisierondes per video"
+      ],
+      "contentTypes": [
+        "Authority content",
+        "Educatieve video's",
+        "Sales content",
+        "Storytelling video's",
+        "Testimonials",
+        "Behind-the-scenes",
+        "Brand-building content",
+        "Trendgerichte video's",
+        "Conversiegerichte content"
+      ],
+      "suitableFor": "Bedrijven die online dominant aanwezig willen zijn en content willen inzetten voor zichtbaarheid, vertrouwen, groei en sterkere merkpositionering."
+    }
   },
   "services": {
     "title": "Losse",

@@ -8,8 +8,11 @@ import { useTranslation } from "react-i18next";
 
 interface PricingCardProps {
   title: string;
+  tagline?: string;
   videoCount: string;
   features: string[];
+  contentTypes?: string[];
+  suitableFor?: string;
   extras: string[];
   featured?: boolean;
   socialMediaFeatures?: string[];
@@ -17,8 +20,11 @@ interface PricingCardProps {
 
 const PricingCard = ({
   title,
+  tagline,
   videoCount,
   features,
+  contentTypes = [],
+  suitableFor,
   extras,
   featured = false,
   socialMediaFeatures = [],
@@ -27,14 +33,7 @@ const PricingCard = ({
   const { t } = useTranslation();
 
   const scrollToContact = () => {
-    // Map package numbers to proper names
-    const packageMap: Record<string, string> = {
-      'Pakket 1': 'Maandelijks Pakket - Starter',
-      'Pakket 2': 'Maandelijks Pakket - Professional',
-      'Pakket 3': 'Maandelijks Pakket - Premium',
-    };
-    
-    const baseName = packageMap[title] || title;
+    const baseName = `Maandelijks Pakket - ${title}`;
     const serviceName = includeSocialMedia ? `${baseName} (met Social Media Management)` : baseName;
     
     // Dispatch custom event to open form with pre-selected package
@@ -58,8 +57,9 @@ const PricingCard = ({
       )}
       
       <div className="text-center mb-6">
-        <h3 className="text-xl sm:text-2xl font-bold mb-2" id={`package-${title.toLowerCase().replace(/\s+/g, '-')}`}>{title}</h3>
-        <p className="text-sm sm:text-base text-muted-foreground">{videoCount}</p>
+        <h3 className="text-xl sm:text-2xl font-bold mb-1" id={`package-${title.toLowerCase().replace(/\s+/g, '-')}`}>{title}</h3>
+        <p className="text-sm sm:text-base font-semibold text-primary mb-2">{videoCount}</p>
+        {tagline && <p className="text-xs sm:text-sm text-muted-foreground">{tagline}</p>}
       </div>
 
       {/* Social Media Toggle Section */}
@@ -97,6 +97,7 @@ const PricingCard = ({
 
       <div className="space-y-4 mb-6">
         <div className="space-y-2">
+          <p className="text-sm font-semibold mb-2">{t('packages.includedTitle')}</p>
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2">
               <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -104,6 +105,29 @@ const PricingCard = ({
             </div>
           ))}
         </div>
+
+        {contentTypes.length > 0 && (
+          <div className="pt-4 border-t border-border">
+            <p className="text-sm font-semibold mb-2">{t('packages.contentTypesTitle')}</p>
+            <div className="flex flex-wrap gap-1.5">
+              {contentTypes.map((type, index) => (
+                <span
+                  key={index}
+                  className="text-xs text-muted-foreground bg-muted/60 rounded-full px-2.5 py-1"
+                >
+                  {type}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {suitableFor && (
+          <div className="pt-4 border-t border-border">
+            <p className="text-sm font-semibold mb-1">{t('packages.suitableForTitle')}</p>
+            <p className="text-sm text-muted-foreground">{suitableFor}</p>
+          </div>
+        )}
 
         {extras.length > 0 && (
           <div className="pt-4 border-t border-border">

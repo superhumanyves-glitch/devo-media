@@ -76,28 +76,29 @@ const Index = () => {
     start: 0,
     delay: statsInView ? 400 : 9999
   });
-  const packageFeatures = [t('packages.features.filmingIncluded'), t('packages.features.editingIncluded'), t('packages.features.scriptsIncluded'), t('packages.features.filmingOnLocation'), t('packages.features.captionsIncluded')];
-  const packageSocialMediaFeatures = [t('packages.socialMediaFeatures.stories'), t('packages.socialMediaFeatures.scheduledPosts'), t('packages.socialMediaFeatures.engagement'), t('packages.socialMediaFeatures.analyticsReport'), t('packages.socialMediaFeatures.contentPlanning'), t('packages.socialMediaFeatures.dmResponses')];
-  const monthlyPackages = [{
-    title: t('packages.package1'),
-    videoCount: `8 ${t('packages.videosPerMonth')}`,
-    features: packageFeatures,
+  const packageSocialMediaFeatures = [
+    t('packages.socialMediaFeatures.contentPlanning'),
+    t('packages.socialMediaFeatures.scheduling'),
+    t('packages.socialMediaFeatures.captions'),
+    t('packages.socialMediaFeatures.hashtags'),
+    t('packages.socialMediaFeatures.stories'),
+    t('packages.socialMediaFeatures.engagement'),
+    t('packages.socialMediaFeatures.dmSupport'),
+    t('packages.socialMediaFeatures.analyticsReport'),
+    t('packages.socialMediaFeatures.contentAnalysis'),
+    t('packages.socialMediaFeatures.optimization'),
+  ];
+  const monthlyPackages = (['starter', 'growth', 'authority'] as const).map((key) => ({
+    title: t(`packages.${key}.name`),
+    tagline: t(`packages.${key}.tagline`),
+    videoCount: t(`packages.${key}.videoCount`),
+    features: t(`packages.${key}.included`, { returnObjects: true }) as string[],
+    contentTypes: t(`packages.${key}.contentTypes`, { returnObjects: true }) as string[],
+    suitableFor: t(`packages.${key}.suitableFor`),
     extras: [t('packages.addOns.droneAvailable')],
-    socialMediaFeatures: packageSocialMediaFeatures
-  }, {
-    title: t('packages.package2'),
-    videoCount: `12 ${t('packages.videosPerMonth')}`,
-    features: packageFeatures,
-    extras: [t('packages.addOns.droneAvailable')],
-    featured: true,
-    socialMediaFeatures: packageSocialMediaFeatures
-  }, {
-    title: t('packages.package3'),
-    videoCount: `16 ${t('packages.videosPerMonth')}`,
-    features: packageFeatures,
-    extras: [t('packages.addOns.droneAvailable')],
-    socialMediaFeatures: packageSocialMediaFeatures
-  }];
+    featured: key === 'growth',
+    socialMediaFeatures: packageSocialMediaFeatures,
+  }));
   const singleServices = [{
     icon: iconVideo,
     title: t('services.singleVideo.title'),
@@ -222,7 +223,23 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {/* With / without social media management explainer */}
+          <div className={`max-w-4xl mx-auto mb-12 sm:mb-16 transition-all duration-700 ${packagesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-2">{t('packages.smmIntro.title')}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground text-center max-w-2xl mx-auto mb-6">{t('packages.smmIntro.subtitle')}</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-5 rounded-lg bg-gradient-card border border-border">
+                <p className="text-sm font-semibold mb-1">{t('packages.smmIntro.withoutTitle')}</p>
+                <p className="text-sm text-muted-foreground">{t('packages.smmIntro.withoutText')}</p>
+              </div>
+              <div className="p-5 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+                <p className="text-sm font-semibold mb-1 text-primary">{t('packages.smmIntro.withTitle')}</p>
+                <p className="text-sm text-muted-foreground">{t('packages.smmIntro.withText')}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-start">
             {monthlyPackages.map((pkg, index) => <div key={index} className={`transition-all duration-700 ${packagesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`} style={packagesInView ? getStaggeredAnimationStyle(index, 100) : {}}>
                 <PricingCard {...pkg} />
               </div>)}

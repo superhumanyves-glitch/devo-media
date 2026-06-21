@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ArrowRight, ClipboardCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import HeroQuoteForm from "@/components/HeroQuoteForm";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -43,11 +42,11 @@ const Hero = () => {
             </p>
           </article>
 
-          {/* Animation + quote form */}
+          {/* Animation */}
           <aside
             className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center w-full max-w-md mx-auto lg:mx-0 lg:ml-auto flex flex-col items-center gap-3 sm:gap-5 lg:gap-6 animate-fade-in"
             style={{ animationDelay: '100ms' }}
-            aria-label="Geanimeerde illustratie van videoproductie en gratis offerte aanvragen"
+            aria-label="Geanimeerde illustratie van videoproductie"
           >
             <div className="h-[140px] sm:h-[220px] lg:h-[280px] w-full">
               <DotLottieReact
@@ -61,7 +60,6 @@ const Hero = () => {
                 aria-hidden="true"
               />
             </div>
-            <HeroQuoteForm />
           </aside>
 
           {/* Secondary CTAs + assessment note */}

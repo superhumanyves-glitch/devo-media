@@ -40,7 +40,7 @@ const App = () => (
         <AssessmentProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             <LocaleWrapper>
               <ScrollToTop />
               <CookieConsent />

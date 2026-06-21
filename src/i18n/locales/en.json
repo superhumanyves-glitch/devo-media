@@ -51,34 +51,117 @@
   "packages": {
     "title": "Monthly",
     "titleHighlight": "Packages",
-    "subtitle": "Choose the package that fits your content strategy",
-    "package1": "Package 1",
-    "package2": "Package 2",
-    "package3": "Package 3",
+    "subtitle": "Flexible content packages built around short-form video for Instagram Reels, TikTok and YouTube Shorts — with or without social media management.",
     "perMonth": "/month",
     "perVideo": "per video",
     "videosPerMonth": "videos per month",
-    "features": {
-      "filmingIncluded": "Filming included",
-      "editingIncluded": "Editing included",
-      "scriptsIncluded": "Scripts included",
-      "filmingOnLocation": "Filming on location",
-      "captionsIncluded": "Captions included if needed"
-    },
+    "includedTitle": "Included",
+    "contentTypesTitle": "Content types",
+    "suitableForTitle": "Best for",
     "extras": "Extras",
     "socialMedia": "Social Media Management",
+    "smmIntro": {
+      "title": "With or without social media management",
+      "subtitle": "Every package can be chosen with or without management. You decide whether you only receive content, or whether we also handle posting, planning and optimising.",
+      "withoutTitle": "Without management",
+      "withoutText": "We deliver your videos professionally and ready to post, with basic guidance on placement. You decide when to post and manage your social media yourself.",
+      "withTitle": "With management",
+      "withText": "We also handle planning, posting and optimising: captions, hashtags, stories, engagement and monthly reporting. So you stay consistently visible without the daily work."
+    },
     "socialMediaFeatures": {
-      "stories": "Stories",
-      "scheduledPosts": "Scheduled posts",
+      "contentPlanning": "Monthly content planning",
+      "scheduling": "Scheduling and posting content",
+      "captions": "Caption writing with clear call-to-actions",
+      "hashtags": "Hashtag and keyword support",
+      "stories": "Stories based on the collaboration",
       "engagement": "Community engagement",
-      "analyticsReport": "Monthly analytics report",
-      "contentPlanning": "Strategic content planning",
-      "dmResponses": "Respond to DMs if needed"
+      "dmSupport": "Basic DM support if agreed",
+      "analyticsReport": "Monthly analytics reporting",
+      "contentAnalysis": "Analysis of best-performing content",
+      "optimization": "Optimisation advice for the next month"
     },
     "addOns": {
       "droneAvailable": "Drone videography available"
     },
-    "requestButton": "Request Quote"
+    "requestButton": "Request Quote",
+    "starter": {
+      "name": "Content Starter",
+      "tagline": "For businesses that want to start with consistent visibility on social media.",
+      "videoCount": "8 short-form videos per month",
+      "included": [
+        "1 content shoot per month",
+        "Professional editing",
+        "Basic colour correction and sound design",
+        "Music selection that fits the video",
+        "Scripts or content structure per video",
+        "Optimised for Reels, TikTok and YouTube Shorts",
+        "Basic content direction for the month",
+        "1 revision round per video"
+      ],
+      "contentTypes": [
+        "Product or service videos",
+        "Behind-the-scenes",
+        "Short promo videos",
+        "Simple talking videos",
+        "Atmosphere shots",
+        "Intro to offer, location or team"
+      ],
+      "suitableFor": "Businesses that want to start professionally with social media content and stay visible each month with clear, polished videos."
+    },
+    "growth": {
+      "name": "Content Growth",
+      "tagline": "For businesses that want to grow structurally with strategic, consistent content.",
+      "videoCount": "12 short-form videos per month",
+      "included": [
+        "1 larger or 2 smaller content shoots per month",
+        "Professional editing with strong hooks and pacing",
+        "Colour correction, music and sound design",
+        "Scripts based on audience, offer and brand",
+        "Trend research and content ideas",
+        "Monthly content planning",
+        "Optimised for Reels, TikTok and YouTube Shorts",
+        "1 to 2 revision rounds per video"
+      ],
+      "contentTypes": [
+        "Educational videos",
+        "Promo videos",
+        "Storytelling content",
+        "Behind-the-scenes",
+        "Customer experience or testimonials",
+        "Trend-driven videos",
+        "Product or service explainers",
+        "Trust-building content"
+      ],
+      "suitableFor": "Businesses that want to post consistently, build more reach and position their brand more strongly on social media."
+    },
+    "authority": {
+      "name": "Content Authority",
+      "tagline": "For businesses that want to use content as a serious growth system.",
+      "videoCount": "16 short-form videos per month",
+      "included": [
+        "2 content shoots per month or 1 extended production day",
+        "Advanced editing with strong storytelling",
+        "Strong hooks, pacing, sound design and visual build-up",
+        "Full scripts and creative concepts",
+        "Trend research and competitor insights",
+        "Monthly content strategy and content calendar",
+        "Analysis of best-performing content + optimisation advice",
+        "Optimised for Reels, TikTok and YouTube Shorts",
+        "2 revision rounds per video"
+      ],
+      "contentTypes": [
+        "Authority content",
+        "Educational videos",
+        "Sales content",
+        "Storytelling videos",
+        "Testimonials",
+        "Behind-the-scenes",
+        "Brand-building content",
+        "Trend-driven videos",
+        "Conversion-focused content"
+      ],
+      "suitableFor": "Businesses that want a dominant online presence and use content for visibility, trust, growth and stronger brand positioning."
+    }
   },
   "services": {
     "title": "Single",
