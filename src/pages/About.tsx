@@ -32,8 +32,8 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 sm:mb-16">
-            <div className="order-2 md:order-1">
-            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <div className="order-2 md:order-1 min-w-0">
+            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed break-words">
                 <p>
                   Ik kom van het pittoreske eiland Aruba, een klein juweeltje in het Caribisch gebied. Afgelopen 7 jaar heb ik me ondergedompeld in de dynamische wereld van contentcreatie, met name op het gebied van gaming en sociale media. Gedreven door een passie om mijn creatieve potentieel te verkennen, ben ik op zoek gegaan naar wat mij echt boeit.
                 </p>
@@ -61,10 +61,10 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 sm:mb-16">
-            <div className="order-2 md:order-1">
+            <div className="order-2 md:order-1 min-w-0">
               <div className="bg-gradient-card border border-border rounded-2xl p-6 sm:p-8 md:p-10">
                 <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6">Devo Media</h2>
-                <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed break-words">
                   <p>
                     <span className="font-bold">Devo Media</span> is het resultaat van mijn jarenlange ervaring in contentcreatie, videografie en sociale media. Het is een merk dat creativiteit en strategie combineert en op maat gemaakte videografie- en socialemediamanagementpakketten aanbiedt die zijn ontworpen om individuen en bedrijven te helpen groeien en bloeien in de digitale ruimte.
                   </p>

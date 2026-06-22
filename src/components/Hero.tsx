@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative sm:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-14 sm:pt-28 pb-8 sm:pb-12"
+      className="relative sm:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-24 sm:pt-28 pb-8 sm:pb-12"
       aria-labelledby="hero-heading"
     >
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
