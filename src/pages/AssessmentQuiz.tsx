@@ -100,9 +100,23 @@ const AssessmentQuiz = () => {
     const score = calculateScore();
     const segment = getSegment(score);
 
+    // Build accurate question/answer pairs straight from what was shown, so the
+    // email always matches the actual questions (incl. the free-text question).
+    const responses = questions
+      .map((q) => {
+        if (q.type === "text") {
+          const txt = currentAnswer.trim();
+          return txt ? { question: q.question, answer: txt } : null;
+        }
+        const value = state.answers[q.id];
+        const label = q.options?.find((o) => o.value === value)?.label;
+        return label ? { question: q.question, answer: label } : null;
+      })
+      .filter((r): r is { question: string; answer: string } => r !== null);
+
     // Send the assessment results by email (pass freshly computed values —
     // the equivalent state may not be updated yet because setState is async)
-    const result = await submitToDatabase(score, segment);
+    const result = await submitToDatabase(score, segment, responses);
 
     if (!result.success) {
       toast({

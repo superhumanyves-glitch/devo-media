@@ -34,7 +34,7 @@ interface AssessmentContextType {
   calculateScore: () => number;
   getSegment: (score: number) => 'high' | 'medium' | 'low';
   resetAssessment: () => void;
-  submitToDatabase: (score?: number, segment?: 'high' | 'medium' | 'low') => Promise<{ success: boolean; error?: string }>;
+  submitToDatabase: (score?: number, segment?: 'high' | 'medium' | 'low', responses?: { question: string; answer: string }[]) => Promise<{ success: boolean; error?: string }>;
 }
 
 const AssessmentContext = createContext<AssessmentContextType | undefined>(undefined);
@@ -120,7 +120,8 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
 
   const submitToDatabase = async (
     scoreArg?: number,
-    segmentArg?: 'high' | 'medium' | 'low'
+    segmentArg?: 'high' | 'medium' | 'low',
+    responses?: { question: string; answer: string }[]
   ): Promise<{ success: boolean; error?: string }> => {
     try {
       // Validate contact info
@@ -152,6 +153,7 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
           segment,
           answers: state.answers,
           decodedAnswers: decoded,
+          responses: responses ?? [],
         }),
       });
 

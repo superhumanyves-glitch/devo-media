@@ -16,6 +16,7 @@ interface AssessmentEmailRequest {
   segment: string;
   answers: Record<string, unknown>;
   decodedAnswers: Record<string, string>;
+  responses: { question: string; answer: string }[];
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -24,53 +25,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { name, company, email, phone, score, segment, decodedAnswers } =
+    const { name, company, email, phone, score, segment, decodedAnswers, responses } =
       req.body as AssessmentEmailRequest;
 
     if (!name || !email || !company) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    const answersHtml = `
-      <p><strong>Q1: Post je nu regelmatig video's?</strong><br>
-      ${decodedAnswers?.currentVideoUsage || "Geen antwoord"}</p>
+    const escapeHtml = (s: string) =>
+      String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
 
-      <p><strong>Q2: Heb je een content plan?</strong><br>
-      ${decodedAnswers?.hasContentPlan || "Geen antwoord"}</p>
-
-      <p><strong>Q3: Hoe vaak post je video content?</strong><br>
-      ${decodedAnswers?.postingFrequency || "Geen antwoord"}</p>
-
-      <p><strong>Q4: Welke video formaten gebruik je?</strong><br>
-      ${decodedAnswers?.videoFormats || "Geen antwoord"}</p>
-
-      <p><strong>Q5: Hoe zit het met je team?</strong><br>
-      ${decodedAnswers?.teamSize || "Geen antwoord"}</p>
-
-      <p><strong>Q6: Werk je al met externe partijen?</strong><br>
-      ${decodedAnswers?.externalPartners || "Geen antwoord"}</p>
-
-      <p><strong>Q7: Hoeveel budget heb je voor video?</strong><br>
-      ${decodedAnswers?.videoBudget || "Geen antwoord"}</p>
-
-      <p><strong>Q8: Waar deel je je content?</strong><br>
-      ${decodedAnswers?.platforms || "Geen antwoord"}</p>
-
-      <p><strong>Q9: Wat is je belangrijkste doel?</strong><br>
-      ${decodedAnswers?.primaryGoal || "Geen antwoord"}</p>
-
-      <p><strong>Q10: Wat is je grootste uitdaging?</strong><br>
-      ${decodedAnswers?.biggestChallenge || "Geen antwoord"}</p>
-
-      <p><strong>Q11: Welke oplossing past bij jou?</strong><br>
-      ${decodedAnswers?.preferredSolution || "Geen antwoord"}</p>
-
-      <p><strong>Q12: Interesse in drone opnames?</strong><br>
-      ${decodedAnswers?.droneInterest || "Geen antwoord"}</p>
-
-      <p><strong>Q13: Hoe staat het met je website?</strong><br>
-      ${decodedAnswers?.websiteStatus || "Geen antwoord"}</p>
-    `;
+    // Render the actual questions and answers exactly as they were asked.
+    const answersHtml = (responses && responses.length > 0)
+      ? responses
+          .map(
+            (r, i) => `
+      <p><strong>Q${i + 1}: ${escapeHtml(r.question)}</strong><br>
+      ${escapeHtml(r.answer) || "Geen antwoord"}</p>`
+          )
+          .join("")
+      : "<p>Geen antwoorden ontvangen.</p>";
 
     // Optional BCC fallback
     const fallbackEmail = process.env.NOTIFY_FALLBACK_EMAIL;

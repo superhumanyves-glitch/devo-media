@@ -63,7 +63,7 @@ const AssessmentResults = () => {
               {t("assessmentResults.directQuestionSub")}
             </p>
 
-            <Button size="lg" onClick={handleWhatsApp} className="w-full gap-2">
+            <Button size="lg" onClick={handleWhatsApp} className="w-full gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white">
               <MessageCircle className="h-5 w-5" />
               {t("assessmentResults.whatsappButton")}
             </Button>
