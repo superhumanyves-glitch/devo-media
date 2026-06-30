@@ -518,5 +518,234 @@
     "toastErrorDesc": "Please fill in all required fields correctly.",
     "toastFailTitle": "Something went wrong",
     "toastFailDesc": "Please try again later or contact us directly."
+  },
+  "legal": {
+    "lastUpdate": "Last updated: October 2025",
+    "rightsReserved": "©️ Devo Media Agency – All rights reserved",
+    "companyHeading": "Devo Media Agency",
+    "addressLabel": "Registered address",
+    "address": "Gelderse Rooslaan 13-4, 6841BA Arnhem",
+    "kvkLabel": "Chamber of Commerce number",
+    "kvkShortLabel": "CoC",
+    "kvk": "90330706",
+    "vatLabel": "VAT number",
+    "vatShortLabel": "VAT",
+    "vat": "NL004808059B18",
+    "websiteLabel": "Website",
+    "website": "www.devomedia.nl",
+    "emailLabel": "Email",
+    "email": "info@devomedia.nl",
+    "phoneLabel": "Phone",
+    "phone": "+31 6 10322231",
+    "terms": {
+      "seoTitle": "Terms & Conditions - Devo Media",
+      "seoDescription": "Read the terms and conditions of Devo Media for our services and collaboration.",
+      "title": "Terms & Conditions",
+      "definitionsIntro": "In these terms and conditions the following definitions apply:",
+      "definitions": [
+        { "term": "Contractor:", "text": "Devo Media Agency, established in Arnhem, registered with the Dutch Chamber of Commerce under number 90330706." },
+        { "term": "Client:", "text": "The natural or legal person who enters into an agreement with Devo Media Agency." },
+        { "term": "Agreement:", "text": "Any agreement between the Client and the Contractor concerning the delivery of services." },
+        { "term": "Services:", "text": "All work offered by Devo Media Agency, including social media management, content creation, videography and website development." }
+      ],
+      "sections": [
+        { "title": "Article 1 – Definitions", "definitions": true },
+        { "title": "Article 2 – Applicability", "items": [
+          "These terms and conditions apply to all quotes, offers, agreements and work carried out by Devo Media Agency.",
+          "Deviations from these terms are only valid if confirmed in writing by both parties.",
+          "Any purchasing or other terms of the Client are expressly rejected."
+        ] },
+        { "title": "Article 3 – Quotes and agreements", "items": [
+          "All quotes are without obligation and valid for 14 days from the date of issue, unless stated otherwise.",
+          "An agreement is established as soon as the quote is confirmed by the Client in writing or by email.",
+          "Prices are exclusive of VAT, unless stated otherwise."
+        ] },
+        { "title": "Article 4 – Payment terms", "items": [
+          "Invoices must be paid within 14 days of the invoice date, unless otherwise agreed in writing.",
+          "For larger projects a payment arrangement of 40% upfront and 60% on delivery applies.",
+          "In the event of late payment, a penalty of €25 is charged after a reminder (after 5 days).",
+          "All collection costs are borne by the Client."
+        ] },
+        { "title": "Article 5 – Execution of the assignment", "items": [
+          "Devo Media Agency carries out all assignments to the best of its insight and ability.",
+          "The Contractor has the right to have certain work carried out by third parties."
+        ] },
+        { "title": "Article 6 – Rights to material and intellectual property", "items": [
+          "All created materials remain the property of Devo Media Agency until full payment.",
+          "After payment the Client obtains a non-exclusive licence for the agreed purposes.",
+          "Editing or reselling is not permitted without written consent."
+        ] },
+        { "title": "Article 7 – Cancellation and changes", "items": [
+          "Cancellation must be made in writing.",
+          "In the event of cancellation after confirmation, costs already incurred will be charged.",
+          "Changes may lead to an adjustment of price and/or delivery time."
+        ] },
+        { "title": "Article 8 – Revisions", "items": [
+          "A maximum of two revision rounds is included per project (unless agreed otherwise).",
+          "Additional revisions may be charged separately."
+        ] },
+        { "title": "Article 9 – Delivery and deadlines", "items": [
+          "Stated delivery times are indicative and not strict deadlines.",
+          "Devo Media Agency is not liable for delays caused by late delivery of materials.",
+          "After delivery the Client is responsible for correct use."
+        ] },
+        { "title": "Article 10 – Liability", "items": [
+          "No liability unless there is intent or gross negligence.",
+          "Liability is limited to the invoiced amount, max. €2,500.",
+          "No liability for indirect damage."
+        ] },
+        { "title": "Article 11 – Recordings and drone work", "items": [
+          "Devo Media Agency complies with all safety regulations.",
+          "The Client is responsible for location permissions and permits.",
+          "No liability for damage due to missing permissions."
+        ] },
+        { "title": "Article 12 – Privacy and data protection", "items": [
+          "Personal data is processed in accordance with the GDPR.",
+          "Data is not shared with third parties unless necessary.",
+          "Appropriate security measures apply."
+        ] },
+        { "title": "Article 13 – Rates and price changes", "items": [
+          "Rates may be changed periodically.",
+          "Ongoing quotes remain valid during their validity period.",
+          "Prices are subject to typing errors."
+        ] },
+        { "title": "Article 14 – Force majeure", "paragraph": "In the event of force majeure (illness, technical failures, natural disasters, etc.), Devo Media Agency has the right to suspend execution or dissolve the agreement without compensation." },
+        { "title": "Article 15 – Applicable law and disputes", "items": [
+          "Dutch law applies.",
+          "Disputes will be submitted to the competent court in Arnhem."
+        ] }
+      ]
+    },
+    "privacy": {
+      "seoTitle": "Privacy Policy - Devo Media",
+      "seoDescription": "Read Devo Media's privacy policy on how we handle your personal data.",
+      "title": "Privacy Policy",
+      "sections": [
+        { "title": "What data do we collect?", "groups": [
+          { "label": "Contact details", "text": "Name, email, phone, company name and address" },
+          { "label": "Business details", "text": "Chamber of Commerce number, VAT number, billing and payment details" },
+          { "label": "Project data", "text": "Communication, content, materials and footage" },
+          { "label": "Technical data", "text": "IP address, browser type and website usage data" }
+        ] },
+        { "title": "Why do we process your data?", "groups": [
+          { "label": "Performance of the agreement", "text": "Delivering services, communication, invoicing and payment" },
+          { "label": "Legal obligations", "text": "Accounting and tax obligations" },
+          { "label": "Legitimate interest", "text": "Marketing, improving our services, website analysis" },
+          { "label": "Consent", "text": "Use of footage for portfolio and marketing emails" }
+        ] },
+        { "title": "How long do we keep your data?", "defItems": [
+          { "term": "Customer data:", "text": "7 years after the end of the assignment (tax)" },
+          { "term": "Project data:", "text": "Project duration + 1 year" },
+          { "term": "Footage:", "text": "Until objection or withdrawal of consent" },
+          { "term": "Marketing:", "text": "Until unsubscribe or objection" },
+          { "term": "Website analytics:", "text": "Anonymised after 14 months" }
+        ] },
+        { "title": "Who do we share your data with?", "groups": [
+          { "label": "Processors", "text": "Hosting providers, cloud storage, accounting software, payment providers, email marketing tools" },
+          { "label": "Third parties", "text": "Accountant, tax advisor, legal advisors, government authorities (if required)" }
+        ] },
+        { "title": "How do we secure your data?", "items": [
+          "Secure (SSL) connections",
+          "Strong passwords and regular updates",
+          "Limited access (need-to-know basis)",
+          "Regular back-ups",
+          "Encryption of sensitive files"
+        ] },
+        { "title": "What are your rights?", "defItems": [
+          { "term": "Right of access:", "text": "Ask which data we process about you" },
+          { "term": "Right to rectification:", "text": "Have incorrect data corrected" },
+          { "term": "Right to erasure:", "text": "Request deletion of your data" },
+          { "term": "Right to restriction:", "text": "Restrict the processing" },
+          { "term": "Right to data portability:", "text": "Receive your data" },
+          { "term": "Right to object:", "text": "Object to the processing" }
+        ], "note": "Contact: info@devomedia.nl - Response within 1 month", "noteLabel": "Contact:" },
+        { "title": "Filing a complaint", "intro": "Not satisfied? Please contact us first. You can also file a complaint with:", "authority": {
+          "name": "Dutch Data Protection Authority",
+          "line": "Postbus 93374, 2509 AJ The Hague",
+          "tel": "Phone: 088 - 1805 250",
+          "websiteLabel": "Website:",
+          "websiteText": "autoriteitpersoonsgegevens.nl"
+        } }
+      ]
+    },
+    "cookies": {
+      "seoTitle": "Cookie Policy - Devo Media",
+      "seoDescription": "Read how Devo Media uses cookies and how you can manage your preferences.",
+      "title": "Cookie Policy",
+      "sections": [
+        { "title": "What are cookies?", "intro": "Cookies are small text files placed on your device when you visit our website. They help the website function properly and collect information about its use." },
+        { "title": "Functional cookies (necessary)", "intro": "These cookies are essential for the website to work and cannot be disabled.", "items": [
+          "Storing language preferences",
+          "Remembering cookie preferences",
+          "Security cookies"
+        ], "note": "Retention period: Session or max. 1 year" },
+        { "title": "Analytical cookies", "intro": "Analytical cookies help us understand how visitors use the website.", "subBox": {
+          "label": "Google Analytics (privacy-friendly)",
+          "items": [
+            "IP addresses are anonymised",
+            "No data exchange with other Google services",
+            "Retention period: Max. 14 months"
+          ]
+        }, "trailing": "Used for: measuring visitors, identifying popular pages, optimising the user experience" },
+        { "title": "Marketing cookies (optional)", "intro": "Marketing cookies are only placed with your consent.", "items": [
+          "Social media integrations (Facebook, Instagram, LinkedIn)",
+          "Video embeds (YouTube, Vimeo)",
+          "Remarketing purposes"
+        ], "note": "Retention period: Max. 2 years" },
+        { "title": "Third-party cookies", "intro": "Our website may contain embedded content from third parties that place their own cookies:", "links": [
+          { "term": "YouTube & Google Maps:", "linkText": "policies.google.com/privacy", "href": "https://policies.google.com/privacy" },
+          { "term": "Facebook/Instagram:", "linkText": "facebook.com/privacy", "href": "https://www.facebook.com/privacy/explanation" },
+          { "term": "LinkedIn:", "linkText": "linkedin.com/legal/privacy-policy", "href": "https://www.linkedin.com/legal/privacy-policy" }
+        ] },
+        { "title": "How do I manage cookies?", "groups": [
+          { "label": "Via our cookie banner", "text": "On your first visit you can set your preferences. These can be adjusted later." },
+          { "label": "Via your browser", "items": [
+            "Chrome: Settings → Privacy and security → Cookies",
+            "Firefox: Options → Privacy and security → Cookies",
+            "Safari: Preferences → Privacy → Cookies",
+            "Edge: Settings → Cookies and site data"
+          ] }
+        ], "italicNote": "Please note: If you disable all cookies, certain features may not work correctly." },
+        { "title": "Questions about cookies?", "contactBox": {
+          "emailLabel": "Email:",
+          "email": "info@devomedia.nl",
+          "phoneLabel": "Phone:",
+          "phone": "+31 6 10322231"
+        } }
+      ]
+    },
+    "disclaimer": {
+      "seoTitle": "Disclaimer - Devo Media",
+      "seoDescription": "Read Devo Media's disclaimer on the use of our website and services.",
+      "title": "Disclaimer",
+      "sections": [
+        { "title": "General", "intro": "This disclaimer applies to the website and all services of Devo Media Agency. By using our website and/or services, you agree to this disclaimer." },
+        { "title": "Website content", "groups": [
+          { "label": "Diligence", "text": "We strive to keep information current, complete and accurate. Despite this care, inaccuracies may occur." },
+          { "label": "No guarantee", "text": "We offer no guarantee regarding accuracy or completeness. Use is at your own risk." },
+          { "label": "Changes", "text": "We reserve the right to change the content at any time without prior notice." }
+        ] },
+        { "title": "Intellectual property", "intro": "All content on this website is the property of Devo Media Agency and protected by copyright.", "items": [
+          "Copying, distributing or publishing is not permitted",
+          "Changing or editing content is prohibited",
+          "Commercial use requires written consent",
+          "Portfolio material remains the property of Devo Media Agency"
+        ] },
+        { "title": "Links to external websites", "intro": "This website may contain links to third-party websites. We have no control over these websites and are not responsible for their content or services. Visiting them is at your own risk.", "noteLink": { "text": "Found a broken link? Report it via <lnk>info@devomedia.nl</lnk>", "href": "mailto:info@devomedia.nl" } },
+        { "title": "Liability", "groups": [
+          { "label": "Exclusion of damage", "text": "Devo Media Agency is not liable for damage arising from the use of the website, unless there is intent or gross negligence." },
+          { "label": "Maximum liability", "text": "Total liability is limited to the invoiced amount, with a maximum of € 2,500." },
+          { "label": "Indirect damage", "text": "No liability for consequential damage, lost profits, missed savings or reputational damage." }
+        ] },
+        { "title": "Service provision", "intro": "Devo Media Agency works on the basis of a <b>best-efforts obligation</b>, not a results obligation.", "trailing": "We give no guarantees about specific results such as growth in followers, website traffic or revenue growth. Effectiveness depends on external factors." },
+        { "title": "Technical aspects", "intro": "We strive for continuous availability, but cannot guarantee:", "items": [
+          "24/7 uptime",
+          "Error-free operation",
+          "Absence of viruses or malware"
+        ], "trailing": "The website may be temporarily unavailable for maintenance or updates." },
+        { "title": "Applicable law", "paragraph": "This disclaimer and the use of the website are governed exclusively by <b>Dutch law</b>. Disputes will be submitted to the competent court in Arnhem." },
+        { "title": "Contact", "contactBox": true }
+      ]
+    }
   }
 }

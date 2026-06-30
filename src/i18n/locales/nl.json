@@ -518,5 +518,234 @@
     "toastErrorDesc": "Vul alle verplichte velden correct in.",
     "toastFailTitle": "Er is iets misgegaan",
     "toastFailDesc": "Probeer het later opnieuw of neem direct contact met ons op."
+  },
+  "legal": {
+    "lastUpdate": "Laatste update: Oktober 2025",
+    "rightsReserved": "©️ Devo Media Agency – Alle rechten voorbehouden",
+    "companyHeading": "Devo Media Agency",
+    "addressLabel": "Vestigingsadres",
+    "address": "Gelderse Rooslaan 13-4, 6841BA Arnhem",
+    "kvkLabel": "KvK-nummer",
+    "kvkShortLabel": "KvK",
+    "kvk": "90330706",
+    "vatLabel": "BTW-nummer",
+    "vatShortLabel": "BTW",
+    "vat": "NL004808059B18",
+    "websiteLabel": "Website",
+    "website": "www.devomedia.nl",
+    "emailLabel": "E-mail",
+    "email": "info@devomedia.nl",
+    "phoneLabel": "Tel",
+    "phone": "+31 6 10322231",
+    "terms": {
+      "seoTitle": "Algemene Voorwaarden - Devo Media",
+      "seoDescription": "Lees de algemene voorwaarden van Devo Media voor onze diensten en samenwerking.",
+      "title": "Algemene Voorwaarden",
+      "definitionsIntro": "In deze algemene voorwaarden wordt verstaan onder:",
+      "definitions": [
+        { "term": "Opdrachtnemer:", "text": "Devo Media Agency, gevestigd te Arnhem, ingeschreven bij de Kamer van Koophandel onder nummer 90330706." },
+        { "term": "Opdrachtgever:", "text": "De natuurlijke persoon of rechtspersoon die een overeenkomst sluit met Devo Media Agency." },
+        { "term": "Overeenkomst:", "text": "Iedere overeenkomst tussen Opdrachtgever en Opdrachtnemer betreffende levering van diensten." },
+        { "term": "Diensten:", "text": "Alle werkzaamheden die Devo Media Agency aanbiedt, waaronder social-media-beheer, contentcreatie, videografie en website-ontwikkeling." }
+      ],
+      "sections": [
+        { "title": "Artikel 1 – Definities", "definitions": true },
+        { "title": "Artikel 2 – Toepasselijkheid", "items": [
+          "Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes, overeenkomsten en werkzaamheden uitgevoerd door Devo Media Agency.",
+          "Afwijkingen van deze voorwaarden zijn slechts geldig indien deze schriftelijk door beide partijen zijn bevestigd.",
+          "Eventuele inkoop- of andere voorwaarden van de Opdrachtgever worden uitdrukkelijk van de hand gewezen."
+        ] },
+        { "title": "Artikel 3 – Offertes en overeenkomsten", "items": [
+          "Alle offertes zijn vrijblijvend en geldig gedurende 14 dagen na dagtekening, tenzij anders vermeld.",
+          "Een overeenkomst komt tot stand zodra de offerte schriftelijk of via e-mail door de Opdrachtgever is bevestigd.",
+          "Prijzen zijn exclusief btw, tenzij anders vermeld."
+        ] },
+        { "title": "Artikel 4 – Betalingsvoorwaarden", "items": [
+          "Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan, tenzij schriftelijk anders overeengekomen.",
+          "Voor grotere projecten geldt een aanbetalingsregeling van 40% vooraf en 60% na oplevering.",
+          "Bij te late betaling wordt na herinnering een boete van €25,- in rekening gebracht (na 5 dagen).",
+          "Alle incassokosten komen voor rekening van de Opdrachtgever."
+        ] },
+        { "title": "Artikel 5 – Uitvoering van de opdracht", "items": [
+          "Devo Media Agency voert alle opdrachten naar beste inzicht en vermogen uit.",
+          "Opdrachtnemer heeft het recht bepaalde werkzaamheden te laten uitvoeren door derden."
+        ] },
+        { "title": "Artikel 6 – Rechten op materiaal en intellectueel eigendom", "items": [
+          "Alle gecreëerde materialen blijven eigendom van Devo Media Agency tot volledige betaling.",
+          "Na betaling verkrijgt de Opdrachtgever een niet-exclusieve licentie voor overeengekomen doeleinden.",
+          "Bewerken of doorverkopen is niet toegestaan zonder schriftelijke toestemming."
+        ] },
+        { "title": "Artikel 7 – Annulering en wijzigingen", "items": [
+          "Annulering dient schriftelijk te gebeuren.",
+          "Bij annulering na bevestiging worden reeds gemaakte kosten in rekening gebracht.",
+          "Wijzigingen kunnen leiden tot aanpassing van prijs en/of levertijd."
+        ] },
+        { "title": "Artikel 8 – Revisies", "items": [
+          "Maximaal twee revisierondes inbegrepen per project (tenzij anders overeengekomen).",
+          "Extra revisies kunnen afzonderlijk in rekening worden gebracht."
+        ] },
+        { "title": "Artikel 9 – Levering en termijnen", "items": [
+          "Opgegeven levertijden zijn indicatief en geen fatale termijnen.",
+          "Devo Media Agency is niet aansprakelijk voor vertragingen door te late aanlevering.",
+          "Na levering is Opdrachtgever verantwoordelijk voor correct gebruik."
+        ] },
+        { "title": "Artikel 10 – Aansprakelijkheid", "items": [
+          "Geen aansprakelijkheid tenzij sprake van opzet of grove nalatigheid.",
+          "Aansprakelijkheid beperkt tot gefactureerd bedrag, max. €2.500,-.",
+          "Geen aansprakelijkheid voor indirecte schade."
+        ] },
+        { "title": "Artikel 11 – Opnames en dronewerkzaamheden", "items": [
+          "Devo Media Agency houdt zich aan alle veiligheidsvoorschriften.",
+          "Opdrachtgever is verantwoordelijk voor locatietoestemmingen en vergunningen.",
+          "Geen aansprakelijkheid voor schade door ontbrekende toestemmingen."
+        ] },
+        { "title": "Artikel 12 – Privacy en gegevensbescherming", "items": [
+          "Persoonsgegevens worden verwerkt conform AVG.",
+          "Gegevens worden niet gedeeld met derden tenzij noodzakelijk.",
+          "Passende beveiligingsmaatregelen zijn van toepassing."
+        ] },
+        { "title": "Artikel 13 – Tarieven en prijswijzigingen", "items": [
+          "Tarieven kunnen periodiek worden gewijzigd.",
+          "Lopende offertes blijven geldig gedurende geldigheidstermijn.",
+          "Prijzen onder voorbehoud van typefouten."
+        ] },
+        { "title": "Artikel 14 – Overmacht", "paragraph": "In geval van overmacht (ziekte, technische storingen, natuurrampen, etc.) heeft Devo Media Agency het recht de uitvoering op te schorten of de overeenkomst te ontbinden zonder schadevergoeding." },
+        { "title": "Artikel 15 – Toepasselijk recht en geschillen", "items": [
+          "Nederlands recht is van toepassing.",
+          "Geschillen worden voorgelegd aan de bevoegde rechter in Arnhem."
+        ] }
+      ]
+    },
+    "privacy": {
+      "seoTitle": "Privacyverklaring - Devo Media",
+      "seoDescription": "Lees de privacyverklaring van Devo Media over hoe wij omgaan met uw persoonsgegevens.",
+      "title": "Privacyverklaring",
+      "sections": [
+        { "title": "Welke gegevens verzamelen wij?", "groups": [
+          { "label": "Contactgegevens", "text": "Naam, e-mail, telefoon, bedrijfsnaam en adres" },
+          { "label": "Zakelijke gegevens", "text": "KvK-nummer, BTW-nummer, facturerings- en betalingsgegevens" },
+          { "label": "Projectgegevens", "text": "Communicatie, content, materialen en beeldmateriaal" },
+          { "label": "Technische gegevens", "text": "IP-adres, browsertype en gebruiksgegevens website" }
+        ] },
+        { "title": "Waarom verwerken wij uw gegevens?", "groups": [
+          { "label": "Uitvoering overeenkomst", "text": "Leveren van diensten, communicatie, facturering en betaling" },
+          { "label": "Wettelijke verplichtingen", "text": "Boekhoudkundige en fiscale verplichtingen" },
+          { "label": "Gerechtvaardigd belang", "text": "Marketing, verbetering dienstverlening, website-analyse" },
+          { "label": "Toestemming", "text": "Gebruik beeldmateriaal voor portfolio en marketing e-mails" }
+        ] },
+        { "title": "Hoe lang bewaren wij uw gegevens?", "defItems": [
+          { "term": "Klantgegevens:", "text": "7 jaar na afloop opdracht (fiscaal)" },
+          { "term": "Projectgegevens:", "text": "Looptijd project + 1 jaar" },
+          { "term": "Beeldmateriaal:", "text": "Tot bezwaar of intrekking toestemming" },
+          { "term": "Marketing:", "text": "Tot afmelding of bezwaar" },
+          { "term": "Website analytics:", "text": "Geanonimiseerd na 14 maanden" }
+        ] },
+        { "title": "Met wie delen wij uw gegevens?", "groups": [
+          { "label": "Verwerkers", "text": "Hosting providers, cloud opslag, boekhoudprogramma's, betalingsproviders, e-mailmarketing tools" },
+          { "label": "Derden", "text": "Accountant, belastingadviseur, juridische adviseurs, overheidsinstanties (indien verplicht)" }
+        ] },
+        { "title": "Hoe beveiligen wij uw gegevens?", "items": [
+          "Beveiligde (SSL) verbindingen",
+          "Sterke wachtwoorden en regelmatige updates",
+          "Beperkte toegang (need-to-know basis)",
+          "Regelmatige back-ups",
+          "Versleuteling van gevoelige bestanden"
+        ] },
+        { "title": "Wat zijn uw rechten?", "defItems": [
+          { "term": "Recht op inzage:", "text": "Vraag welke gegevens wij van u verwerken" },
+          { "term": "Recht op rectificatie:", "text": "Laat onjuiste gegevens corrigeren" },
+          { "term": "Recht op verwijdering:", "text": "Vraag verwijdering van uw gegevens" },
+          { "term": "Recht op beperking:", "text": "Beperk de verwerking" },
+          { "term": "Recht op dataportabiliteit:", "text": "Ontvang uw gegevens" },
+          { "term": "Recht van bezwaar:", "text": "Maak bezwaar tegen verwerking" }
+        ], "note": "Contact: info@devomedia.nl - Reactie binnen 1 maand", "noteLabel": "Contact:" },
+        { "title": "Klachten indienen", "intro": "Niet tevreden? Neem eerst contact met ons op. U kunt ook een klacht indienen bij:", "authority": {
+          "name": "Autoriteit Persoonsgegevens",
+          "line": "Postbus 93374, 2509 AJ Den Haag",
+          "tel": "Tel: 088 - 1805 250",
+          "websiteLabel": "Website:",
+          "websiteText": "autoriteitpersoonsgegevens.nl"
+        } }
+      ]
+    },
+    "cookies": {
+      "seoTitle": "Cookieverklaring - Devo Media",
+      "seoDescription": "Lees hoe Devo Media cookies gebruikt en hoe u uw voorkeuren kunt beheren.",
+      "title": "Cookieverklaring",
+      "sections": [
+        { "title": "Wat zijn cookies?", "intro": "Cookies zijn kleine tekstbestanden die op uw apparaat worden geplaatst wanneer u onze website bezoekt. Ze helpen de website goed te functioneren en verzamelen informatie over het gebruik." },
+        { "title": "Functionele cookies (noodzakelijk)", "intro": "Deze cookies zijn essentieel voor de werking van de website en kunnen niet worden uitgeschakeld.", "items": [
+          "Opslaan van taalvoorkeuren",
+          "Onthouden van cookievoorkeuren",
+          "Beveiligingscookies"
+        ], "note": "Bewaartermijn: Sessie of max. 1 jaar" },
+        { "title": "Analytische cookies", "intro": "Analytische cookies helpen ons begrijpen hoe bezoekers de website gebruiken.", "subBox": {
+          "label": "Google Analytics (privacy-vriendelijk)",
+          "items": [
+            "IP-adressen worden geanonimiseerd",
+            "Geen data-uitwisseling met andere Google-diensten",
+            "Bewaartermijn: Max. 14 maanden"
+          ]
+        }, "trailing": "Gebruikt voor: bezoekers meten, populaire pagina's identificeren, gebruikerservaring optimaliseren" },
+        { "title": "Marketing cookies (optioneel)", "intro": "Marketing cookies worden alleen geplaatst met uw toestemming.", "items": [
+          "Social media integraties (Facebook, Instagram, LinkedIn)",
+          "Video embeds (YouTube, Vimeo)",
+          "Remarketing doeleinden"
+        ], "note": "Bewaartermijn: Max. 2 jaar" },
+        { "title": "Cookies van derden", "intro": "Onze website kan embedded content bevatten van derden die hun eigen cookies plaatsen:", "links": [
+          { "term": "YouTube & Google Maps:", "linkText": "policies.google.com/privacy", "href": "https://policies.google.com/privacy" },
+          { "term": "Facebook/Instagram:", "linkText": "facebook.com/privacy", "href": "https://www.facebook.com/privacy/explanation" },
+          { "term": "LinkedIn:", "linkText": "linkedin.com/legal/privacy-policy", "href": "https://www.linkedin.com/legal/privacy-policy" }
+        ] },
+        { "title": "Hoe beheer ik cookies?", "groups": [
+          { "label": "Via onze cookiebanner", "text": "Bij uw eerste bezoek kunt u uw voorkeuren aangeven. Deze zijn later aanpasbaar." },
+          { "label": "Via uw browser", "items": [
+            "Chrome: Instellingen → Privacy en beveiliging → Cookies",
+            "Firefox: Opties → Privacy en beveiliging → Cookies",
+            "Safari: Voorkeuren → Privacy → Cookies",
+            "Edge: Instellingen → Cookies en sitegegevens"
+          ] }
+        ], "italicNote": "Let op: Als u alle cookies uitschakelt, kunnen bepaalde functies mogelijk niet correct werken." },
+        { "title": "Vragen over cookies?", "contactBox": {
+          "emailLabel": "E-mail:",
+          "email": "info@devomedia.nl",
+          "phoneLabel": "Telefoon:",
+          "phone": "+31 6 10322231"
+        } }
+      ]
+    },
+    "disclaimer": {
+      "seoTitle": "Disclaimer - Devo Media",
+      "seoDescription": "Lees de disclaimer van Devo Media over het gebruik van onze website en diensten.",
+      "title": "Disclaimer",
+      "sections": [
+        { "title": "Algemeen", "intro": "Deze disclaimer is van toepassing op de website en alle diensten van Devo Media Agency. Door gebruik te maken van onze website en/of diensten, gaat u akkoord met deze disclaimer." },
+        { "title": "Inhoud website", "groups": [
+          { "label": "Zorgvuldigheid", "text": "Wij streven ernaar informatie actueel, volledig en juist te houden. Ondanks deze zorg kunnen er onjuistheden voorkomen." },
+          { "label": "Geen garantie", "text": "Wij bieden geen garantie met betrekking tot juistheid of volledigheid. Gebruik is voor eigen risico." },
+          { "label": "Wijzigingen", "text": "Wij behouden ons het recht voor de inhoud op elk moment te wijzigen zonder voorafgaande kennisgeving." }
+        ] },
+        { "title": "Intellectueel eigendom", "intro": "Alle content op deze website is eigendom van Devo Media Agency en beschermd door auteursrecht.", "items": [
+          "Kopiëren, verspreiden of openbaar maken is niet toegestaan",
+          "Content wijzigen of bewerken is verboden",
+          "Commercieel gebruik vereist schriftelijke toestemming",
+          "Portfoliomateriaal blijft eigendom van Devo Media Agency"
+        ] },
+        { "title": "Links naar externe websites", "intro": "Deze website kan links bevatten naar websites van derden. Wij hebben geen controle over deze websites en zijn niet verantwoordelijk voor hun inhoud of diensten. Bezoeken gebeurt voor eigen risico.", "noteLink": { "text": "Foute link gevonden? Meld dit via <lnk>info@devomedia.nl</lnk>", "href": "mailto:info@devomedia.nl" } },
+        { "title": "Aansprakelijkheid", "groups": [
+          { "label": "Uitsluiting schade", "text": "Devo Media Agency is niet aansprakelijk voor schade voortvloeiend uit gebruik van de website, tenzij sprake van opzet of grove schuld." },
+          { "label": "Maximale aansprakelijkheid", "text": "Totale aansprakelijkheid beperkt tot gefactureerd bedrag, met een maximum van € 2.500,-" },
+          { "label": "Indirecte schade", "text": "Geen aansprakelijkheid voor gevolgschade, gederfde winst, gemiste besparingen of reputatieschade." }
+        ] },
+        { "title": "Dienstverlening", "intro": "Devo Media Agency werkt op basis van een <b>inspanningsverplichting</b>, niet op basis van een resultaatverplichting.", "trailing": "Wij geven geen garanties over specifieke resultaten zoals groei in volgers, website verkeer of omzetgroei. De effectiviteit is afhankelijk van externe factoren." },
+        { "title": "Technische aspecten", "intro": "Wij streven naar continue beschikbaarheid, maar kunnen niet garanderen:", "items": [
+          "24/7 uptime",
+          "Foutloze werking",
+          "Afwezigheid van virussen of malware"
+        ], "trailing": "De website kan tijdelijk onbeschikbaar zijn voor onderhoud of updates." },
+        { "title": "Toepasselijk recht", "paragraph": "Op deze disclaimer en het gebruik van de website is uitsluitend <b>Nederlands recht</b> van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Arnhem." },
+        { "title": "Contact", "contactBox": true }
+      ]
+    }
   }
 }
