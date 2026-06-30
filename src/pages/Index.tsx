@@ -59,7 +59,7 @@ const Index = () => {
     }
   }, [location]);
   const clientsCount = useCountUp({
-    end: 30,
+    end: 35,
     duration: 2000,
     start: 0,
     delay: statsInView ? 0 : 9999
