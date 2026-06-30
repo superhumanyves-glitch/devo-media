@@ -54,22 +54,18 @@ const contactSchema = z.object({
 });
 
 const monthlyPackages = [
-  "Maandelijks Pakket - Starter",
-  "Maandelijks Pakket - Professional",
-  "Maandelijks Pakket - Premium",
-  "Maandelijks Pakket - Starter (met Social Media Management)",
-  "Maandelijks Pakket - Professional (met Social Media Management)",
-  "Maandelijks Pakket - Premium (met Social Media Management)",
+  "Maandelijks Pakket - Content Starter",
+  "Maandelijks Pakket - Content Growth",
+  "Maandelijks Pakket - Content Authority",
+  "Maandelijks Pakket - Content Starter (met Social Media Management)",
+  "Maandelijks Pakket - Content Growth (met Social Media Management)",
+  "Maandelijks Pakket - Content Authority (met Social Media Management)",
 ];
 
 const individualServices = [
   "Single Video",
   "Aftermovie/Opening",
   "Drone/FPV Video",
-  "FPV Drone Video (30 min filmen, 1-4 uur editen)",
-  "Social Media Content",
-  "Bedrijfsvideo",
-  "Evenement Coverage",
 ];
 
 const additionalServices = [

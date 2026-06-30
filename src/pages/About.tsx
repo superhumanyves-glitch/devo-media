@@ -12,7 +12,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Over Mij - Devo Media | Bryan's Verhaal"
-        description="Ontdek het verhaal achter Devo Media. Van Aruba naar Nederland, 7+ jaar ervaring in content creatie en videoproductie voor 30+ bedrijven."
+        description="Ontdek het verhaal achter Devo Media. Van Aruba naar Nederland, 7+ jaar ervaring in content creatie en videoproductie voor 35+ bedrijven."
         keywords="over devo media, bryan videograaf, content creator aruba, videoproductie nederland, bedrijfsverhaal"
         canonicalUrl="/about"
         structuredData={organizationStructuredData}
@@ -43,7 +43,7 @@ const About = () => {
                 </p>
                 
                 <p>
-                  Met een solide basis van ervaring en inmiddels <span className="text-primary font-semibold">30+ bedrijven</span> waar ik mee heb samengewerkt, wilde ik iets unieks creëren dat echt impact zou hebben en zo ontstond <span className="font-bold">Devo Media</span>.
+                  Met een solide basis van ervaring en inmiddels <span className="text-primary font-semibold">35+ bedrijven</span> waar ik mee heb samengewerkt, wilde ik iets unieks creëren dat echt impact zou hebben en zo ontstond <span className="font-bold">Devo Media</span>.
                 </p>
               </div>
             </div>

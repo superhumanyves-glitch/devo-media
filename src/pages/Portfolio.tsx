@@ -75,7 +75,7 @@ const Portfolio = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
         title="Portfolio - Devo Media | Ons Videoproductie Werk"
-        description="Bekijk ons portfolio van professionele videoproductie projecten. Aftermovies, promotievideo's, drone videografie en social media content voor 30+ bedrijven."
+        description="Bekijk ons portfolio van professionele videoproductie projecten. Aftermovies, promotievideo's, drone videografie en social media content voor 35+ bedrijven."
         keywords="videoproductie portfolio, aftermovie, promotievideo, drone videografie, bedrijfsvideo's, social media content"
         canonicalUrl="/portfolio"
         structuredData={organizationStructuredData}

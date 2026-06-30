@@ -212,7 +212,7 @@ const AssessmentLanding = () => {
                 Wie we zijn
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: '100ms' }}>
-                Devo Media helpt bedrijven hun social media strategie om te zetten in meetbare resultaten. Met meer dan 7 jaar ervaring, 30+ tevreden klanten, en bewezen resultaten, weten we precies hoe je video content moet inzetten om klanten te krijgen.
+                Devo Media helpt bedrijven hun social media strategie om te zetten in meetbare resultaten. Met meer dan 7 jaar ervaring, 35+ tevreden klanten, en bewezen resultaten, weten we precies hoe je video content moet inzetten om klanten te krijgen.
               </p>
               
               <h3 className="text-2xl sm:text-3xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
