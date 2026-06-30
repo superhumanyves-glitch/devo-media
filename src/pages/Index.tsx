@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import { getStaggeredAnimationStyle } from "@/lib/animations";
 import { organizationStructuredData, serviceStructuredData } from "@/lib/structuredData";
 import { useEffect } from "react";
@@ -31,6 +32,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const localePath = useLocalePath();
   const {
     t
   } = useTranslation();
@@ -336,13 +338,13 @@ const Index = () => {
               {t('portfolio.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="shadow-glow" onClick={() => navigate("/assessment-landing")}>
+              <Button size="lg" className="shadow-glow" onClick={() => navigate(localePath("/video-readiness-assessment"))}>
                 {t('portfolio.freeAssessment')}
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate("/portfolio")}>
+              <Button size="lg" variant="outline" onClick={() => navigate(localePath("/portfolio"))}>
                 {t('portfolio.viewPortfolio')}
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate("/results")}>
+              <Button size="lg" variant="outline" onClick={() => navigate(localePath("/resultaten"))}>
                 {t('portfolio.viewResults')}
               </Button>
             </div>

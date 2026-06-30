@@ -2,8 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Colophon = () => {
+  const localePath = useLocalePath();
   return (
     <div className="min-h-screen flex flex-col">
         <SEO 
@@ -84,13 +87,13 @@ const Colophon = () => {
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
                 <h2 className="text-lg font-semibold mb-3 text-foreground text-left">Juridische documenten</h2>
                 <div className="flex flex-wrap gap-3 text-sm">
-                  <a href="/algemene-voorwaarden" className="text-primary hover:underline">Algemene Voorwaarden</a>
+                  <Link to={localePath("/algemene-voorwaarden")} className="text-primary hover:underline">Algemene Voorwaarden</Link>
                   <span className="text-muted-foreground">•</span>
-                  <a href="/privacyverklaring" className="text-primary hover:underline">Privacyverklaring</a>
+                  <Link to={localePath("/privacyverklaring")} className="text-primary hover:underline">Privacyverklaring</Link>
                   <span className="text-muted-foreground">•</span>
-                  <a href="/cookieverklaring" className="text-primary hover:underline">Cookieverklaring</a>
+                  <Link to={localePath("/cookieverklaring")} className="text-primary hover:underline">Cookieverklaring</Link>
                   <span className="text-muted-foreground">•</span>
-                  <a href="/disclaimer" className="text-primary hover:underline">Disclaimer</a>
+                  <Link to={localePath("/disclaimer")} className="text-primary hover:underline">Disclaimer</Link>
                 </div>
               </section>
 

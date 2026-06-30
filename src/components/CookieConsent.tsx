@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const localePath = useLocalePath();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -35,7 +37,7 @@ const CookieConsent = () => {
           </h2>
           <p className="text-base text-muted-foreground mb-6">
             We gebruiken cookies om je ervaring te verbeteren en om onze website goed te laten werken. Door onze website te gebruiken, ga je akkoord met ons{" "}
-            <Link to="/cookieverklaring" className="underline hover:text-primary font-medium text-foreground">
+            <Link to={localePath("/cookieverklaring")} className="underline hover:text-primary font-medium text-foreground">
               cookiebeleid
             </Link>
             .

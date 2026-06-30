@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import result1 from "@/assets/results/result-1.png";
@@ -13,6 +15,8 @@ import result6 from "@/assets/results/result-6.png";
 import result7 from "@/assets/results/result-7.jpg";
 
 const Results = () => {
+  const navigate = useNavigate();
+  const localePath = useLocalePath();
   const results = [
     { id: 1, image: result1, alt: "Belangrijke metrieken: 16K totaal aantal kijkers (+7307.6%), 3,244 nieuwe kijkers" },
     { id: 2, image: result2, alt: "Belangrijke metrieken: 23K berichtweergaven (+896.7%), 690 profielweergaven" },
@@ -52,7 +56,7 @@ const Results = () => {
         <section className="py-8 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <button
-              onClick={() => window.location.href = '/portfolio'}
+              onClick={() => navigate(localePath('/portfolio'))}
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300 shadow-md"
             >
               Terug naar Portfolio <ArrowRight className="w-4 h-4" />

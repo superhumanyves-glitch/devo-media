@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ArrowRight, ClipboardCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Hero = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const localePath = useLocalePath();
   
   const scrollToPricing = () => {
     document.getElementById('pakketten')?.scrollIntoView({ behavior: 'smooth' });
@@ -71,7 +73,7 @@ const Hero = () => {
               <Button
                 variant="hero"
                 size="lg"
-                onClick={() => navigate('/video-readiness-assessment')}
+                onClick={() => navigate(localePath('/video-readiness-assessment'))}
                 className="group gap-2 w-full sm:w-auto text-sm sm:text-base"
                 aria-label="Start gratis assessment om uw video behoeften te bepalen"
               >

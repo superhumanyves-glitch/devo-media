@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
@@ -13,6 +14,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const AssessmentLanding = () => {
   const navigate = useNavigate();
+  const localePath = useLocalePath();
   const [statsRef, statsInView] = useInView({ threshold: 0.3 });
 
   const clientsCount = useCountUp({ end: 35, duration: 2000, start: 0, delay: statsInView ? 0 : 9999 });
@@ -72,7 +74,7 @@ const AssessmentLanding = () => {
 
               <Button 
                 size="lg" 
-                onClick={() => navigate('/assessment/quiz')}
+                onClick={() => navigate(localePath('/assessment/quiz'))}
                 className="gap-2 sm:gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 animate-bounce-in text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-6 rounded-full group hover:scale-105 active:scale-95 will-change-transform bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary font-bold relative overflow-hidden max-w-full"
                 style={{ animationDelay: '200ms' }}
               >
@@ -191,7 +193,7 @@ const AssessmentLanding = () => {
               </p>
               <Button 
                 size="lg" 
-                onClick={() => navigate('/assessment/quiz')}
+                onClick={() => navigate(localePath('/assessment/quiz'))}
                 className="gap-2 sm:gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-6 rounded-full group hover:scale-105 active:scale-95 will-change-transform bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary font-bold relative overflow-hidden max-w-full"
               >
                 <span className="relative z-10 flex items-center gap-2 sm:gap-3">
@@ -253,7 +255,7 @@ const AssessmentLanding = () => {
             <div className="text-center animate-fade-in" style={{ animationDelay: '400ms' }}>
               <Button 
                 size="lg" 
-                onClick={() => navigate('/assessment/quiz')}
+                onClick={() => navigate(localePath('/assessment/quiz'))}
                 className="gap-2 sm:gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-6 rounded-full group hover:scale-105 active:scale-95 will-change-transform bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary font-bold relative overflow-hidden max-w-full"
               >
                 <span className="relative z-10 flex items-center gap-2 sm:gap-3">

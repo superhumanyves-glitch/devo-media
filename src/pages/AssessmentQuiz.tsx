@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,6 +16,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 
 const AssessmentQuiz = () => {
   const navigate = useNavigate();
+  const localePath = useLocalePath();
   const { toast } = useToast();
   const { state, setContactInfo, setAnswer, calculateScore, getSegment, submitToDatabase } = useAssessment();
   const [currentStep, setCurrentStep] = useState(0);
@@ -203,25 +205,25 @@ const AssessmentQuiz = () => {
     const score = calculateScore();
     const segment = getSegment(score);
     
-    // Save to database
+    // Send the assessment results by email
     const result = await submitToDatabase();
-    
+
     if (!result.success) {
       toast({
         title: "Waarschuwing",
-        description: "Je resultaten worden getoond, maar we konden ze niet opslaan in onze database. Geen zorgen, je kunt ze nog steeds bekijken!",
+        description: "Je resultaten worden getoond, maar we konden ze niet naar ons versturen. Geen zorgen, je kunt ze nog steeds bekijken!",
         variant: "default",
       });
     }
-    
-    navigate('/assessment/results');
+
+    navigate(localePath('/assessment/results'));
   };
 
   const handleBack = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     } else {
-      navigate('/video-readiness-assessment');
+      navigate(localePath('/video-readiness-assessment'));
     }
   };
 

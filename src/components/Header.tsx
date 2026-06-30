@@ -12,11 +12,13 @@ import {
 } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const localePath = useLocalePath();
   const isHomePage = location.pathname === '/' || location.pathname === '/en';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +33,7 @@ const Header = () => {
   
   const scrollToSection = (id: string) => {
     if (!isHomePage) {
-      navigate('/', { state: { scrollTo: id } });
+      navigate(localePath('/'), { state: { scrollTo: id } });
       return;
     }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -43,7 +45,7 @@ const Header = () => {
       scrolled ? 'py-2 shadow-lg' : 'py-3 sm:py-4'
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="transition-transform duration-300 hover:scale-105">
+        <Link to={localePath("/")} className="transition-transform duration-300 hover:scale-105">
           <img 
             src={logo} 
             alt="Devo Media" 
@@ -72,17 +74,17 @@ const Header = () => {
           >
             {t('header.whyUs')}
           </button>
-          <Link to="/portfolio">
+          <Link to={localePath("/portfolio")}>
             <button className="text-foreground hover:text-primary transition-all duration-200 hover:scale-105">
               {t('header.portfolio')}
             </button>
           </Link>
-          <Link to="/video-readiness-assessment">
+          <Link to={localePath("/video-readiness-assessment")}>
             <button className="text-foreground hover:text-primary transition-all duration-200 font-medium hover:scale-105">
               {t('header.freeAssessment')}
             </button>
           </Link>
-          <Link to="/about">
+          <Link to={localePath("/about")}>
             <button className="text-foreground hover:text-primary transition-all duration-200 hover:scale-105">
               {t('header.about')}
             </button>
@@ -134,17 +136,17 @@ const Header = () => {
               >
                 {t('header.whyUs')}
               </button>
-              <Link to="/portfolio" onClick={() => setMobileMenuOpen(false)}>
+              <Link to={localePath("/portfolio")} onClick={() => setMobileMenuOpen(false)}>
                 <button className="text-lg text-foreground hover:text-primary transition-all duration-200 text-left w-full hover:translate-x-2 animate-slide-in-left" style={{ animationDelay: '150ms' }}>
                   {t('header.portfolio')}
                 </button>
               </Link>
-              <Link to="/video-readiness-assessment" onClick={() => setMobileMenuOpen(false)}>
+              <Link to={localePath("/video-readiness-assessment")} onClick={() => setMobileMenuOpen(false)}>
                 <button className="text-lg text-foreground hover:text-primary transition-all duration-200 text-left w-full font-medium hover:translate-x-2 animate-slide-in-left" style={{ animationDelay: '200ms' }}>
                   {t('header.freeAssessment')}
                 </button>
               </Link>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+              <Link to={localePath("/about")} onClick={() => setMobileMenuOpen(false)}>
                 <button className="text-lg text-foreground hover:text-primary transition-all duration-200 text-left w-full hover:translate-x-2 animate-slide-in-left" style={{ animationDelay: '250ms' }}>
                   {t('header.about')}
                 </button>

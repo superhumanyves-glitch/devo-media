@@ -2,9 +2,11 @@ import logo from "@/assets/devo-logo.png";
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const localePath = useLocalePath();
   return (
     <footer className="relative bg-secondary border-t border-border py-12 pb-28">
       <div className="container mx-auto px-4">
@@ -49,11 +51,11 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <Link to="/algemene-voorwaarden" className="hover:text-primary transition-colors font-bold">{t('footer.terms')}</Link>
-            <Link to="/privacyverklaring" className="hover:text-primary transition-colors font-bold">{t('footer.privacy')}</Link>
-            <Link to="/cookieverklaring" className="hover:text-primary transition-colors font-bold">{t('footer.cookies')}</Link>
-            <Link to="/disclaimer" className="hover:text-primary transition-colors font-bold">{t('footer.disclaimer')}</Link>
-            <Link to="/colophon" className="hover:text-primary transition-colors font-bold">{t('footer.contact')}</Link>
+            <Link to={localePath("/algemene-voorwaarden")} className="hover:text-primary transition-colors font-bold">{t('footer.terms')}</Link>
+            <Link to={localePath("/privacyverklaring")} className="hover:text-primary transition-colors font-bold">{t('footer.privacy')}</Link>
+            <Link to={localePath("/cookieverklaring")} className="hover:text-primary transition-colors font-bold">{t('footer.cookies')}</Link>
+            <Link to={localePath("/disclaimer")} className="hover:text-primary transition-colors font-bold">{t('footer.disclaimer')}</Link>
+            <Link to={localePath("/colophon")} className="hover:text-primary transition-colors font-bold">{t('footer.contact')}</Link>
           </div>
 
           <div className="text-sm text-muted-foreground text-center">

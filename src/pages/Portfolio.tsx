@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import VideoCard from "@/components/VideoCard";
@@ -58,6 +59,7 @@ const portfolioVideos = [
 
 const Portfolio = () => {
   const navigate = useNavigate();
+  const localePath = useLocalePath();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -92,7 +94,7 @@ const Portfolio = () => {
           Dit is slechts het topje van de ijsberg, een voorproef van wat we echt kunnen bouwen.
         </p>
         <Button 
-          onClick={() => navigate('/resultaten')}
+          onClick={() => navigate(localePath('/resultaten'))}
           variant="outline"
           className="gap-2 animate-fade-in"
           style={{ animationDelay: '200ms' }}

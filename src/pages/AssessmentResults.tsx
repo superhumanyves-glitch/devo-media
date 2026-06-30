@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocalePath } from "@/hooks/useLocalePath";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, Phone } from "lucide-react";
 import Header from "@/components/Header";
@@ -9,12 +10,13 @@ import checkGradient from "@/assets/check-gradient.png";
 
 const AssessmentResults = () => {
   const navigate = useNavigate();
+  const localePath = useLocalePath();
   const { state, getSegment } = useAssessment();
 
   useEffect(() => {
     // Redirect if no contact info (user hasn't completed assessment)
     if (!state.contactInfo) {
-      navigate('/video-readiness-assessment');
+      navigate(localePath('/video-readiness-assessment'));
     }
   }, [state.contactInfo, navigate]);
 
@@ -145,14 +147,14 @@ const AssessmentResults = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button 
-                  onClick={() => navigate('/portfolio')}
+                  onClick={() => navigate(localePath('/portfolio'))}
                   variant="outline"
                   size="sm"
                 >
                   Bekijk Portfolio
                 </Button>
                 <Button 
-                  onClick={() => navigate('/resultaten')}
+                  onClick={() => navigate(localePath('/resultaten'))}
                   variant="outline"
                   size="sm"
                 >
