@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useInView } from "@/hooks/useInView";
+import { useTranslation } from "react-i18next";
 import emzsLogo from "@/assets/logos/emzs-logo.png";
 import broodjeLogo from "@/assets/logos/broodje-logo.png";
 import loversLogo from "@/assets/logos/lovers-logo.png";
@@ -29,6 +30,7 @@ const LogoSlider = () => {
     Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
   const [ref, isInView] = useInView({ threshold: 0.2 });
+  const { t } = useTranslation();
 
   // Duplicate logos for seamless infinite scroll
   const duplicatedLogos = [...logos, ...logos, ...logos];
@@ -39,7 +41,7 @@ const LogoSlider = () => {
         <h3 className={`text-2xl font-bold text-center mb-8 text-foreground transition-all duration-700 ${
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          Bedrijven die ons vertrouwen
+          {t('portfolio.trustedBy')}
         </h3>
         <Carousel
           opts={{
