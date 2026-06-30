@@ -15,6 +15,8 @@
     "description": "Met meer dan 3 jaar ervaring in videoproductie help ik bedrijven groeien met video's die converteren. Van concept tot oplevering - alles onder één dak.",
     "ctaPrimary": "Start Gratis Assessment",
     "ctaSecondary": "Bekijk Onze Pakketten",
+    "ariaAssessment": "Start gratis assessment om uw video behoeften te bepalen",
+    "ariaPackages": "Bekijk onze video pakketten en prijzen",
     "quote": {
       "title": "Vraag een gratis offerte aan",
       "subtitle": "Vertel ons wat je nodig hebt en we reageren binnen 48 uur.",
@@ -299,7 +301,8 @@
     "privacy": "Privacyverklaring",
     "cookies": "Cookieverklaring",
     "disclaimer": "Disclaimer",
-    "rights": "Alle rechten voorbehouden"
+    "rights": "Alle rechten voorbehouden",
+    "poweredBy": "Mede mogelijk gemaakt door"
   },
   "trustBadges": {
     "response": {
@@ -747,5 +750,138 @@
         { "title": "Contact", "contactBox": true }
       ]
     }
+  },
+  "assessmentLanding": {
+    "seoTitle": "Gratis Video Readiness Assessment - Devo Media",
+    "seoDescription": "Ontdek in 2 minuten of video marketing geschikt is voor jouw bedrijf. Gratis assessment met directe aanbevelingen voor jouw video strategie.",
+    "seoKeywords": "video readiness assessment, video marketing test, video strategie, gratis video advies, social media assessment",
+    "heroTitlePrefix": "Gefrustreerd dat je energie in social media stopt, maar je ",
+    "heroTitleHighlight": "niet eens weet",
+    "heroTitleSuffix": " of het geld oplevert?",
+    "heroSubtitle": "Beantwoord 15 vragen en ontvang binnen 48 uur een persoonlijk adviesgesprek waarin we jouw antwoorden analyseren en je de exacte stappen geven om social media om te zetten in klanten.",
+    "startButton": "Start het Assessment",
+    "badgeTime": "3 minuten",
+    "badgeFree": "Gratis",
+    "badgeAdvice": "Advies binnen 48u",
+    "analyzeTitle": "Wat analyseren wij voor jou:",
+    "benefits": [
+      "🔍 Waarom je huidige aanpak niet de resultaten geeft die je wilt",
+      "🎯 Welke stappen je moet zetten om social media wél voor je te laten werken",
+      "🚀 Hoe je video's maakt die daadwerkelijk conversie opleveren",
+      "🚁 Of drone content relevant is voor jouw bedrijf",
+      "💻 Of website integratie waarde toevoegt aan jouw situatie"
+    ],
+    "analyzeNote": "Binnen 48 uur nemen wij persoonlijk contact met je op om jouw antwoorden te bespreken en een op maat gemaakt actieplan te presenteren.",
+    "audienceTitle": "Voor wie is deze assessment?",
+    "audienceSubtitle": "Of je nu net begint of al ervaren bent, wij matchen je met de perfecte groei strategie",
+    "personas": [
+      { "title": "🚀 Klaar om te Schalen", "description": "Je post nu regelmatig, maar wilt je content professioneler maken en naar een hoger niveau tillen" },
+      { "title": "⏰ Volledig Uitbesteden", "description": "Geen tijd? Wij nemen video en social media volledig uit handen" },
+      { "title": "📊 Inconsistente Creator", "description": "Je post af en toe, maar zoekt meer structuur en consistentie" },
+      { "title": "🎯 Flexibel Per Project", "description": "Je wilt flexibiliteit zonder lange verplichtingen" },
+      { "title": "💰 Budget Bewust", "description": "Je wilt beginnen met video, maar zoekt een betaalbare oplossing" },
+      { "title": "✨ Jouw Video Journey Begint Hier", "description": "Nieuw met video en klaar om de eerste stap te zetten" }
+    ],
+    "recognizeBold": "Herken je jezelf?",
+    "recognizeRest": " Ontdek in 3 minuten welke aanpak perfect bij jou past.",
+    "whoTitle": "Wie we zijn",
+    "whoText": "Devo Media helpt bedrijven hun social media strategie om te zetten in meetbare resultaten. Met meer dan 7 jaar ervaring, 35+ tevreden klanten, en bewezen resultaten, weten we precies hoe je video content moet inzetten om klanten te krijgen.",
+    "whyTitle": "Waarom deze assessment?",
+    "whyText": "De meeste bedrijven weten dat social media werkt, maar worstelen met de uitvoering. Deze assessment geeft je helderheid over wat jij moet doen om social media wél voor je te laten werken, zonder geld te verspillen aan trial & error.",
+    "statClients": "Tevreden klanten",
+    "statYears": "Jaar ervaring",
+    "statResults": "Meetbare resultaten"
+  },
+  "assessmentResults": {
+    "thankYou": "Bedankt, {{name}}!",
+    "received": "We hebben je assessment ontvangen en bekijken je situatie.",
+    "followupPrefix": "We nemen binnen ",
+    "followupBold": "48 uur",
+    "followupSuffix": " contact met je op met een persoonlijk advies.",
+    "directQuestion": "Heb je direct een vraag?",
+    "directQuestionSub": "Aarzel niet om contact met ons op te nemen",
+    "whatsappButton": "Start chat via WhatsApp",
+    "whatsappMessage": "Hallo! Ik heb zojuist het Social Media Assessment ingevuld. Ik heb een vraag.",
+    "orContact": "Of neem direct contact op:",
+    "whatNext": "Wat gebeurt er nu?",
+    "steps": [
+      { "title": "We analyseren je antwoorden", "text": "Ons team bekijkt je specifieke situatie en doelen" },
+      { "title": "We maken een persoonlijk plan", "text": "Op maat gemaakt advies voor jouw bedrijf" },
+      { "title": "We nemen contact op", "text": "Binnen 48 uur ontvang je ons voorstel" }
+    ],
+    "moreWork": "Wil je ondertussen meer zien van ons werk?",
+    "viewPortfolio": "Bekijk Portfolio",
+    "viewResults": "Zie Resultaten"
+  },
+  "assessmentQuiz": {
+    "contactTitle": "Laten we beginnen",
+    "contactSubtitle": "Vul je gegevens in om je gepersonaliseerde resultaten te ontvangen",
+    "nameLabel": "Naam *",
+    "namePlaceholder": "Je volledige naam",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "je@email.com",
+    "companyLabel": "Bedrijfsnaam *",
+    "companyPlaceholder": "Je bedrijfsnaam",
+    "phoneLabel": "Telefoonnummer (optioneel)",
+    "phonePlaceholder": "+31 6 12345678",
+    "back": "Terug",
+    "startButton": "Start Assessment",
+    "next": "Volgende",
+    "viewResults": "Bekijk Resultaten",
+    "toastRequiredTitle": "Vul alle verplichte velden in",
+    "toastRequiredDesc": "Naam, email en bedrijfsnaam zijn verplicht",
+    "toastSelectTitle": "Selecteer een optie",
+    "toastSelectDesc": "Kies een antwoord voordat je verder gaat",
+    "toastWarnTitle": "Waarschuwing",
+    "toastWarnDesc": "Je resultaten worden getoond, maar we konden ze niet naar ons versturen. Geen zorgen, je kunt ze nog steeds bekijken!",
+    "questions": [
+      { "question": "Post je nu regelmatig video's op social media?", "options": ["Ja, minstens 3x per week", "Ja, maar niet vaak (1-2x per maand)", "Nee, nog nooit gedaan"] },
+      { "question": "Heb je een plan voor je video content?", "options": ["Ja, alles staat gepland", "Soms, als ik tijd heb", "Nee, ik wil hulp met een plan"] },
+      { "question": "Meet je hoe goed je video's presteren?", "options": ["Ja, ik bekijk alle cijfers", "Soms kijk ik naar views en likes", "Nee, weet niet hoe"] },
+      { "question": "Weet je precies wie je wilt bereiken met je video's?", "options": ["Ja, heel specifiek", "Een beetje, niet heel gedetailleerd", "Nee, wil een brede groep bereiken"] },
+      { "question": "Hoeveel tijd besteed je per maand aan video's maken?", "options": ["Meer dan 10 uur", "5-10 uur", "Minder dan 5 uur", "0 uur - geen tijd"] },
+      { "question": "Wat gebruik je om video's op te nemen?", "options": ["Professionele camera en apparatuur", "Smartphone", "Ik heb niks"] },
+      { "question": "Wie maakt je video content?", "options": ["Iemand die zich hier fulltime mee bezig houdt", "Meerdere mensen af en toe", "Ik doe het zelf erbij"] },
+      { "question": "Hoe groot is je bedrijf?", "options": ["Alleen ikzelf (ZZP'er)", "Klein team (2-10 mensen)", "Groeiend (10-50 mensen)", "Groot bedrijf (50+ mensen)"] },
+      { "question": "Wat wil je bereiken met video's de komende 3 maanden?", "options": ["Bekendheid - meer mensen moeten ons kennen", "Leads - meer potentiële klanten", "Klantbinding - betere relatie met klanten", "Uitleg - duidelijk maken wat we doen", "Personeel - goede mensen aantrekken"] },
+      { "question": "Wat is je grootste probleem met video content?", "options": ["Geen tijd", "Geen ideeën", "Te duur", "Ziet er niet goed uit", "Zie geen resultaten"] },
+      { "question": "Welke oplossing past bij jou?", "options": ["Maandelijks - vaste content", "Per project - flexibel", "Eenmalig - voor een event", "Alles uitbesteden"] },
+      { "question": "Wil je drone video's voor je bedrijf?", "options": ["Ja, zeker", "Misschien, wil eerst voorbeelden zien", "Nee, niet relevant", "Weet niet wat dat kan betekenen"] },
+      { "question": "Heb je een website?", "options": ["Ja, een moderne website", "Ja, maar moet vernieuwd worden", "Nee, heb er nog geen", "Ja, maar wil video's toevoegen"] },
+      { "question": "Nog iets wat we moeten weten? (Optioneel)", "placeholder": "Bijvoorbeeld: 'We starten binnenkort met een nieuw product'..." }
+    ]
+  },
+  "errorBoundary": {
+    "title": "Er is iets misgegaan",
+    "message": "We hebben een onverwachte fout ondervonden. Probeer de pagina te vernieuwen.",
+    "button": "Pagina Vernieuwen"
+  },
+  "resultsPage": {
+    "seoTitle": "Bewezen Resultaten - Devo Media | Échte Cijfers van Échte Bedrijven",
+    "seoDescription": "Zie de concrete resultaten die Devo Media behaalt voor klanten: 16K+ kijkers, 313K+ views, 160K+ berichtweergaven. Bewezen groei in social media bereik en engagement.",
+    "seoKeywords": "social media resultaten, video marketing resultaten, instagram groei, linkedin engagement, bewezen resultaten, video marketing succes",
+    "heroTitle": "Bewezen Resultaten",
+    "heroSubtitle": "Échte cijfers van échte bedrijven. Dit is wat we voor onze klanten bereiken.",
+    "backToPortfolio": "Terug naar Portfolio",
+    "ctaTitle": "Dit Kan Jouw Bedrijf Ook Bereiken",
+    "ctaText": "Klaar om jouw online aanwezigheid naar het volgende niveau te tillen?",
+    "ctaButton": "Neem Contact Op",
+    "alts": [
+      "Belangrijke metrieken: 16K totaal aantal kijkers (+7307.6%), 3,244 nieuwe kijkers",
+      "Belangrijke metrieken: 23K berichtweergaven (+896.7%), 690 profielweergaven",
+      "Belangrijke metrieken: 67K berichtweergaven (+119.4%), 2,268 profielweergaven (+77.7%)",
+      "Instagram weergaven: 313.307 weergaven, 4,3K content-interacties (+100%)",
+      "Bereik: 108,0K (+695%), 55,1K van niet-volgers",
+      "LinkedIn metrieken: 160K berichtweergaven (+107.9%), 4.754 likes (+133.6%), 759 keer gedeeld (+225.8%)",
+      "Belangrijke metrieken: 275K berichtweergaven (+1108.1%), 11K profielweergaven (+1575.7%), 6.272 likes (+1016%), 1.341 keer gedeeld (+2636.7%)"
+    ]
+  },
+  "portfolioPage": {
+    "seoTitle": "Portfolio - Devo Media | Ons Videoproductie Werk",
+    "seoDescription": "Bekijk ons portfolio van professionele videoproductie projecten. Aftermovies, promotievideo's, drone videografie en social media content voor 35+ bedrijven.",
+    "seoKeywords": "videoproductie portfolio, aftermovie, promotievideo, drone videografie, bedrijfsvideo's, social media content",
+    "heroTitle": "Ons Werk",
+    "heroSubtitle": "Dit is slechts het topje van de ijsberg, een voorproef van wat we echt kunnen bouwen.",
+    "viewResults": "Bekijk Onze Resultaten"
   }
 }

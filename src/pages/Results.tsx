@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useLocalePath } from "@/hooks/useLocalePath";
+import { useTranslation } from "react-i18next";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import result1 from "@/assets/results/result-1.png";
@@ -17,22 +18,17 @@ import result7 from "@/assets/results/result-7.jpg";
 const Results = () => {
   const navigate = useNavigate();
   const localePath = useLocalePath();
-  const results = [
-    { id: 1, image: result1, alt: "Belangrijke metrieken: 16K totaal aantal kijkers (+7307.6%), 3,244 nieuwe kijkers" },
-    { id: 2, image: result2, alt: "Belangrijke metrieken: 23K berichtweergaven (+896.7%), 690 profielweergaven" },
-    { id: 3, image: result3, alt: "Key metrics: 67K post views (+119.4%), 2,268 profile views (+77.7%)" },
-    { id: 4, image: result4, alt: "Instagram views: 313,307 views, 4.3K content interactions (+100%)" },
-    { id: 5, image: result5, alt: "Reach: 108.0K (+695%), 55.1K from non-followers" },
-    { id: 6, image: result6, alt: "LinkedIn metrieken: 160K berichtweergaven (+107.9%), 4,754 likes (+133.6%), 759 keer gedeeld (+225.8%)" },
-    { id: 7, image: result7, alt: "Belangrijke metrieken: 275K berichtweergaven (+1108.1%), 11K profielweergaven (+1575.7%), 6,272 likes (+1016%), 1,341 keer gedeeld (+2636.7%)" },
-  ];
+  const { t } = useTranslation();
+  const alts = t("resultsPage.alts", { returnObjects: true }) as string[];
+  const images = [result1, result2, result3, result4, result5, result6, result7];
+  const results = images.map((image, i) => ({ id: i + 1, image, alt: alts[i] ?? "" }));
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="Bewezen Resultaten - Devo Media | Échte Cijfers van Échte Bedrijven"
-        description="Zie de concrete resultaten die Devo Media behaalt voor klanten: 16K+ kijkers, 313K+ views, 160K+ berichtweergaven. Bewezen groei in social media bereik en engagement."
-        keywords="social media resultaten, video marketing resultaten, instagram groei, linkedin engagement, bewezen resultaten, video marketing succes"
+      <SEO
+        title={t("resultsPage.seoTitle")}
+        description={t("resultsPage.seoDescription")}
+        keywords={t("resultsPage.seoKeywords")}
         canonicalUrl="/resultaten"
       />
       <ScrollProgress />
@@ -44,10 +40,10 @@ const Results = () => {
         <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/20">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-              Bewezen Resultaten
+              {t("resultsPage.heroTitle")}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-              Échte cijfers van échte bedrijven. Dit is wat we voor onze klanten bereiken.
+              {t("resultsPage.heroSubtitle")}
             </p>
           </div>
         </section>
@@ -59,7 +55,7 @@ const Results = () => {
               onClick={() => navigate(localePath('/portfolio'))}
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300 shadow-md"
             >
-              Terug naar Portfolio <ArrowRight className="w-4 h-4" />
+              {t("resultsPage.backToPortfolio")} <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </section>
@@ -92,16 +88,16 @@ const Results = () => {
         <section className="py-16 px-4 bg-gradient-to-b from-muted/20 to-background">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Dit Kan Jouw Bedrijf Ook Bereiken
+              {t("resultsPage.ctaTitle")}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Klaar om jouw online aanwezigheid naar het volgende niveau te tillen?
+              {t("resultsPage.ctaText")}
             </p>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('openContactForm'))}
               className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
             >
-              Neem Contact Op
+              {t("resultsPage.ctaButton")}
             </button>
           </div>
         </section>

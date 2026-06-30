@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div className="text-xs text-muted-foreground text-center">
-            Mede mogelijk gemaakt door{' '}
+            {t('footer.poweredBy')}{' '}
             <a 
               href="https://versareconsulting.com" 
               target="_blank" 

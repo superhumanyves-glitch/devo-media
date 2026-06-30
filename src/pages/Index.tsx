@@ -133,7 +133,7 @@ const Index = () => {
   }, {
     icon: iconScissors,
     title: t('services.editing.title'),
-    price: "€85/uur",
+    price: `€85${t('services.filming.perHour')}`,
     features: t('services.editing.features', {
       returnObjects: true
     }) as string[]

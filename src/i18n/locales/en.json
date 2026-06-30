@@ -15,6 +15,8 @@
     "description": "With over 3 years of experience in video production, I help businesses grow with videos that convert. From concept to delivery - everything under one roof.",
     "ctaPrimary": "Start Free Assessment",
     "ctaSecondary": "View Our Packages",
+    "ariaAssessment": "Start the free assessment to determine your video needs",
+    "ariaPackages": "View our video packages and prices",
     "quote": {
       "title": "Get a free quote",
       "subtitle": "Tell us what you need and we'll reply within 48 hours.",
@@ -299,7 +301,8 @@
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
     "disclaimer": "Disclaimer",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "poweredBy": "Made possible by"
   },
   "trustBadges": {
     "response": {
@@ -385,7 +388,7 @@
   "footerTagline": "Professional content creation in the Netherlands",
   "buttons": {
     "selectPackage": "Select Package",
-    "requestQuote": "Request Quote",
+    "requestQuote": "Request Service",
     "regular": "Regular",
     "specialOffer": "Special Offer",
     "discoverOffer": "Discover our Special Offer!",
@@ -747,5 +750,138 @@
         { "title": "Contact", "contactBox": true }
       ]
     }
+  },
+  "assessmentLanding": {
+    "seoTitle": "Free Video Readiness Assessment - Devo Media",
+    "seoDescription": "Discover in 2 minutes whether video marketing is right for your business. Free assessment with instant recommendations for your video strategy.",
+    "seoKeywords": "video readiness assessment, video marketing test, video strategy, free video advice, social media assessment",
+    "heroTitlePrefix": "Frustrated that you pour energy into social media, but you ",
+    "heroTitleHighlight": "don't even know",
+    "heroTitleSuffix": " whether it makes money?",
+    "heroSubtitle": "Answer 15 questions and receive a personal advisory call within 48 hours, in which we analyse your answers and give you the exact steps to turn social media into customers.",
+    "startButton": "Start the Assessment",
+    "badgeTime": "3 minutes",
+    "badgeFree": "Free",
+    "badgeAdvice": "Advice within 48h",
+    "analyzeTitle": "What we analyse for you:",
+    "benefits": [
+      "🔍 Why your current approach isn't giving you the results you want",
+      "🎯 Which steps you need to take to make social media actually work for you",
+      "🚀 How to make videos that genuinely drive conversions",
+      "🚁 Whether drone content is relevant for your business",
+      "💻 Whether website integration adds value to your situation"
+    ],
+    "analyzeNote": "Within 48 hours we'll personally contact you to discuss your answers and present a tailor-made action plan.",
+    "audienceTitle": "Who is this assessment for?",
+    "audienceSubtitle": "Whether you're just starting out or already experienced, we match you with the perfect growth strategy",
+    "personas": [
+      { "title": "🚀 Ready to Scale", "description": "You already post regularly, but want to make your content more professional and take it to the next level" },
+      { "title": "⏰ Fully Outsource", "description": "No time? We take video and social media completely off your hands" },
+      { "title": "📊 Inconsistent Creator", "description": "You post now and then, but are looking for more structure and consistency" },
+      { "title": "🎯 Flexible Per Project", "description": "You want flexibility without long-term commitments" },
+      { "title": "💰 Budget Conscious", "description": "You want to start with video, but are looking for an affordable solution" },
+      { "title": "✨ Your Video Journey Starts Here", "description": "New to video and ready to take the first step" }
+    ],
+    "recognizeBold": "Recognise yourself?",
+    "recognizeRest": " Discover in 3 minutes which approach fits you perfectly.",
+    "whoTitle": "Who we are",
+    "whoText": "Devo Media helps businesses turn their social media strategy into measurable results. With more than 7 years of experience, 35+ satisfied clients, and proven results, we know exactly how to use video content to win customers.",
+    "whyTitle": "Why this assessment?",
+    "whyText": "Most businesses know social media works, but struggle with the execution. This assessment gives you clarity on what you need to do to make social media work for you, without wasting money on trial & error.",
+    "statClients": "Satisfied clients",
+    "statYears": "Years of experience",
+    "statResults": "Measurable results"
+  },
+  "assessmentResults": {
+    "thankYou": "Thank you, {{name}}!",
+    "received": "We've received your assessment and are reviewing your situation.",
+    "followupPrefix": "We'll get back to you within ",
+    "followupBold": "48 hours",
+    "followupSuffix": " with personal advice.",
+    "directQuestion": "Have a question right now?",
+    "directQuestionSub": "Don't hesitate to get in touch with us",
+    "whatsappButton": "Start a chat on WhatsApp",
+    "whatsappMessage": "Hi! I've just completed the Social Media Assessment. I have a question.",
+    "orContact": "Or contact us directly:",
+    "whatNext": "What happens now?",
+    "steps": [
+      { "title": "We analyse your answers", "text": "Our team reviews your specific situation and goals" },
+      { "title": "We create a personal plan", "text": "Tailor-made advice for your business" },
+      { "title": "We get in touch", "text": "You'll receive our proposal within 48 hours" }
+    ],
+    "moreWork": "Want to see more of our work in the meantime?",
+    "viewPortfolio": "View Portfolio",
+    "viewResults": "See Results"
+  },
+  "assessmentQuiz": {
+    "contactTitle": "Let's get started",
+    "contactSubtitle": "Fill in your details to receive your personalised results",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "you@email.com",
+    "companyLabel": "Company name *",
+    "companyPlaceholder": "Your company name",
+    "phoneLabel": "Phone number (optional)",
+    "phonePlaceholder": "+31 6 12345678",
+    "back": "Back",
+    "startButton": "Start Assessment",
+    "next": "Next",
+    "viewResults": "View Results",
+    "toastRequiredTitle": "Fill in all required fields",
+    "toastRequiredDesc": "Name, email and company name are required",
+    "toastSelectTitle": "Select an option",
+    "toastSelectDesc": "Choose an answer before continuing",
+    "toastWarnTitle": "Warning",
+    "toastWarnDesc": "Your results are shown, but we couldn't send them to us. Don't worry, you can still view them!",
+    "questions": [
+      { "question": "Do you regularly post videos on social media?", "options": ["Yes, at least 3x a week", "Yes, but not often (1-2x a month)", "No, never done it"] },
+      { "question": "Do you have a plan for your video content?", "options": ["Yes, everything is planned", "Sometimes, when I have time", "No, I want help with a plan"] },
+      { "question": "Do you measure how well your videos perform?", "options": ["Yes, I review all the numbers", "Sometimes I look at views and likes", "No, don't know how"] },
+      { "question": "Do you know exactly who you want to reach with your videos?", "options": ["Yes, very specifically", "A little, not very detailed", "No, I want to reach a broad audience"] },
+      { "question": "How much time do you spend on making videos per month?", "options": ["More than 10 hours", "5-10 hours", "Less than 5 hours", "0 hours - no time"] },
+      { "question": "What do you use to record videos?", "options": ["Professional camera and equipment", "Smartphone", "I have nothing"] },
+      { "question": "Who makes your video content?", "options": ["Someone who works on this full-time", "Several people now and then", "I do it on the side myself"] },
+      { "question": "How big is your company?", "options": ["Just myself (freelancer)", "Small team (2-10 people)", "Growing (10-50 people)", "Large company (50+ people)"] },
+      { "question": "What do you want to achieve with videos in the next 3 months?", "options": ["Awareness - more people should know us", "Leads - more potential customers", "Retention - a better relationship with customers", "Explanation - making clear what we do", "Recruitment - attracting good people"] },
+      { "question": "What is your biggest problem with video content?", "options": ["No time", "No ideas", "Too expensive", "Doesn't look good", "I see no results"] },
+      { "question": "Which solution suits you?", "options": ["Monthly - regular content", "Per project - flexible", "One-off - for an event", "Outsource everything"] },
+      { "question": "Do you want drone videos for your business?", "options": ["Yes, definitely", "Maybe, I want to see examples first", "No, not relevant", "Don't know what that could mean"] },
+      { "question": "Do you have a website?", "options": ["Yes, a modern website", "Yes, but it needs an update", "No, don't have one yet", "Yes, but I want to add videos"] },
+      { "question": "Anything else we should know? (Optional)", "placeholder": "For example: 'We're launching a new product soon'..." }
+    ]
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "message": "We encountered an unexpected error. Please try refreshing the page.",
+    "button": "Refresh Page"
+  },
+  "resultsPage": {
+    "seoTitle": "Proven Results - Devo Media | Real Numbers from Real Businesses",
+    "seoDescription": "See the concrete results Devo Media achieves for clients: 16K+ viewers, 313K+ views, 160K+ post impressions. Proven growth in social media reach and engagement.",
+    "seoKeywords": "social media results, video marketing results, instagram growth, linkedin engagement, proven results, video marketing success",
+    "heroTitle": "Proven Results",
+    "heroSubtitle": "Real numbers from real businesses. This is what we achieve for our clients.",
+    "backToPortfolio": "Back to Portfolio",
+    "ctaTitle": "Your Business Can Achieve This Too",
+    "ctaText": "Ready to take your online presence to the next level?",
+    "ctaButton": "Get in Touch",
+    "alts": [
+      "Key metrics: 16K total viewers (+7307.6%), 3,244 new viewers",
+      "Key metrics: 23K post views (+896.7%), 690 profile views",
+      "Key metrics: 67K post views (+119.4%), 2,268 profile views (+77.7%)",
+      "Instagram views: 313,307 views, 4.3K content interactions (+100%)",
+      "Reach: 108.0K (+695%), 55.1K from non-followers",
+      "LinkedIn metrics: 160K post views (+107.9%), 4,754 likes (+133.6%), 759 shares (+225.8%)",
+      "Key metrics: 275K post views (+1108.1%), 11K profile views (+1575.7%), 6,272 likes (+1016%), 1,341 shares (+2636.7%)"
+    ]
+  },
+  "portfolioPage": {
+    "seoTitle": "Portfolio - Devo Media | Our Video Production Work",
+    "seoDescription": "View our portfolio of professional video production projects. Aftermovies, promotional videos, drone videography and social media content for 35+ businesses.",
+    "seoKeywords": "video production portfolio, aftermovie, promotional video, drone videography, corporate videos, social media content",
+    "heroTitle": "Our Work",
+    "heroSubtitle": "This is just the tip of the iceberg, a taste of what we can really build.",
+    "viewResults": "View Our Results"
   }
 }

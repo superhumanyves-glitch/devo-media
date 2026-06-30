@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocalePath } from "@/hooks/useLocalePath";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import VideoCard from "@/components/VideoCard";
@@ -60,6 +61,7 @@ const portfolioVideos = [
 const Portfolio = () => {
   const navigate = useNavigate();
   const localePath = useLocalePath();
+  const { t } = useTranslation();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -75,10 +77,10 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEO 
-        title="Portfolio - Devo Media | Ons Videoproductie Werk"
-        description="Bekijk ons portfolio van professionele videoproductie projecten. Aftermovies, promotievideo's, drone videografie en social media content voor 35+ bedrijven."
-        keywords="videoproductie portfolio, aftermovie, promotievideo, drone videografie, bedrijfsvideo's, social media content"
+      <SEO
+        title={t("portfolioPage.seoTitle")}
+        description={t("portfolioPage.seoDescription")}
+        keywords={t("portfolioPage.seoKeywords")}
         canonicalUrl="/portfolio"
         structuredData={organizationStructuredData}
       />
@@ -88,10 +90,10 @@ const Portfolio = () => {
       
       <section className="pt-28 md:pt-32 pb-4 md:pb-6 px-4 text-center">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2 animate-fade-in">
-          Ons Werk
+          {t("portfolioPage.heroTitle")}
         </h1>
         <p className="text-xs md:text-sm text-muted-foreground mb-4 animate-fade-in">
-          Dit is slechts het topje van de ijsberg, een voorproef van wat we echt kunnen bouwen.
+          {t("portfolioPage.heroSubtitle")}
         </p>
         <Button 
           onClick={() => navigate(localePath('/resultaten'))}
@@ -100,7 +102,7 @@ const Portfolio = () => {
           style={{ animationDelay: '200ms' }}
         >
           <TrendingUp className="w-4 h-4" />
-          Bekijk Onze Resultaten
+          {t("portfolioPage.viewResults")}
         </Button>
       </section>
 

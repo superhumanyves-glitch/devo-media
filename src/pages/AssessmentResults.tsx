@@ -6,12 +6,15 @@ import { MessageCircle, Mail, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useAssessment } from "@/contexts/AssessmentContext";
+import { useTranslation } from "react-i18next";
 import checkGradient from "@/assets/check-gradient.png";
 
 const AssessmentResults = () => {
   const navigate = useNavigate();
   const localePath = useLocalePath();
+  const { t } = useTranslation();
   const { state, getSegment } = useAssessment();
+  const steps = t("assessmentResults.steps", { returnObjects: true }) as { title: string; text: string }[];
 
   useEffect(() => {
     // Redirect if no contact info (user hasn't completed assessment)
@@ -25,7 +28,7 @@ const AssessmentResults = () => {
   }
 
   const handleWhatsApp = () => {
-    const message = `Hallo! Ik heb zojuist het Social Media Assessment ingevuld. Ik heb een vraag.`;
+    const message = t("assessmentResults.whatsappMessage");
     window.open(`https://wa.me/31610322231?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -43,26 +46,26 @@ const AssessmentResults = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl font-black mb-6">
-                Bedankt, {state.contactInfo.name}!
+                {t("assessmentResults.thankYou", { name: state.contactInfo.name })}
               </h1>
-              
+
               <p className="text-xl sm:text-2xl text-muted-foreground mb-4">
-                We hebben je assessment ontvangen en bekijken je situatie.
+                {t("assessmentResults.received")}
               </p>
-              
+
               <p className="text-lg text-muted-foreground">
-                We nemen binnen <span className="font-bold text-foreground">48 uur</span> contact met je op met een persoonlijk advies.
+                {t("assessmentResults.followupPrefix")}<span className="font-bold text-foreground">{t("assessmentResults.followupBold")}</span>{t("assessmentResults.followupSuffix")}
               </p>
             </div>
 
             {/* Contact Options */}
             <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 sm:p-10 border-2 border-primary/20 mb-8">
               <h2 className="text-2xl sm:text-3xl font-black mb-4 text-center">
-                Heb je direct een vraag?
+                {t("assessmentResults.directQuestion")}
               </h2>
-              
+
               <p className="text-center text-muted-foreground mb-8">
-                Aarzel niet om contact met ons op te nemen
+                {t("assessmentResults.directQuestionSub")}
               </p>
 
               <div className="space-y-4 mb-8">
@@ -72,12 +75,12 @@ const AssessmentResults = () => {
                   className="w-full text-lg py-6 gap-2"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Start chat via WhatsApp
+                  {t("assessmentResults.whatsappButton")}
                 </Button>
               </div>
 
               <div className="space-y-4 pt-6 border-t border-border">
-                <h3 className="font-bold text-center mb-4">Of neem direct contact op:</h3>
+                <h3 className="font-bold text-center mb-4">{t("assessmentResults.orContact")}</h3>
                 
                 <a 
                   href="tel:+31610322231"
@@ -99,66 +102,44 @@ const AssessmentResults = () => {
 
             {/* What Happens Next */}
             <div className="bg-background rounded-xl p-8 border">
-              <h3 className="text-xl font-bold mb-6 text-center">Wat gebeurt er nu?</h3>
-              
+              <h3 className="text-xl font-bold mb-6 text-center">{t("assessmentResults.whatNext")}</h3>
+
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                    1
+                {steps.map((step, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-1">{step.title}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {step.text}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold mb-1">We analyseren je antwoorden</p>
-                    <p className="text-sm text-muted-foreground">
-                      Ons team bekijkt je specifieke situatie en doelen
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">We maken een persoonlijk plan</p>
-                    <p className="text-sm text-muted-foreground">
-                      Op maat gemaakt advies voor jouw bedrijf
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">We nemen contact op</p>
-                    <p className="text-sm text-muted-foreground">
-                      Binnen 48 uur ontvang je ons voorstel
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
             {/* Alternative Actions */}
             <div className="text-center mt-12 space-y-4">
               <p className="text-sm text-muted-foreground mb-4">
-                Wil je ondertussen meer zien van ons werk?
+                {t("assessmentResults.moreWork")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button 
+                <Button
                   onClick={() => navigate(localePath('/portfolio'))}
                   variant="outline"
                   size="sm"
                 >
-                  Bekijk Portfolio
+                  {t("assessmentResults.viewPortfolio")}
                 </Button>
-                <Button 
+                <Button
                   onClick={() => navigate(localePath('/resultaten'))}
                   variant="outline"
                   size="sm"
                 >
-                  Zie Resultaten
+                  {t("assessmentResults.viewResults")}
                 </Button>
               </div>
             </div>

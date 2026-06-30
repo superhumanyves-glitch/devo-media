@@ -75,7 +75,7 @@ const Hero = () => {
                 size="lg"
                 onClick={() => navigate(localePath('/video-readiness-assessment'))}
                 className="group gap-2 w-full sm:w-auto text-sm sm:text-base"
-                aria-label="Start gratis assessment om uw video behoeften te bepalen"
+                aria-label={t('hero.ariaAssessment')}
               >
                 <ClipboardCheck className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" /> {t('hero.ctaPrimary')}
               </Button>
@@ -84,7 +84,7 @@ const Hero = () => {
                 size="lg"
                 onClick={scrollToPricing}
                 className="gap-2 group border-2 border-primary bg-background text-primary font-bold hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base"
-                aria-label="Bekijk onze video pakketten en prijzen"
+                aria-label={t('hero.ariaPackages')}
               >
                 {t('hero.ctaSecondary')}
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />

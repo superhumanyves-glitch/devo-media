@@ -13,11 +13,32 @@ import { useAssessment } from "@/contexts/AssessmentContext";
 import { useToast } from "@/hooks/use-toast";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { useTranslation } from "react-i18next";
+
+// Canonical question/answer metadata. The `value`s are language-independent
+// and feed the scoring (calculateScore) and lead decoding (leadUtils).
+const questionMeta: { id: string; type?: "text"; values?: string[] }[] = [
+  { id: "q1", values: ["option1", "option2", "option3"] },
+  { id: "q2", values: ["option1", "option2", "option3"] },
+  { id: "q3", values: ["option1", "option2", "option3"] },
+  { id: "q4", values: ["option1", "option2", "option3"] },
+  { id: "q5", values: ["option1", "option2", "option3", "option4"] },
+  { id: "q6", values: ["option1", "option2", "option3"] },
+  { id: "q7", values: ["option1", "option2", "option3"] },
+  { id: "q8", values: ["solo", "small", "growing", "established"] },
+  { id: "q9", values: ["awareness", "leads", "retention", "explanation", "recruitment"] },
+  { id: "q10", values: ["time", "ideas", "budget", "quality", "results"] },
+  { id: "q11", values: ["monthly", "project", "onetime", "managed"] },
+  { id: "q12", values: ["very", "maybe", "no", "unknown"] },
+  { id: "q13", values: ["modern", "outdated", "none", "integrate"] },
+  { id: "q14", type: "text" },
+];
 
 const AssessmentQuiz = () => {
   const navigate = useNavigate();
   const localePath = useLocalePath();
   const { toast } = useToast();
+  const { t } = useTranslation();
   const { state, setContactInfo, setAnswer, calculateScore, getSegment, submitToDatabase } = useAssessment();
   const [currentStep, setCurrentStep] = useState(0);
   const [tempContactInfo, setTempContactInfo] = useState({
@@ -28,140 +49,14 @@ const AssessmentQuiz = () => {
   });
   const [currentAnswer, setCurrentAnswer] = useState("");
 
-  const questions = [
-    {
-      id: "q1",
-      question: "Post je nu regelmatig video's op social media?",
-      options: [
-        { value: "option1", label: "Ja, minstens 3x per week" },
-        { value: "option2", label: "Ja, maar niet vaak (1-2x per maand)" },
-        { value: "option3", label: "Nee, nog nooit gedaan" }
-      ]
-    },
-    {
-      id: "q2",
-      question: "Heb je een plan voor je video content?",
-      options: [
-        { value: "option1", label: "Ja, alles staat gepland" },
-        { value: "option2", label: "Soms, als ik tijd heb" },
-        { value: "option3", label: "Nee, ik wil hulp met een plan" }
-      ]
-    },
-    {
-      id: "q3",
-      question: "Meet je hoe goed je video's presteren?",
-      options: [
-        { value: "option1", label: "Ja, ik bekijk alle cijfers" },
-        { value: "option2", label: "Soms kijk ik naar views en likes" },
-        { value: "option3", label: "Nee, weet niet hoe" }
-      ]
-    },
-    {
-      id: "q4",
-      question: "Weet je precies wie je wilt bereiken met je video's?",
-      options: [
-        { value: "option1", label: "Ja, heel specifiek" },
-        { value: "option2", label: "Een beetje, niet heel gedetailleerd" },
-        { value: "option3", label: "Nee, wil een brede groep bereiken" }
-      ]
-    },
-    {
-      id: "q5",
-      question: "Hoeveel tijd besteed je per maand aan video's maken?",
-      options: [
-        { value: "option1", label: "Meer dan 10 uur" },
-        { value: "option2", label: "5-10 uur" },
-        { value: "option3", label: "Minder dan 5 uur" },
-        { value: "option4", label: "0 uur - geen tijd" }
-      ]
-    },
-    {
-      id: "q6",
-      question: "Wat gebruik je om video's op te nemen?",
-      options: [
-        { value: "option1", label: "Professionele camera en apparatuur" },
-        { value: "option2", label: "Smartphone" },
-        { value: "option3", label: "Ik heb niks" }
-      ]
-    },
-    {
-      id: "q7",
-      question: "Wie maakt je video content?",
-      options: [
-        { value: "option1", label: "Iemand die zich hier fulltime mee bezig houdt" },
-        { value: "option2", label: "Meerdere mensen af en toe" },
-        { value: "option3", label: "Ik doe het zelf erbij" }
-      ]
-    },
-    {
-      id: "q8",
-      question: "Hoe groot is je bedrijf?",
-      options: [
-        { value: "solo", label: "Alleen ikzelf (ZZP'er)" },
-        { value: "small", label: "Klein team (2-10 mensen)" },
-        { value: "growing", label: "Groeiend (10-50 mensen)" },
-        { value: "established", label: "Groot bedrijf (50+ mensen)" }
-      ]
-    },
-    {
-      id: "q9",
-      question: "Wat wil je bereiken met video's de komende 3 maanden?",
-      options: [
-        { value: "awareness", label: "Bekendheid - meer mensen moeten ons kennen" },
-        { value: "leads", label: "Leads - meer potentiële klanten" },
-        { value: "retention", label: "Klantbinding - betere relatie met klanten" },
-        { value: "explanation", label: "Uitleg - duidelijk maken wat we doen" },
-        { value: "recruitment", label: "Personeel - goede mensen aantrekken" }
-      ]
-    },
-    {
-      id: "q10",
-      question: "Wat is je grootste probleem met video content?",
-      options: [
-        { value: "time", label: "Geen tijd" },
-        { value: "ideas", label: "Geen ideeën" },
-        { value: "budget", label: "Te duur" },
-        { value: "quality", label: "Ziet er niet goed uit" },
-        { value: "results", label: "Zie geen resultaten" }
-      ]
-    },
-    {
-      id: "q11",
-      question: "Welke oplossing past bij jou?",
-      options: [
-        { value: "monthly", label: "Maandelijks - vaste content" },
-        { value: "project", label: "Per project - flexibel" },
-        { value: "onetime", label: "Eenmalig - voor een event" },
-        { value: "managed", label: "Alles uitbesteden" }
-      ]
-    },
-    {
-      id: "q12",
-      question: "Wil je drone video's voor je bedrijf?",
-      options: [
-        { value: "very", label: "Ja, zeker" },
-        { value: "maybe", label: "Misschien, wil eerst voorbeelden zien" },
-        { value: "no", label: "Nee, niet relevant" },
-        { value: "unknown", label: "Weet niet wat dat kan betekenen" }
-      ]
-    },
-    {
-      id: "q13",
-      question: "Heb je een website?",
-      options: [
-        { value: "modern", label: "Ja, een moderne website" },
-        { value: "outdated", label: "Ja, maar moet vernieuwd worden" },
-        { value: "none", label: "Nee, heb er nog geen" },
-        { value: "integrate", label: "Ja, maar wil video's toevoegen" }
-      ]
-    },
-    {
-      id: "q14",
-      type: "text",
-      question: "Nog iets wat we moeten weten? (Optioneel)",
-      placeholder: "Bijvoorbeeld: 'We starten binnenkort met een nieuw product'..."
-    }
-  ];
+  const questionContent = t("assessmentQuiz.questions", { returnObjects: true }) as { question: string; options?: string[]; placeholder?: string }[];
+  const questions = questionMeta.map((meta, i) => ({
+    id: meta.id,
+    type: meta.type,
+    question: questionContent[i].question,
+    placeholder: questionContent[i].placeholder,
+    options: meta.values?.map((value, j) => ({ value, label: questionContent[i].options?.[j] ?? value })),
+  }));
 
   const totalSteps = questions.length + 1; // +1 for contact form
 
@@ -169,8 +64,8 @@ const AssessmentQuiz = () => {
     e.preventDefault();
     if (!tempContactInfo.name || !tempContactInfo.email || !tempContactInfo.company) {
       toast({
-        title: "Vul alle verplichte velden in",
-        description: "Naam, email en bedrijfsnaam zijn verplicht",
+        title: t("assessmentQuiz.toastRequiredTitle"),
+        description: t("assessmentQuiz.toastRequiredDesc"),
         variant: "destructive",
       });
       return;
@@ -189,8 +84,8 @@ const AssessmentQuiz = () => {
     } else {
       if (!currentAnswer) {
         toast({
-          title: "Selecteer een optie",
-          description: "Kies een antwoord voordat je verder gaat",
+          title: t("assessmentQuiz.toastSelectTitle"),
+          description: t("assessmentQuiz.toastSelectDesc"),
           variant: "destructive",
         });
         return;
@@ -210,8 +105,8 @@ const AssessmentQuiz = () => {
 
     if (!result.success) {
       toast({
-        title: "Waarschuwing",
-        description: "Je resultaten worden getoond, maar we konden ze niet naar ons versturen. Geen zorgen, je kunt ze nog steeds bekijken!",
+        title: t("assessmentQuiz.toastWarnTitle"),
+        description: t("assessmentQuiz.toastWarnDesc"),
         variant: "default",
       });
     }
@@ -241,55 +136,55 @@ const AssessmentQuiz = () => {
             // Contact Form
             <div className="animate-fade-in">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">
-                Laten we beginnen
+                {t("assessmentQuiz.contactTitle")}
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                Vul je gegevens in om je gepersonaliseerde resultaten te ontvangen
+                {t("assessmentQuiz.contactSubtitle")}
               </p>
 
               <form onSubmit={handleContactSubmit} className="space-y-6 max-w-md mx-auto">
                 <div>
-                  <Label htmlFor="name">Naam *</Label>
+                  <Label htmlFor="name">{t("assessmentQuiz.nameLabel")}</Label>
                   <Input
                     id="name"
                     value={tempContactInfo.name}
                     onChange={(e) => setTempContactInfo({ ...tempContactInfo, name: e.target.value })}
-                    placeholder="Je volledige naam"
+                    placeholder={t("assessmentQuiz.namePlaceholder")}
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Email *</Label>
+                  <Label htmlFor="email">{t("assessmentQuiz.emailLabel")}</Label>
                   <Input
                     id="email"
                     type="email"
                     value={tempContactInfo.email}
                     onChange={(e) => setTempContactInfo({ ...tempContactInfo, email: e.target.value })}
-                    placeholder="je@email.com"
+                    placeholder={t("assessmentQuiz.emailPlaceholder")}
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="company">Bedrijfsnaam *</Label>
+                  <Label htmlFor="company">{t("assessmentQuiz.companyLabel")}</Label>
                   <Input
                     id="company"
                     value={tempContactInfo.company}
                     onChange={(e) => setTempContactInfo({ ...tempContactInfo, company: e.target.value })}
-                    placeholder="Je bedrijfsnaam"
+                    placeholder={t("assessmentQuiz.companyPlaceholder")}
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="phone">Telefoonnummer (optioneel)</Label>
+                  <Label htmlFor="phone">{t("assessmentQuiz.phoneLabel")}</Label>
                   <Input
                     id="phone"
                     type="tel"
                     value={tempContactInfo.phone}
                     onChange={(e) => setTempContactInfo({ ...tempContactInfo, phone: e.target.value })}
-                    placeholder="+31 6 12345678"
+                    placeholder={t("assessmentQuiz.phonePlaceholder")}
                   />
                 </div>
 
@@ -300,10 +195,10 @@ const AssessmentQuiz = () => {
                     onClick={handleBack}
                     className="gap-2"
                   >
-                    <ArrowLeft className="w-4 h-4" /> Terug
+                    <ArrowLeft className="w-4 h-4" /> {t("assessmentQuiz.back")}
                   </Button>
                   <Button type="submit" className="flex-1 gap-2">
-                    Start Assessment <ArrowRight className="w-4 h-4" />
+                    {t("assessmentQuiz.startButton")} <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>
               </form>
@@ -350,16 +245,16 @@ const AssessmentQuiz = () => {
                   onClick={handleBack}
                   className="gap-2"
                 >
-                  <ArrowLeft className="w-4 h-4" /> Terug
+                  <ArrowLeft className="w-4 h-4" /> {t("assessmentQuiz.back")}
                 </Button>
-                
+
                 {currentStep === questions.length ? (
                   <Button onClick={handleFinish} className="flex-1 gap-2">
-                    Bekijk Resultaten <ArrowRight className="w-4 h-4" />
+                    {t("assessmentQuiz.viewResults")} <ArrowRight className="w-4 h-4" />
                   </Button>
                 ) : (
                   <Button onClick={handleNext} className="flex-1 gap-2">
-                    Volgende <ArrowRight className="w-4 h-4" />
+                    {t("assessmentQuiz.next")} <ArrowRight className="w-4 h-4" />
                   </Button>
                 )}
               </div>
