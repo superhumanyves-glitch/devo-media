@@ -848,6 +848,8 @@
       { "question": "Which solution suits you?", "options": ["Monthly - regular content", "Per project - flexible", "One-off - for an event", "Outsource everything"] },
       { "question": "Do you want drone videos for your business?", "options": ["Yes, definitely", "Maybe, I want to see examples first", "No, not relevant", "Don't know what that could mean"] },
       { "question": "Do you have a website?", "options": ["Yes, a modern website", "Yes, but it needs an update", "No, don't have one yet", "Yes, but I want to add videos"] },
+      { "question": "What is your monthly budget for video and social media?", "options": ["Up to €500 per month", "€500 – €1,500 per month", "€1,500+ per month", "Not sure yet"] },
+      { "question": "When do you want to start?", "options": ["As soon as possible", "Within 1-3 months", "In 3+ months", "I'm just exploring"] },
       { "question": "Anything else we should know? (Optional)", "placeholder": "For example: 'We're launching a new product soon'..." }
     ]
   },

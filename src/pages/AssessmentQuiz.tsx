@@ -31,6 +31,8 @@ const questionMeta: { id: string; type?: "text"; values?: string[] }[] = [
   { id: "q11", values: ["monthly", "project", "onetime", "managed"] },
   { id: "q12", values: ["very", "maybe", "no", "unknown"] },
   { id: "q13", values: ["modern", "outdated", "none", "integrate"] },
+  { id: "budget", values: ["upto500", "500to1500", "1500plus", "unsure"] },
+  { id: "timeline", values: ["asap", "1to3", "3plus", "exploring"] },
   { id: "q14", type: "text" },
 ];
 

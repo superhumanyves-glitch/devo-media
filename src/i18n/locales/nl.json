@@ -848,6 +848,8 @@
       { "question": "Welke oplossing past bij jou?", "options": ["Maandelijks - vaste content", "Per project - flexibel", "Eenmalig - voor een event", "Alles uitbesteden"] },
       { "question": "Wil je drone video's voor je bedrijf?", "options": ["Ja, zeker", "Misschien, wil eerst voorbeelden zien", "Nee, niet relevant", "Weet niet wat dat kan betekenen"] },
       { "question": "Heb je een website?", "options": ["Ja, een moderne website", "Ja, maar moet vernieuwd worden", "Nee, heb er nog geen", "Ja, maar wil video's toevoegen"] },
+      { "question": "Wat is je maandelijkse budget voor video en social media?", "options": ["Tot €500 per maand", "€500 – €1.500 per maand", "€1.500+ per maand", "Nog niet zeker"] },
+      { "question": "Wanneer wil je beginnen?", "options": ["Zo snel mogelijk", "Binnen 1-3 maanden", "Over 3+ maanden", "Ik ben aan het oriënteren"] },
       { "question": "Nog iets wat we moeten weten? (Optioneel)", "placeholder": "Bijvoorbeeld: 'We starten binnenkort met een nieuw product'..." }
     ]
   },
