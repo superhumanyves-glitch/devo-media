@@ -8,7 +8,6 @@ import { lazyLoad, PageLoader } from "@/lib/lazyLoad";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
 import ContactForm from "@/components/ContactForm";
-import ProtectedRoute from "@/components/ProtectedRoute";
 import { AssessmentProvider } from "@/contexts/AssessmentContext";
 import { LocaleWrapper } from "@/components/LocaleWrapper";
 
@@ -28,8 +27,6 @@ const Cookieverklaring = lazyLoad(() => import("./pages/Cookieverklaring"), { fa
 const Disclaimer = lazyLoad(() => import("./pages/Disclaimer"), { fallback: <PageLoader /> });
 const Colophon = lazyLoad(() => import("./pages/Colophon"), { fallback: <PageLoader /> });
 const NotFound = lazyLoad(() => import("./pages/NotFound"), { fallback: <PageLoader /> });
-const Auth = lazyLoad(() => import("./pages/Auth"), { fallback: <PageLoader /> });
-const Dashboard = lazyLoad(() => import("./pages/Dashboard"), { fallback: <PageLoader /> });
 
 const queryClient = new QueryClient();
 
@@ -59,15 +56,6 @@ const App = () => (
                 <Route path="/cookieverklaring" element={<Cookieverklaring />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
                 <Route path="/colophon" element={<Colophon />} />
-                <Route path="/auth" element={<Auth />} />
-                <Route
-                  path="/dashboard"
-                  element={
-                    <ProtectedRoute>
-                      <Dashboard />
-                    </ProtectedRoute>
-                  }
-                />
 
                 {/* English routes (with /en prefix) */}
                 <Route path="/en" element={<Index />} />
@@ -82,15 +70,6 @@ const App = () => (
                 <Route path="/en/cookieverklaring" element={<Cookieverklaring />} />
                 <Route path="/en/disclaimer" element={<Disclaimer />} />
                 <Route path="/en/colophon" element={<Colophon />} />
-                <Route path="/en/auth" element={<Auth />} />
-                <Route
-                  path="/en/dashboard"
-                  element={
-                    <ProtectedRoute>
-                      <Dashboard />
-                    </ProtectedRoute>
-                  }
-                />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />

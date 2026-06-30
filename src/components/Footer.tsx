@@ -1,11 +1,9 @@
 import logo from "@/assets/devo-logo.png";
 import { Linkedin, Instagram, Facebook } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { Key } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   return (
     <footer className="relative bg-secondary border-t border-border py-12 pb-28">
@@ -75,15 +73,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Hidden admin access key */}
-      <button
-        onClick={() => navigate("/auth")}
-        className="absolute bottom-4 right-4 opacity-30 hover:opacity-60 transition-opacity duration-300"
-        aria-label="Admin access"
-      >
-        <Key className="h-4 w-4 text-muted-foreground" />
-      </button>
     </footer>
   );
 };

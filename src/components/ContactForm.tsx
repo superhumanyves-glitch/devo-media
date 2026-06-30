@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { supabase } from "@/integrations/supabase/client";
-import { 
+import {
   Sheet, 
   SheetContent, 
   SheetDescription, 
@@ -149,39 +148,23 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
     try {
       contactSchema.parse(formData);
 
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("contact_submissions")
-        .insert({
+      // Send the lead via the serverless email endpoint
+      const response = await fetch('/api/send-contact-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: formData.name,
-          email: formData.email,
           company: formData.company,
-          phone: formData.phone || null,
-          work_types: formData.workTypes,
+          email: formData.email,
+          phone: formData.phone || '',
+          workTypes: formData.workTypes,
           message: formData.message,
-          status: "new",
-        });
+        }),
+      });
 
-      if (dbError) throw dbError;
-
-      // Send emails via edge function (don't block on email errors)
-      try {
-        const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
-          body: {
-            name: formData.name,
-            company: formData.company,
-            email: formData.email,
-            phone: formData.phone || '',
-            workTypes: formData.workTypes,
-            message: formData.message,
-          },
-        });
-        
-        if (emailError) {
-          console.error('Email sending failed:', emailError);
-        }
-      } catch (emailError) {
-        console.error('Email function error:', emailError);
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Email sending failed');
       }
 
       setShowSuccess(true);

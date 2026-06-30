@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
 
 // Input validation schema
@@ -128,66 +127,37 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
 
       const validatedContact = contactSchema.parse(state.contactInfo);
 
-      // Import lead qualification utilities
-      const { decodeAssessmentAnswers, qualifyLead } = await import('@/lib/leadUtils');
-      
-      // Decode and qualify the lead
+      // Decode the answers into readable insights for the email
+      const { decodeAssessmentAnswers } = await import('@/lib/leadUtils');
       const decoded = decodeAssessmentAnswers(state.answers);
-      const qualification = qualifyLead(decoded);
 
-      // Insert into database with qualification data
-      const { error } = await supabase
-        .from('assessment_submissions')
-        .insert({
+      // Send the assessment lead via the serverless email endpoint
+      const response = await fetch('/api/send-assessment-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: validatedContact.name,
-          email: validatedContact.email,
           company: validatedContact.company,
-          phone: validatedContact.phone || null,
-          answers: state.answers,
+          email: validatedContact.email,
+          phone: validatedContact.phone || '',
           score: state.score,
           segment: state.segment || 'low',
-          persona_type: qualification.personaType,
-          readiness_score: qualification.readinessScore,
-          budget_indicator: qualification.budgetIndicator,
-          urgency_level: qualification.urgency,
-          service_matches: qualification.serviceMatches,
-          conversion_probability: qualification.conversionProbability,
-          recommended_package: qualification.recommendedPackage,
-          recommended_approach: qualification.recommendedApproach,
-        });
+          answers: state.answers,
+          decodedAnswers: decoded,
+        }),
+      });
 
-      if (error) {
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
         if (import.meta.env.DEV) {
-          console.error('Database submission error:', error);
+          console.error('Assessment email failed:', data);
         }
-        return { success: false, error: error.message };
-      }
-
-      // Send emails via edge function (don't block on email errors)
-      try {
-        const { error: emailError } = await supabase.functions.invoke('send-assessment-email', {
-          body: {
-            name: validatedContact.name,
-            company: validatedContact.company,
-            email: validatedContact.email,
-            phone: validatedContact.phone || '',
-            score: state.score,
-            segment: state.segment || 'low',
-            answers: state.answers,
-            decodedAnswers: decoded,
-          },
-        });
-        
-        if (emailError) {
-          console.error('Email sending failed:', emailError);
-        }
-      } catch (emailError) {
-        console.error('Email function error:', emailError);
+        return { success: false, error: data.error || 'Failed to send assessment' };
       }
 
       // Clear sensitive data from sessionStorage after successful submission
       sessionStorage.removeItem('devo-assessment');
-      
+
       return { success: true };
     } catch (error) {
       if (error instanceof z.ZodError) {
