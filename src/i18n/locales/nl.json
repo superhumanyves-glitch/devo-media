@@ -793,6 +793,7 @@
     "statResults": "Meetbare resultaten"
   },
   "assessmentResults": {
+    "badge": "Assessment voltooid",
     "thankYou": "Bedankt, {{name}}!",
     "received": "We hebben je assessment ontvangen en bekijken je situatie.",
     "followupPrefix": "We nemen binnen ",
