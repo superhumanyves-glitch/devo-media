@@ -793,7 +793,6 @@
     "statResults": "Measurable results"
   },
   "assessmentResults": {
-    "badge": "Assessment complete",
     "thankYou": "Thank you, {{name}}!",
     "received": "We've received your assessment and are reviewing your situation.",
     "followupPrefix": "We'll get back to you within ",

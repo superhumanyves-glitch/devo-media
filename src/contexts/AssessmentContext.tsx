@@ -34,7 +34,7 @@ interface AssessmentContextType {
   calculateScore: () => number;
   getSegment: (score: number) => 'high' | 'medium' | 'low';
   resetAssessment: () => void;
-  submitToDatabase: () => Promise<{ success: boolean; error?: string }>;
+  submitToDatabase: (score?: number, segment?: 'high' | 'medium' | 'low') => Promise<{ success: boolean; error?: string }>;
 }
 
 const AssessmentContext = createContext<AssessmentContextType | undefined>(undefined);
@@ -118,12 +118,20 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
     sessionStorage.removeItem('devo-assessment');
   };
 
-  const submitToDatabase = async (): Promise<{ success: boolean; error?: string }> => {
+  const submitToDatabase = async (
+    scoreArg?: number,
+    segmentArg?: 'high' | 'medium' | 'low'
+  ): Promise<{ success: boolean; error?: string }> => {
     try {
       // Validate contact info
       if (!state.contactInfo) {
         return { success: false, error: 'Contact information is missing' };
       }
+
+      // Prefer the freshly computed values from handleFinish; the equivalent
+      // state values may not be updated yet (setState is async).
+      const score = scoreArg ?? state.score;
+      const segment = segmentArg ?? state.segment ?? 'low';
 
       const validatedContact = contactSchema.parse(state.contactInfo);
 
@@ -140,8 +148,8 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
           company: validatedContact.company,
           email: validatedContact.email,
           phone: validatedContact.phone || '',
-          score: state.score,
-          segment: state.segment || 'low',
+          score,
+          segment,
           answers: state.answers,
           decodedAnswers: decoded,
         }),

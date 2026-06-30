@@ -99,9 +99,10 @@ const AssessmentQuiz = () => {
   const handleFinish = async () => {
     const score = calculateScore();
     const segment = getSegment(score);
-    
-    // Send the assessment results by email
-    const result = await submitToDatabase();
+
+    // Send the assessment results by email (pass freshly computed values —
+    // the equivalent state may not be updated yet because setState is async)
+    const result = await submitToDatabase(score, segment);
 
     if (!result.success) {
       toast({
