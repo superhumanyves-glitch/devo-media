@@ -15,7 +15,7 @@ const AssessmentLanding = () => {
   const navigate = useNavigate();
   const [statsRef, statsInView] = useInView({ threshold: 0.3 });
 
-  const clientsCount = useCountUp({ end: 30, duration: 2000, start: 0, delay: statsInView ? 0 : 9999 });
+  const clientsCount = useCountUp({ end: 35, duration: 2000, start: 0, delay: statsInView ? 0 : 9999 });
   const yearsCount = useCountUp({ end: 7, duration: 2000, start: 0, delay: statsInView ? 200 : 9999 });
   const resultsCount = useCountUp({ end: 100, duration: 2000, start: 0, delay: statsInView ? 400 : 9999 });
 
