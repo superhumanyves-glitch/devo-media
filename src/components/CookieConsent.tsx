@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { useLocalePath } from "@/hooks/useLocalePath";
+import { useTranslation, Trans } from "react-i18next";
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
   const localePath = useLocalePath();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -33,14 +35,20 @@ const CookieConsent = () => {
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
         <div className="bg-card border-2 border-border rounded-lg shadow-2xl max-w-lg w-full p-6 sm:p-8 animate-scale-in">
           <h2 className="text-2xl font-bold mb-4 text-foreground">
-            Cookie Melding
+            {t('cookieBanner.title')}
           </h2>
           <p className="text-base text-muted-foreground mb-6">
-            We gebruiken cookies om je ervaring te verbeteren en om onze website goed te laten werken. Door onze website te gebruiken, ga je akkoord met ons{" "}
-            <Link to={localePath("/cookieverklaring")} className="underline hover:text-primary font-medium text-foreground">
-              cookiebeleid
-            </Link>
-            .
+            <Trans
+              i18nKey="cookieBanner.text"
+              components={{
+                lnk: (
+                  <Link
+                    to={localePath("/cookieverklaring")}
+                    className="underline hover:text-primary font-medium text-foreground"
+                  />
+                ),
+              }}
+            />
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
@@ -48,13 +56,13 @@ const CookieConsent = () => {
               onClick={handleDecline}
               className="flex-1"
             >
-              Weigeren
+              {t('cookieBanner.decline')}
             </Button>
             <Button
               onClick={handleAccept}
               className="flex-1"
             >
-              Accepteren
+              {t('cookieBanner.accept')}
             </Button>
           </div>
         </div>

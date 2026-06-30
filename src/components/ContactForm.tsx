@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,43 +14,46 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { useTranslation, Trans } from "react-i18next";
+import type { TFunction } from "i18next";
 import { ArrowRight, Check, MessageCircle, Loader2, ChevronLeft } from "lucide-react";
 import logo from "@/assets/devo-logo.png";
 import checkGradient from "@/assets/check-gradient.png";
 import whatsappLogo from "@/assets/whatsapp-logo.svg.webp";
 import chatIcon from "@/assets/icon-chat-3d.png";
 
-const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, { message: "Naam is verplicht" })
-    .max(100, { message: "Naam mag maximaal 100 tekens zijn" }),
-  company: z
-    .string()
-    .trim()
-    .min(1, { message: "Bedrijfsnaam is verplicht" })
-    .max(100, { message: "Bedrijfsnaam mag maximaal 100 tekens zijn" }),
-  email: z
-    .string()
-    .trim()
-    .email({ message: "Ongeldig e-mailadres" })
-    .max(255, { message: "E-mail mag maximaal 255 tekens zijn" }),
-  phone: z
-    .string()
-    .trim()
-    .max(20, { message: "Telefoonnummer mag maximaal 20 tekens zijn" })
-    .optional()
-    .or(z.literal("")),
-  workTypes: z
-    .array(z.string())
-    .min(1, { message: "Selecteer minimaal één optie" }),
-  message: z
-    .string()
-    .trim()
-    .min(1, { message: "Bericht is verplicht" })
-    .max(1000, { message: "Bericht mag maximaal 1000 tekens zijn" }),
-});
+const buildContactSchema = (t: TFunction) =>
+  z.object({
+    name: z
+      .string()
+      .trim()
+      .min(1, { message: t("contactForm.validation.nameRequired") })
+      .max(100, { message: t("contactForm.validation.nameMax") }),
+    company: z
+      .string()
+      .trim()
+      .min(1, { message: t("contactForm.validation.companyRequired") })
+      .max(100, { message: t("contactForm.validation.companyMax") }),
+    email: z
+      .string()
+      .trim()
+      .email({ message: t("contactForm.validation.emailInvalid") })
+      .max(255, { message: t("contactForm.validation.emailMax") }),
+    phone: z
+      .string()
+      .trim()
+      .max(20, { message: t("contactForm.validation.phoneMax") })
+      .optional()
+      .or(z.literal("")),
+    workTypes: z
+      .array(z.string())
+      .min(1, { message: t("contactForm.validation.workTypesMin") }),
+    message: z
+      .string()
+      .trim()
+      .min(1, { message: t("contactForm.validation.messageRequired") })
+      .max(1000, { message: t("contactForm.validation.messageMax") }),
+  });
 
 const monthlyPackages = [
   "Maandelijks Pakket - Content Starter",
@@ -78,6 +81,24 @@ const additionalServices = [
 interface ContactFormProps { showTrigger?: boolean }
 const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
   const { toast } = useToast();
+  const { t } = useTranslation();
+  const contactSchema = useMemo(() => buildContactSchema(t), [t]);
+
+  // Canonical values stay language-independent (used for submission and the
+  // package pre-select); only the visible labels are translated.
+  const monthlyPackageOptions = useMemo(() => {
+    const labels = t("contactForm.monthlyPackageLabels", { returnObjects: true }) as string[];
+    return monthlyPackages.map((value, i) => ({ value, label: labels[i] ?? value }));
+  }, [t]);
+  const individualServiceOptions = useMemo(() => {
+    const labels = t("contactForm.individualServiceLabels", { returnObjects: true }) as string[];
+    return individualServices.map((value, i) => ({ value, label: labels[i] ?? value }));
+  }, [t]);
+  const additionalServiceOptions = useMemo(() => {
+    const labels = t("contactForm.additionalServiceLabels", { returnObjects: true }) as string[];
+    return additionalServices.map((value, i) => ({ value, label: labels[i] ?? value }));
+  }, [t]);
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -205,14 +226,14 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
         });
 
         toast({
-          title: "Oeps!",
-          description: "Vul alle verplichte velden correct in.",
+          title: t("contactForm.toastErrorTitle"),
+          description: t("contactForm.toastErrorDesc"),
           variant: "destructive",
         });
       } else {
         toast({
-          title: "Er is iets misgegaan",
-          description: "Probeer het later opnieuw of neem direct contact met ons op.",
+          title: t("contactForm.toastFailTitle"),
+          description: t("contactForm.toastFailDesc"),
           variant: "destructive",
         });
       }
@@ -257,7 +278,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
       {showTrigger && (
         <SheetTrigger asChild>
           <Button size="lg" className="shadow-glow">
-            Neem Contact Op <ArrowRight className="ml-2" />
+            {t("contactForm.triggerButton")} <ArrowRight className="ml-2" />
           </Button>
         </SheetTrigger>
       )}
@@ -274,15 +295,18 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-black mb-4">
-              Bedankt!
+              {t("contactForm.successTitle")}
             </h2>
-            
+
             <p className="text-lg sm:text-xl text-muted-foreground mb-3">
-              We hebben je bericht ontvangen.
+              {t("contactForm.successBody")}
             </p>
-            
+
             <p className="text-base text-muted-foreground">
-              We nemen binnen <span className="font-bold text-foreground">48 uur</span> contact met je op.
+              <Trans
+                i18nKey="contactForm.successFollowup"
+                components={{ b: <span className="font-bold text-foreground" /> }}
+              />
             </p>
           </div>
         ) : !showForm ? (
@@ -293,10 +317,10 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
                 <img src={logo} alt="Devo Media" className="h-10 sm:h-12" />
               </div>
               <SheetTitle className="text-2xl sm:text-3xl text-center font-black">
-                Hoe kunnen we je helpen?
+                {t("contactForm.choiceTitle")}
               </SheetTitle>
               <SheetDescription className="text-sm sm:text-base text-center">
-                Kies de manier die het beste bij je past
+                {t("contactForm.choiceSubtitle")}
               </SheetDescription>
             </SheetHeader>
 
@@ -305,7 +329,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
               <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer group">
                 <a
                   href={`https://wa.me/31610322231?text=${encodeURIComponent(
-                    "Hallo Devo Media! Ik heb interesse in jullie videoproductie diensten en zou graag meer informatie ontvangen."
+                    t("contactForm.whatsappMessage")
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -318,17 +342,17 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                          Snel Chatten
+                          {t("contactForm.whatsappTitle")}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4">
-                          Direct contact via WhatsApp voor snelle vragen en advies
+                          {t("contactForm.whatsappDesc")}
                         </p>
-                        <Button 
+                        <Button
                           type="button"
                           className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white"
                           size="lg"
                         >
-                          Open WhatsApp
+                          {t("contactForm.whatsappButton")}
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </div>
@@ -345,21 +369,21 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <img src={chatIcon} alt="Service Aanvragen" className="w-7 h-7" />
+                      <img src={chatIcon} alt={t("contactForm.formCardTitle")} className="w-7 h-7" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                        Service Aanvragen
+                        {t("contactForm.formCardTitle")}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Vul het formulier in voor een officiële aanvraag met alle details
+                        {t("contactForm.formCardDesc")}
                       </p>
-                      <Button 
+                      <Button
                         type="button"
                         className="w-full"
                         size="lg"
                       >
-                        Naar Formulier
+                        {t("contactForm.formCardButton")}
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </div>
@@ -379,14 +403,14 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
                 className="w-fit mb-2"
               >
                 <ChevronLeft className="w-4 h-4 mr-1" />
-                Terug
+                {t("contactForm.back")}
               </Button>
               <div className="flex justify-center mb-3 sm:mb-4">
                 <img src={logo} alt="Devo Media" className="h-10 sm:h-12" />
               </div>
-              <SheetTitle className="text-xl sm:text-2xl text-center">Service Aanvragen</SheetTitle>
+              <SheetTitle className="text-xl sm:text-2xl text-center">{t("contactForm.formTitle")}</SheetTitle>
               <SheetDescription className="text-sm sm:text-base text-center">
-                Vertel ons over je plannen en we nemen binnen 48 uur contact op.
+                {t("contactForm.formSubtitle")}
               </SheetDescription>
             </SheetHeader>
 
@@ -396,7 +420,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             <div className="relative">
               <Input
                 name="name"
-                placeholder="Je volledige naam *"
+                placeholder={t("contactForm.namePlaceholder")}
                 value={formData.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -408,7 +432,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
                 aria-describedby={errors.name && touched.name ? "name-error" : undefined}
               />
               {isFieldValid("name") && (
-                <Check className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-label="Veld correct ingevuld" />
+                <Check className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-label={t("contactForm.fieldValid")} />
               )}
               {errors.name && touched.name && (
                 <p id="name-error" className="text-xs text-destructive mt-1 ml-4" role="alert">{errors.name}</p>
@@ -419,7 +443,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             <div className="relative">
               <Input
                 name="company"
-                placeholder="Je bedrijf *"
+                placeholder={t("contactForm.companyPlaceholder")}
                 value={formData.company}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -440,7 +464,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
               <Input
                 type="email"
                 name="email"
-                placeholder="E-mailadres *"
+                placeholder={t("contactForm.emailPlaceholder")}
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -461,7 +485,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
               <Input
                 type="tel"
                 name="phone"
-                placeholder="Telefoonnummer (optioneel)"
+                placeholder={t("contactForm.phonePlaceholder")}
                 value={formData.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -481,31 +505,31 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             <div className="space-y-4">
               <div>
                 <label className="text-sm font-semibold">
-                  Type werk *
+                  {t("contactForm.workTypeLabel")}
                 </label>
                 <p className="text-xs text-muted-foreground mt-1">
-                  (Kies de gebieden waar je in geïnteresseerd bent)
+                  {t("contactForm.workTypeHint")}
                 </p>
               </div>
 
               {/* Monthly Packages Section */}
               <div className="space-y-2">
-                <h4 className="text-sm font-medium text-muted-foreground">Maandelijkse Pakketten</h4>
-                {monthlyPackages.map((type) => (
+                <h4 className="text-sm font-medium text-muted-foreground">{t("contactForm.monthlyPackagesHeading")}</h4>
+                {monthlyPackageOptions.map((option) => (
                   <label
-                    key={type}
-                    htmlFor={type}
+                    key={option.value}
+                    htmlFor={option.value}
                     className="flex items-center space-x-3 p-4 border border-border rounded-lg cursor-pointer hover:border-primary/50 hover:bg-accent/50 transition-all"
                   >
                     <Checkbox
-                      id={type}
-                      checked={formData.workTypes.includes(type)}
+                      id={option.value}
+                      checked={formData.workTypes.includes(option.value)}
                       onCheckedChange={(checked) =>
-                        handleCheckboxChange(type, checked as boolean)
+                        handleCheckboxChange(option.value, checked as boolean)
                       }
                     />
                     <span className="text-sm flex-1">
-                      {type}
+                      {option.label}
                     </span>
                   </label>
                 ))}
@@ -513,22 +537,22 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
 
               {/* Individual Services Section */}
               <div className="space-y-2">
-                <h4 className="text-sm font-medium text-muted-foreground">Losse Diensten</h4>
-                {individualServices.map((type) => (
+                <h4 className="text-sm font-medium text-muted-foreground">{t("contactForm.individualServicesHeading")}</h4>
+                {individualServiceOptions.map((option) => (
                   <label
-                    key={type}
-                    htmlFor={type}
+                    key={option.value}
+                    htmlFor={option.value}
                     className="flex items-center space-x-3 p-4 border border-border rounded-lg cursor-pointer hover:border-primary/50 hover:bg-accent/50 transition-all"
                   >
                     <Checkbox
-                      id={type}
-                      checked={formData.workTypes.includes(type)}
+                      id={option.value}
+                      checked={formData.workTypes.includes(option.value)}
                       onCheckedChange={(checked) =>
-                        handleCheckboxChange(type, checked as boolean)
+                        handleCheckboxChange(option.value, checked as boolean)
                       }
                     />
                     <span className="text-sm flex-1">
-                      {type}
+                      {option.label}
                     </span>
                   </label>
                 ))}
@@ -536,22 +560,22 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
 
               {/* Additional Services Section */}
               <div className="space-y-2">
-                <h4 className="text-sm font-medium text-muted-foreground">Aanvullende Diensten</h4>
-                {additionalServices.map((type) => (
+                <h4 className="text-sm font-medium text-muted-foreground">{t("contactForm.additionalServicesHeading")}</h4>
+                {additionalServiceOptions.map((option) => (
                   <label
-                    key={type}
-                    htmlFor={type}
+                    key={option.value}
+                    htmlFor={option.value}
                     className="flex items-center space-x-3 p-4 border border-border rounded-lg cursor-pointer hover:border-primary/50 hover:bg-accent/50 transition-all"
                   >
                     <Checkbox
-                      id={type}
-                      checked={formData.workTypes.includes(type)}
+                      id={option.value}
+                      checked={formData.workTypes.includes(option.value)}
                       onCheckedChange={(checked) =>
-                        handleCheckboxChange(type, checked as boolean)
+                        handleCheckboxChange(option.value, checked as boolean)
                       }
                     />
                     <span className="text-sm flex-1">
-                      {type}
+                      {option.label}
                     </span>
                   </label>
                 ))}
@@ -566,7 +590,7 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             <div>
               <Textarea
                 name="message"
-                placeholder="Vertel ons over je project *"
+                placeholder={t("contactForm.messagePlaceholder")}
                 value={formData.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -587,11 +611,11 @@ const ContactForm = ({ showTrigger = true }: ContactFormProps) => {
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Verzenden...
+                {t("contactForm.submitting")}
               </>
             ) : (
               <>
-                Verzenden
+                {t("contactForm.submit")}
                 <div className="ml-2 w-6 h-6 rounded-full bg-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-primary" />
                 </div>

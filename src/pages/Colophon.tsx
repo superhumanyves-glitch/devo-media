@@ -4,39 +4,43 @@ import { SEO } from "@/components/SEO";
 import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocalePath } from "@/hooks/useLocalePath";
+import { useTranslation } from "react-i18next";
 
 const Colophon = () => {
   const localePath = useLocalePath();
+  const { t } = useTranslation();
+  const services = t('colophon.servicesList', { returnObjects: true }) as { name: string; desc: string }[];
+
   return (
     <div className="min-h-screen flex flex-col">
-        <SEO 
-          title="Colophon - Devo Media"
-          description="Bedrijfsinformatie en contactgegevens van Devo Media Agency in Arnhem, Nederland."
+        <SEO
+          title={t('colophon.seoTitle')}
+          description={t('colophon.seoDescription')}
           canonicalUrl="/colophon"
         />
         <Header />
-        
+
         <main className="flex-grow bg-background pt-24">
           <div className="container mx-auto px-4 py-12 max-w-4xl text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground text-left">Colophon</h1>
-            <p className="text-muted-foreground mb-8 text-left">Bedrijfsinformatie Devo Media Agency</p>
-            
+            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground text-left">{t('colophon.title')}</h1>
+            <p className="text-muted-foreground mb-8 text-left">{t('colophon.subtitle')}</p>
+
             <div className="space-y-6">
               <section className="bg-card/50 backdrop-blur-sm p-6 rounded-xl border border-border/50 shadow-sm">
-                <h2 className="text-lg font-semibold mb-4 text-foreground text-left">Bedrijfsgegevens</h2>
+                <h2 className="text-lg font-semibold mb-4 text-foreground text-left">{t('colophon.companyInfo')}</h2>
                 <div className="text-sm text-muted-foreground space-y-1">
-                  <p><span className="font-medium text-foreground">Officiële bedrijfsnaam:</span> Devo Media Agency</p>
-                  <p><span className="font-medium text-foreground">Vestigingsadres:</span> Gelderse Rooslaan 13-4, 6841BA Arnhem</p>
-                  <p><span className="font-medium text-foreground">KvK-nummer:</span> 90330706</p>
-                  <p><span className="font-medium text-foreground">BTW-nummer:</span> NL004808059B18</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.officialName')}:</span> Devo Media Agency</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.address')}:</span> Gelderse Rooslaan 13-4, 6841BA Arnhem</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.kvk')}:</span> 90330706</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.vat')}:</span> NL004808059B18</p>
                 </div>
               </section>
 
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
-                <h2 className="text-lg font-semibold mb-4 text-foreground text-left">Contact</h2>
+                <h2 className="text-lg font-semibold mb-4 text-foreground text-left">{t('colophon.contact')}</h2>
                 <div className="space-y-3">
                   <div>
-                    <h3 className="text-base font-medium mb-2 text-foreground text-left">Algemene vragen</h3>
+                    <h3 className="text-base font-medium mb-2 text-foreground text-left">{t('colophon.generalQuestions')}</h3>
                     <div className="space-y-1 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <Mail className="w-4 h-4" />
@@ -50,7 +54,7 @@ const Colophon = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-base font-medium mb-2 text-foreground text-left">Social Media</h3>
+                    <h3 className="text-base font-medium mb-2 text-foreground text-left">{t('colophon.socialMedia')}</h3>
                     <div className="flex gap-4 text-sm">
                       <a href="https://www.instagram.com/devomediaagency/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                         <Instagram className="w-4 h-4" />
@@ -66,55 +70,55 @@ const Colophon = () => {
               </section>
 
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
-                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">Diensten</h2>
+                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">{t('colophon.services')}</h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><span className="font-medium text-foreground">Social Media Management</span> – Strategie, contentcreatie en community management</li>
-                  <li><span className="font-medium text-foreground">Videoproductie</span> – Aftermovies, commercials, bedrijfsfilms, drone-opnames</li>
-                  <li><span className="font-medium text-foreground">Contentcreatie</span> – Fotografie, grafisch ontwerp, copywriting</li>
-                  <li><span className="font-medium text-foreground">Web Development</span> – Website-ontwerp en -ontwikkeling, SEO-optimalisatie</li>
-                  <li><span className="font-medium text-foreground">Branding & Strategie</span> – Merkidentiteit, visuele concepten, campagnes</li>
+                  {services.map((service) => (
+                    <li key={service.name}>
+                      <span className="font-medium text-foreground">{service.name}</span> – {service.desc}
+                    </li>
+                  ))}
                 </ul>
               </section>
 
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
-                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">Openingstijden</h2>
+                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">{t('colophon.openingHours')}</h2>
                 <div className="text-sm text-muted-foreground space-y-2">
-                  <p><span className="font-medium text-foreground">Kantooruren:</span> Maandag t/m vrijdag: 09:00 - 18:00</p>
-                  <p><span className="font-medium text-foreground">E-mail & telefoon:</span> Reactie binnen 24 uur op werkdagen</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.officeHours')}:</span> {t('colophon.officeHoursValue')}</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.emailPhone')}:</span> {t('colophon.emailPhoneValue')}</p>
                 </div>
               </section>
 
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
-                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">Juridische documenten</h2>
+                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">{t('colophon.legalDocs')}</h2>
                 <div className="flex flex-wrap gap-3 text-sm">
-                  <Link to={localePath("/algemene-voorwaarden")} className="text-primary hover:underline">Algemene Voorwaarden</Link>
+                  <Link to={localePath("/algemene-voorwaarden")} className="text-primary hover:underline">{t('footer.terms')}</Link>
                   <span className="text-muted-foreground">•</span>
-                  <Link to={localePath("/privacyverklaring")} className="text-primary hover:underline">Privacyverklaring</Link>
+                  <Link to={localePath("/privacyverklaring")} className="text-primary hover:underline">{t('footer.privacy')}</Link>
                   <span className="text-muted-foreground">•</span>
-                  <Link to={localePath("/cookieverklaring")} className="text-primary hover:underline">Cookieverklaring</Link>
+                  <Link to={localePath("/cookieverklaring")} className="text-primary hover:underline">{t('footer.cookies')}</Link>
                   <span className="text-muted-foreground">•</span>
-                  <Link to={localePath("/disclaimer")} className="text-primary hover:underline">Disclaimer</Link>
+                  <Link to={localePath("/disclaimer")} className="text-primary hover:underline">{t('footer.disclaimer')}</Link>
                 </div>
               </section>
 
               <section className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-border/50">
-                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">Tarieven & betalingen</h2>
+                <h2 className="text-lg font-semibold mb-3 text-foreground text-left">{t('colophon.ratesPayments')}</h2>
                 <div className="text-sm text-muted-foreground space-y-1">
-                  <p><span className="font-medium text-foreground">Betalingstermijn:</span> 14 dagen netto</p>
-                  <p><span className="font-medium text-foreground">Aanbetaling:</span> 40% vooraf bij grotere projecten</p>
-                  <p><span className="font-medium text-foreground">Betaalmethoden:</span> Bankoverschrijving, iDEAL</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.paymentTerm')}:</span> {t('colophon.paymentTermValue')}</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.deposit')}:</span> {t('colophon.depositValue')}</p>
+                  <p><span className="font-medium text-foreground">{t('colophon.paymentMethods')}:</span> {t('colophon.paymentMethodsValue')}</p>
                 </div>
               </section>
 
               <div className="bg-muted/30 backdrop-blur-sm p-4 rounded-xl border border-border/50">
                 <p className="text-xs text-muted-foreground">
-                  ©️ 2025 Devo Media Agency – Alle rechten voorbehouden
+                  {t('colophon.rightsReserved')}
                 </p>
               </div>
             </div>
           </div>
         </main>
-        
+
         <Footer />
       </div>
   );
