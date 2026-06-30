@@ -10,6 +10,7 @@ import result3 from "@/assets/results/result-3.png";
 import result4 from "@/assets/results/result-4.png";
 import result5 from "@/assets/results/result-5.png";
 import result6 from "@/assets/results/result-6.png";
+import result7 from "@/assets/results/result-7.jpg";
 
 const Results = () => {
   const results = [
@@ -19,6 +20,7 @@ const Results = () => {
     { id: 4, image: result4, alt: "Instagram views: 313,307 views, 4.3K content interactions (+100%)" },
     { id: 5, image: result5, alt: "Reach: 108.0K (+695%), 55.1K from non-followers" },
     { id: 6, image: result6, alt: "LinkedIn metrieken: 160K berichtweergaven (+107.9%), 4,754 likes (+133.6%), 759 keer gedeeld (+225.8%)" },
+    { id: 7, image: result7, alt: "Belangrijke metrieken: 275K berichtweergaven (+1108.1%), 11K profielweergaven (+1575.7%), 6,272 likes (+1016%), 1,341 keer gedeeld (+2636.7%)" },
   ];
 
   return (

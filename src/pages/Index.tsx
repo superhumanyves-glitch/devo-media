@@ -102,46 +102,36 @@ const Index = () => {
   const singleServices = [{
     icon: iconVideo,
     title: t('services.singleVideo.title'),
-    price: `${t('buttons.from')} €350`,
+    price: `${t('buttons.from')} €495,99`,
     features: t('services.singleVideo.features', {
       returnObjects: true
-    }) as string[],
-    extras: [`${t('services.drone.title')} +€175`]
+    }) as string[]
   }, {
     icon: iconCamera,
     title: t('services.aftermovie.title'),
-    price: "€495,99",
+    price: `${t('buttons.from')} €695,99`,
     features: t('services.aftermovie.features', {
       returnObjects: true
-    }) as string[],
-    extras: [`${t('services.drone.title')} +€225`]
+    }) as string[]
   }, {
     icon: iconDrone,
     title: t('services.drone.title'),
-    price: `${t('services.drone.from')} €295,99`,
+    price: `${t('services.drone.from')} €595,99`,
     features: t('services.drone.features', {
       returnObjects: true
-    }) as string[],
-    specialOffer: false,
-    alternativeOption: {
-      price: "€129,99",
-      features: t('services.drone.alternativeFeatures', {
-        returnObjects: true
-      }) as string[],
-      isSpecialOffer: true
-    }
+    }) as string[]
   }];
   const additionalServices = [{
     icon: iconCamera,
     title: t('services.filming.title'),
-    price: `€50${t('services.filming.perHour')}`,
+    price: `€65${t('services.filming.perHour')}`,
     features: t('services.filming.features', {
       returnObjects: true
     }) as string[]
   }, {
     icon: iconScissors,
     title: t('services.editing.title'),
-    price: "€60/uur",
+    price: "€85/uur",
     features: t('services.editing.features', {
       returnObjects: true
     }) as string[]
@@ -291,7 +281,7 @@ const Index = () => {
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl mx-auto">
             <div className="w-full lg:w-auto lg:flex-shrink-0">
-              <ServiceCard icon={iconWebsite} title={t('website.service.title')} price={`${t('website.service.from')} €498,99`} features={t('website.service.features', {
+              <ServiceCard icon={iconWebsite} title={t('website.service.title')} price={`${t('website.service.from')} €995,99`} features={t('website.service.features', {
                 returnObjects: true
               }) as string[]} />
             </div>
