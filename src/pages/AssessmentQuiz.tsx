@@ -64,7 +64,7 @@ const AssessmentQuiz = () => {
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!tempContactInfo.name || !tempContactInfo.email || !tempContactInfo.company) {
+    if (!tempContactInfo.name || !tempContactInfo.email || !tempContactInfo.company || !tempContactInfo.phone) {
       toast({
         title: t("assessmentQuiz.toastRequiredTitle"),
         description: t("assessmentQuiz.toastRequiredDesc"),
@@ -202,6 +202,7 @@ const AssessmentQuiz = () => {
                     value={tempContactInfo.phone}
                     onChange={(e) => setTempContactInfo({ ...tempContactInfo, phone: e.target.value })}
                     placeholder={t("assessmentQuiz.phonePlaceholder")}
+                    required
                   />
                 </div>
 

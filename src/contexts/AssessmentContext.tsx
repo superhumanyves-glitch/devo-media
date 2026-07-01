@@ -6,7 +6,7 @@ export const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "Name cannot be empty" }).max(100, { message: "Name must be less than 100 characters" }),
   email: z.string().trim().email({ message: "Invalid email address" }).max(255, { message: "Email must be less than 255 characters" }),
   company: z.string().trim().min(1, { message: "Company cannot be empty" }).max(100, { message: "Company must be less than 100 characters" }),
-  phone: z.string().trim().max(20, { message: "Phone must be less than 20 characters" }).optional(),
+  phone: z.string().trim().min(6, { message: "Phone number is required" }).max(20, { message: "Phone must be less than 20 characters" }),
 });
 
 export interface ContactInfo {

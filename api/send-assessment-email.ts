@@ -1,23 +1,12 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { randomUUID } from "node:crypto";
 import { Resend } from "resend";
+import { assessmentEmailSchema } from "./_lib/validation";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Where internal lead notifications go
 const TO_DEVO_MEDIA = "devomediaagency@proton.me";
-
-interface AssessmentEmailRequest {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  score: number;
-  segment: string;
-  answers: Record<string, unknown>;
-  decodedAnswers: Record<string, string>;
-  responses: { question: string; answer: string }[];
-}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -25,12 +14,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { name, company, email, phone, score, segment, decodedAnswers, responses } =
-      req.body as AssessmentEmailRequest;
-
-    if (!name || !email || !company) {
-      return res.status(400).json({ error: "Missing required fields" });
+    const parsed = assessmentEmailSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({
+        error: parsed.error.issues[0]?.message || "Invalid submission",
+      });
     }
+    const { name, company, email, phone, score, segment, decodedAnswers, responses } =
+      parsed.data;
 
     const escapeHtml = (s: string) =>
       String(s)
