@@ -42,9 +42,8 @@ const buildContactSchema = (t: TFunction) =>
     phone: z
       .string()
       .trim()
-      .max(20, { message: t("contactForm.validation.phoneMax") })
-      .optional()
-      .or(z.literal("")),
+      .min(6, { message: t("contactForm.validation.phoneRequired") })
+      .max(20, { message: t("contactForm.validation.phoneMax") }),
     workTypes: z
       .array(z.string())
       .min(1, { message: t("contactForm.validation.workTypesMin") }),

@@ -1,20 +1,12 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { randomUUID } from "node:crypto";
 import { Resend } from "resend";
+import { contactEmailSchema } from "./_lib/validation";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Where internal lead notifications go
 const TO_DEVO_MEDIA = "devomediaagency@proton.me";
-
-interface ContactEmailRequest {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  workTypes: string[];
-  message: string;
-}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -22,12 +14,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { name, company, email, phone, workTypes, message } =
-      req.body as ContactEmailRequest;
-
-    if (!name || !email || !company) {
-      return res.status(400).json({ error: "Missing required fields" });
+    const parsed = contactEmailSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({
+        error: parsed.error.issues[0]?.message || "Invalid submission",
+      });
     }
+    const { name, company, email, phone, workTypes, message } = parsed.data;
 
     const workTypesList = (workTypes || []).map((type) => `• ${type}`).join("\n");
 
