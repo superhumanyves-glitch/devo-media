@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { randomUUID } from "node:crypto";
 import { Resend } from "resend";
-import { contactEmailSchema } from "./_lib/validation";
+import { contactEmailSchema } from "./_lib/validation.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
