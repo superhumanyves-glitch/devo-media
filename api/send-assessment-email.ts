@@ -85,6 +85,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
+    // The internal notification is the actual lead capture; fail loudly if it
+    // didn't go out (Resend returns errors instead of throwing).
+    if (internalEmail.error) {
+      console.error("Resend error (internal email):", internalEmail.error);
+      return res.status(502).json({ error: internalEmail.error.message });
+    }
+
     // Avoid Resend rate limiting (2 req/sec)
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -125,6 +132,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         </p>
       `,
     });
+
+    // The lead is already captured at this point, so a failed confirmation
+    // email is logged but doesn't fail the submission.
+    if (leadEmail.error) {
+      console.error("Resend error (lead confirmation):", leadEmail.error);
+    }
 
     return res.status(200).json({
       success: true,
