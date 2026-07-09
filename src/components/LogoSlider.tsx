@@ -14,6 +14,8 @@ import maxStudiosLogo from "@/assets/logos/max-studios-logo.png";
 import vanKolfSchotenLogo from "@/assets/logos/van-kolf-schoten-logo.png";
 import floresLogo from "@/assets/logos/flores-logo.png";
 import versareLogo from "@/assets/logos/versare-logo.png";
+import papiamentuTvLogo from "@/assets/logos/papiamentu-tv-logo.png";
+import firstClassSportsLogo from "@/assets/logos/first-class-sports-logo.png";
 
 const logos = [
   { src: emzsLogo, alt: "EMZS Premium Barber", maxHeight: "max-h-24 md:max-h-28" },
@@ -23,6 +25,8 @@ const logos = [
   { src: vanKolfSchotenLogo, alt: "Van Kolf Schoten", maxHeight: "max-h-40 md:max-h-48" },
   { src: floresLogo, alt: "Florés Onderwijs", maxHeight: "max-h-40 md:max-h-48" },
   { src: versareLogo, alt: "Versare Consulting", maxHeight: "max-h-24 md:max-h-28" },
+  { src: papiamentuTvLogo, alt: "Papiamentu.tv", maxHeight: "max-h-24 md:max-h-28" },
+  { src: firstClassSportsLogo, alt: "First Class Sports", maxHeight: "max-h-40 md:max-h-48" },
 ];
 
 const LogoSlider = () => {
