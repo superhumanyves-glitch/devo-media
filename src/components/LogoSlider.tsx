@@ -17,16 +17,19 @@ import versareLogo from "@/assets/logos/versare-logo.png";
 import papiamentuTvLogo from "@/assets/logos/papiamentu-tv-logo.png";
 import firstClassSportsLogo from "@/assets/logos/first-class-sports-logo.png";
 
+// Logo images are trimmed to their content, so height directly controls the
+// visible size: square logos get the base height, wider logos get less height
+// since they take up more width.
 const logos = [
   { src: emzsLogo, alt: "EMZS Premium Barber", maxHeight: "max-h-24 md:max-h-28" },
-  { src: broodjeLogo, alt: "Broodje & Co", maxHeight: "max-h-40 md:max-h-48" },
-  { src: loversLogo, alt: "Lovers Premium Quality", maxHeight: "max-h-32 md:max-h-36" },
-  { src: maxStudiosLogo, alt: "Max Studios", maxHeight: "max-h-28 md:max-h-32" },
-  { src: vanKolfSchotenLogo, alt: "Van Kolf Schoten", maxHeight: "max-h-40 md:max-h-48" },
-  { src: floresLogo, alt: "Florés Onderwijs", maxHeight: "max-h-40 md:max-h-48" },
-  { src: versareLogo, alt: "Versare Consulting", maxHeight: "max-h-24 md:max-h-28" },
+  { src: broodjeLogo, alt: "Broodje & Co", maxHeight: "max-h-20 md:max-h-24" },
+  { src: loversLogo, alt: "Lovers Premium Quality", maxHeight: "max-h-20 md:max-h-24" },
+  { src: maxStudiosLogo, alt: "Max Studios", maxHeight: "max-h-24 md:max-h-28" },
+  { src: vanKolfSchotenLogo, alt: "Van Kolf Schoten", maxHeight: "max-h-20 md:max-h-24" },
+  { src: floresLogo, alt: "Florés Onderwijs", maxHeight: "max-h-16 md:max-h-20" },
+  { src: versareLogo, alt: "Versare Consulting", maxHeight: "max-h-14 md:max-h-16" },
   { src: papiamentuTvLogo, alt: "Papiamentu.tv", maxHeight: "max-h-24 md:max-h-28" },
-  { src: firstClassSportsLogo, alt: "First Class Sports", maxHeight: "max-h-40 md:max-h-48" },
+  { src: firstClassSportsLogo, alt: "First Class Sports", maxHeight: "max-h-24 md:max-h-28" },
 ];
 
 const LogoSlider = () => {
@@ -61,7 +64,7 @@ const LogoSlider = () => {
           <CarouselContent className="-ml-2 md:-ml-4">
             {duplicatedLogos.map((logo, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <div className="p-8 flex items-center justify-center h-48 md:h-56 group">
+                <div className="p-4 md:p-8 flex items-center justify-center h-48 md:h-56 group">
                   <img
                     src={logo.src}
                     alt={logo.alt}
