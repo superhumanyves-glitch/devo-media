@@ -1,10 +1,3 @@
-import { useRef } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import { useInView } from "@/hooks/useInView";
 import { useTranslation } from "react-i18next";
 import emzsLogo from "@/assets/logos/emzs-logo.png";
@@ -33,14 +26,12 @@ const logos = [
 ];
 
 const LogoSlider = () => {
-  const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: false })
-  );
   const [ref, isInView] = useInView({ threshold: 0.2 });
   const { t } = useTranslation();
 
-  // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+  // Two copies of the track; the CSS animation shifts exactly one copy's
+  // width (-50%) before looping, so the scroll never shows a seam.
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <div ref={ref} className="w-full py-12 bg-background/50">
@@ -50,31 +41,27 @@ const LogoSlider = () => {
         }`}>
           {t('portfolio.trustedBy')}
         </h3>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-            dragFree: true,
-          }}
-          plugins={[plugin.current]}
-          className={`w-full transition-all duration-1000 ${
+        <div
+          className={`w-full overflow-hidden transition-opacity duration-1000 ${
             isInView ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <div className="logo-marquee flex w-max items-center">
             {duplicatedLogos.map((logo, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <div className="p-4 md:p-8 flex items-center justify-center h-48 md:h-56 group">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className={`${logo.maxHeight} max-w-full object-contain transition-all duration-300 group-hover:scale-110 opacity-90 group-hover:opacity-100`}
-                  />
-                </div>
-              </CarouselItem>
+              <div
+                key={index}
+                aria-hidden={index >= logos.length}
+                className="flex items-center justify-center h-48 md:h-56 w-44 md:w-64 px-4 md:px-8 group"
+              >
+                <img
+                  src={logo.src}
+                  alt={index < logos.length ? logo.alt : ""}
+                  className={`${logo.maxHeight} max-w-full object-contain transition-all duration-300 group-hover:scale-110 opacity-90 group-hover:opacity-100`}
+                />
+              </div>
             ))}
-          </CarouselContent>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -122,6 +122,26 @@ All colors MUST be HSL.
       stroke-dashoffset: 0;
     }
   }
+
+  /* Continuous logo marquee: a single compositor-driven transform animation,
+     so it stays smooth at any refresh rate without main-thread work. The
+     track holds two copies of the logos; -50% lands exactly on the seam. */
+  @keyframes logo-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .logo-marquee {
+    animation: logo-marquee 45s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee {
+      animation-play-state: paused;
+    }
+  }
 }
 
 @layer base {
