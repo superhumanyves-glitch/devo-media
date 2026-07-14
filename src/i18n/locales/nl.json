@@ -173,20 +173,21 @@
     "singleVideo": {
       "title": "Single Video",
       "features": [
-        "Filmen inbegrepen",
-        "Editen inbegrepen",
-        "Scripts inbegrepen",
-        "Filmen op locatie",
-        "Captions inbegrepen indien nodig"
+        "Concept en script inbegrepen",
+        "Professionele opnames op locatie",
+        "Volledige montage en kleurcorrectie",
+        "Muziek en ondertiteling",
+        "Eén correctieronde"
       ]
     },
     "aftermovie": {
-      "title": "Aftermovie/Opening",
+      "title": "Aftermovie / Eventvideo",
       "features": [
-        "Filmen inbegrepen",
-        "Editen inbegrepen",
-        "Filmen op locatie",
-        "Captions inbegrepen indien nodig"
+        "Inclusief maximaal 3 uur filmen op locatie",
+        "Elk extra uur: €85",
+        "Volledige montage en kleurcorrectie",
+        "Muziek en ondertiteling",
+        "Eén correctieronde"
       ]
     },
     "drone": {
@@ -206,20 +207,23 @@
       "save": "Bespaar €166! 🎉"
     },
     "filming": {
-      "title": "Video Maken Zonder Editen",
+      "title": "Video-opnames zonder montage",
       "perHour": "/uur",
       "features": [
         "Filmen op locatie",
         "Canon EOS R8 professionele camera",
-        "Stabilizer inbegrepen"
+        "Stabilizer inbegrepen",
+        "Halve draaidag vanaf €395"
       ]
     },
     "editing": {
-      "title": "Video Editen",
+      "title": "Professionele videomontage",
       "features": [
-        "Remote editen",
-        "Professionele software",
-        "Snelle levering"
+        "Montage op afstand",
+        "Professionele kleurcorrectie",
+        "Muziek en sound design",
+        "Ondertiteling mogelijk",
+        "Snelle levering mogelijk (tegen meerprijs)"
       ]
     },
     "socialMedia": {
@@ -398,7 +402,8 @@
     "extraOptions": "Extra opties:",
     "extra": "Extra:",
     "popular": "Populair",
-    "from": "vanaf"
+    "from": "vanaf",
+    "exVat": "excl. btw"
   },
   "aboutPage": {
     "seoTitle": "Over Mij - Devo Media | Bryan's Verhaal",
@@ -495,12 +500,12 @@
     ],
     "individualServiceLabels": [
       "Single Video",
-      "Aftermovie/Opening",
+      "Aftermovie / Eventvideo",
       "Drone/FPV Video"
     ],
     "additionalServiceLabels": [
-      "Video Maken Zonder Editen",
-      "Video Editen",
+      "Video-opnames zonder montage",
+      "Professionele videomontage",
       "Social Media Management",
       "Website Development",
       "Anders / Nog niet zeker"

@@ -16,13 +16,14 @@ interface ServiceCardProps {
   icon: string;
   title: string;
   price: string;
+  priceNote?: string;
   features: string[];
   extras?: string[];
   specialOffer?: boolean;
   alternativeOption?: AlternativeOption;
 }
 
-const ServiceCard = ({ icon, title, price, features, extras, specialOffer, alternativeOption }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, price, priceNote, features, extras, specialOffer, alternativeOption }: ServiceCardProps) => {
   const [isAlternative, setIsAlternative] = useState(false);
   const { t } = useTranslation();
   
@@ -61,7 +62,12 @@ const ServiceCard = ({ icon, title, price, features, extras, specialOffer, alter
         </div>
         <div>
           <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
-          <p className="text-xl sm:text-2xl font-bold text-primary">{currentPrice}</p>
+          <p className="text-xl sm:text-2xl font-bold text-primary">
+            {currentPrice}
+            {priceNote && (
+              <span className="ml-1.5 text-xs sm:text-sm font-medium text-muted-foreground">{priceNote}</span>
+            )}
+          </p>
         </div>
       </div>
 

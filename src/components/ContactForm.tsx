@@ -65,13 +65,13 @@ const monthlyPackages = [
 
 const individualServices = [
   "Single Video",
-  "Aftermovie/Opening",
+  "Aftermovie / Eventvideo",
   "Drone/FPV Video",
 ];
 
 const additionalServices = [
-  "Video Maken Zonder Editen",
-  "Video Editen",
+  "Video-opnames zonder montage",
+  "Professionele videomontage",
   "Social Media Management",
   "Website Development",
   "Anders / Nog niet zeker",

@@ -173,20 +173,21 @@
     "singleVideo": {
       "title": "Single Video",
       "features": [
-        "Filming included",
-        "Editing included",
-        "Scripts included",
-        "Filming on location",
-        "Captions included if needed"
+        "Concept and script included",
+        "Professional filming on location",
+        "Full editing and color grading",
+        "Music and subtitles",
+        "One revision round"
       ]
     },
     "aftermovie": {
-      "title": "Aftermovie/Opening",
+      "title": "Aftermovie / Eventvideo",
       "features": [
-        "Filming included",
-        "Editing included",
-        "Filming on location",
-        "Captions included if needed"
+        "Includes up to 3 hours of filming on location",
+        "Each additional hour: €85",
+        "Full editing and color grading",
+        "Music and subtitles",
+        "One revision round"
       ]
     },
     "drone": {
@@ -206,20 +207,23 @@
       "save": "Save €166! 🎉"
     },
     "filming": {
-      "title": "Video Shooting Without Editing",
+      "title": "Video Recording Without Editing",
       "perHour": "/hour",
       "features": [
         "Filming on location",
         "Canon EOS R8 professional camera",
-        "Stabilizer included"
+        "Stabilizer included",
+        "Half-day shoot from €395"
       ]
     },
     "editing": {
-      "title": "Video Editing",
+      "title": "Professional Video Editing",
       "features": [
         "Remote editing",
-        "Professional software",
-        "Fast delivery"
+        "Professional color grading",
+        "Music and sound design",
+        "Subtitles available",
+        "Rush delivery available (paid add-on)"
       ]
     },
     "socialMedia": {
@@ -398,7 +402,8 @@
     "extraOptions": "Extra options:",
     "extra": "Extra:",
     "popular": "Popular",
-    "from": "from"
+    "from": "from",
+    "exVat": "excl. VAT"
   },
   "aboutPage": {
     "seoTitle": "About Me - Devo Media | Bryan's Story",
@@ -495,12 +500,12 @@
     ],
     "individualServiceLabels": [
       "Single Video",
-      "Aftermovie/Opening",
+      "Aftermovie / Eventvideo",
       "Drone/FPV Video"
     ],
     "additionalServiceLabels": [
-      "Video Filming (No Editing)",
-      "Video Editing",
+      "Video Recording (No Editing)",
+      "Professional Video Editing",
       "Social Media Management",
       "Website Development",
       "Other / Not sure yet"

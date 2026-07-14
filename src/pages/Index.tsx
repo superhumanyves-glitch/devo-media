@@ -104,21 +104,24 @@ const Index = () => {
   const singleServices = [{
     icon: iconVideo,
     title: t('services.singleVideo.title'),
-    price: `${t('buttons.from')} €495,99`,
+    price: `${t('buttons.from')} €495`,
+    priceNote: t('buttons.exVat'),
     features: t('services.singleVideo.features', {
       returnObjects: true
     }) as string[]
   }, {
     icon: iconCamera,
     title: t('services.aftermovie.title'),
-    price: `${t('buttons.from')} €695,99`,
+    price: `${t('buttons.from')} €795`,
+    priceNote: t('buttons.exVat'),
     features: t('services.aftermovie.features', {
       returnObjects: true
     }) as string[]
   }, {
     icon: iconDrone,
     title: t('services.drone.title'),
-    price: `${t('services.drone.from')} €595,99`,
+    price: `${t('services.drone.from')} €595`,
+    priceNote: t('buttons.exVat'),
     features: t('services.drone.features', {
       returnObjects: true
     }) as string[]
@@ -126,7 +129,8 @@ const Index = () => {
   const additionalServices = [{
     icon: iconCamera,
     title: t('services.filming.title'),
-    price: `€65${t('services.filming.perHour')}`,
+    price: `€80${t('services.filming.perHour')}`,
+    priceNote: t('buttons.exVat'),
     features: t('services.filming.features', {
       returnObjects: true
     }) as string[]
@@ -134,6 +138,7 @@ const Index = () => {
     icon: iconScissors,
     title: t('services.editing.title'),
     price: `€85${t('services.filming.perHour')}`,
+    priceNote: t('buttons.exVat'),
     features: t('services.editing.features', {
       returnObjects: true
     }) as string[]
@@ -283,7 +288,7 @@ const Index = () => {
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl mx-auto">
             <div className="w-full lg:w-auto lg:flex-shrink-0">
-              <ServiceCard icon={iconWebsite} title={t('website.service.title')} price={`${t('website.service.from')} €995,99`} features={t('website.service.features', {
+              <ServiceCard icon={iconWebsite} title={t('website.service.title')} price={`${t('website.service.from')} €995`} priceNote={t('buttons.exVat')} features={t('website.service.features', {
                 returnObjects: true
               }) as string[]} />
             </div>
