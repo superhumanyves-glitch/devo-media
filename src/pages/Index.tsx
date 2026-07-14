@@ -106,6 +106,7 @@ const Index = () => {
     title: t('services.singleVideo.title'),
     price: `${t('buttons.from')} €495`,
     priceNote: t('buttons.exVat'),
+    halo: "bg-primary/25",
     features: t('services.singleVideo.features', {
       returnObjects: true
     }) as string[]
@@ -114,6 +115,7 @@ const Index = () => {
     title: t('services.aftermovie.title'),
     price: `${t('buttons.from')} €795`,
     priceNote: t('buttons.exVat'),
+    halo: "bg-purple-500/25",
     features: t('services.aftermovie.features', {
       returnObjects: true
     }) as string[]
@@ -122,6 +124,7 @@ const Index = () => {
     title: t('services.drone.title'),
     price: `${t('services.drone.from')} €595`,
     priceNote: t('buttons.exVat'),
+    halo: "bg-sky-500/30",
     features: t('services.drone.features', {
       returnObjects: true
     }) as string[]
@@ -131,6 +134,7 @@ const Index = () => {
     title: t('services.filming.title'),
     price: `€80${t('services.filming.perHour')}`,
     priceNote: t('buttons.exVat'),
+    halo: "bg-amber-500/25",
     features: t('services.filming.features', {
       returnObjects: true
     }) as string[]
@@ -139,6 +143,7 @@ const Index = () => {
     title: t('services.editing.title'),
     price: `€85${t('services.filming.perHour')}`,
     priceNote: t('buttons.exVat'),
+    halo: "bg-rose-500/25",
     features: t('services.editing.features', {
       returnObjects: true
     }) as string[]
@@ -245,8 +250,9 @@ const Index = () => {
       </section>
 
       {/* Single Services Section */}
-      <section id="diensten" ref={servicesRef} className="py-16 sm:py-20 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section id="diensten" ref={servicesRef} className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-accent/[0.03] animate-gradient-shift bg-[length:200%_200%]" />
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               {t('services.title')} <span className="text-primary">{t('services.titleHighlight')}</span>

@@ -21,9 +21,12 @@ interface ServiceCardProps {
   extras?: string[];
   specialOffer?: boolean;
   alternativeOption?: AlternativeOption;
+  /* Tailwind bg class for a soft glow behind the icon (e.g. "bg-sky-500/30").
+     Also enables the gradient accent line along the card's top edge. */
+  halo?: string;
 }
 
-const ServiceCard = ({ icon, title, price, priceNote, features, extras, specialOffer, alternativeOption }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, price, priceNote, features, extras, specialOffer, alternativeOption, halo }: ServiceCardProps) => {
   const [isAlternative, setIsAlternative] = useState(false);
   const { t } = useTranslation();
   
@@ -56,9 +59,15 @@ const ServiceCard = ({ icon, title, price, priceNote, features, extras, specialO
           {t('buttons.specialOffer')}
         </Badge>
       )}
+      {halo && (
+        <div className="absolute top-0 left-8 right-8 h-[3px] rounded-b-full bg-gradient-to-r from-primary/50 via-accent/60 to-primary/50" />
+      )}
       <div className="flex items-center gap-3 sm:gap-4 mb-4">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-          <img src={icon} alt={title} className="w-full h-full object-contain" />
+        <div className="relative w-12 h-12 sm:w-16 sm:h-16 shrink-0">
+          {halo && <div className={`absolute inset-0 rounded-full blur-xl scale-125 ${halo}`} />}
+          <div className="relative w-full h-full rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+            <img src={icon} alt={title} className="w-full h-full object-contain" />
+          </div>
         </div>
         <div>
           <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
