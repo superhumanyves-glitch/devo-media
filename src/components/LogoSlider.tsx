@@ -14,15 +14,15 @@ import firstClassSportsLogo from "@/assets/logos/first-class-sports-logo.png";
 // visible size: square logos get the base height, wider logos get less height
 // since they take up more width.
 const logos = [
-  { src: emzsLogo, alt: "EMZS Premium Barber", maxHeight: "max-h-24 md:max-h-28" },
-  { src: broodjeLogo, alt: "Broodje & Co", maxHeight: "max-h-20 md:max-h-24" },
-  { src: loversLogo, alt: "Lovers Premium Quality", maxHeight: "max-h-20 md:max-h-24" },
-  { src: maxStudiosLogo, alt: "Max Studios", maxHeight: "max-h-24 md:max-h-28" },
-  { src: vanKolfSchotenLogo, alt: "Van Kolf Schoten", maxHeight: "max-h-20 md:max-h-24" },
-  { src: floresLogo, alt: "Florés Onderwijs", maxHeight: "max-h-16 md:max-h-20" },
-  { src: versareLogo, alt: "Versare Consulting", maxHeight: "max-h-14 md:max-h-16" },
-  { src: papiamentuTvLogo, alt: "Papiamentu.tv", maxHeight: "max-h-24 md:max-h-28" },
-  { src: firstClassSportsLogo, alt: "First Class Sports", maxHeight: "max-h-24 md:max-h-28" },
+  { src: emzsLogo, alt: "EMZS Premium Barber", maxHeight: "max-h-14 md:max-h-16" },
+  { src: broodjeLogo, alt: "Broodje & Co", maxHeight: "max-h-12 md:max-h-14" },
+  { src: loversLogo, alt: "Lovers Premium Quality", maxHeight: "max-h-12 md:max-h-14" },
+  { src: maxStudiosLogo, alt: "Max Studios", maxHeight: "max-h-14 md:max-h-16" },
+  { src: vanKolfSchotenLogo, alt: "Van Kolf Schoten", maxHeight: "max-h-12 md:max-h-14" },
+  { src: floresLogo, alt: "Florés Onderwijs", maxHeight: "max-h-10 md:max-h-12" },
+  { src: versareLogo, alt: "Versare Consulting", maxHeight: "max-h-8 md:max-h-10" },
+  { src: papiamentuTvLogo, alt: "Papiamentu.tv", maxHeight: "max-h-14 md:max-h-16" },
+  { src: firstClassSportsLogo, alt: "First Class Sports", maxHeight: "max-h-14 md:max-h-16" },
 ];
 
 const LogoSlider = () => {
@@ -34,36 +34,36 @@ const LogoSlider = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div ref={ref} className="w-full py-12 bg-background/50">
-      <div className="container mx-auto px-4">
-        <h3 className={`text-2xl font-bold text-center mb-8 text-foreground transition-all duration-700 ${
-          isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          {t('portfolio.trustedBy')}
-        </h3>
-        <div
-          className={`w-full overflow-hidden transition-opacity duration-1000 ${
-            isInView ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="logo-marquee flex w-max items-center">
-            {duplicatedLogos.map((logo, index) => (
-              <div
-                key={index}
-                aria-hidden={index >= logos.length}
-                className="flex items-center justify-center h-48 md:h-56 w-44 md:w-64 px-4 md:px-8 group"
-              >
-                <img
-                  src={logo.src}
-                  alt={index < logos.length ? logo.alt : ""}
-                  className={`${logo.maxHeight} max-w-full object-contain transition-all duration-300 group-hover:scale-110 opacity-90 group-hover:opacity-100`}
-                />
-              </div>
-            ))}
-          </div>
+    <section ref={ref} aria-label={t('portfolio.trustedBy')} className="py-14 md:py-16 border-y border-border/60 bg-secondary/40">
+      <p className={`text-center text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground px-4 mb-8 md:mb-10 transition-all duration-700 ${
+        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}>
+        {t('portfolio.trustedBy')}
+      </p>
+      <div
+        className={`logo-marquee-mask w-full overflow-hidden transition-opacity duration-1000 ${
+          isInView ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <div className="logo-marquee flex w-max items-center">
+          {duplicatedLogos.map((logo, index) => (
+            <div
+              key={index}
+              aria-hidden={index >= logos.length}
+              className="flex items-center justify-center h-20 md:h-24 px-7 md:px-10"
+            >
+              <img
+                src={logo.src}
+                alt={index < logos.length ? logo.alt : ""}
+                loading="lazy"
+                draggable={false}
+                className={`${logo.maxHeight} w-auto max-w-[130px] md:max-w-[170px] object-contain grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100`}
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

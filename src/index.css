@@ -133,8 +133,20 @@ All colors MUST be HSL.
   }
 
   .logo-marquee {
-    animation: logo-marquee 45s linear infinite;
+    animation: logo-marquee 40s linear infinite;
     will-change: transform;
+  }
+
+  /* Let people stop the strip to look at (or hover-reveal) a logo. */
+  .logo-marquee-mask:hover .logo-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Soft fade at both edges so logos enter and leave gradually instead of
+     being clipped by the viewport. */
+  .logo-marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   }
 
   @media (prefers-reduced-motion: reduce) {
