@@ -137,11 +137,6 @@ All colors MUST be HSL.
     will-change: transform;
   }
 
-  /* Let people stop the strip to look at (or hover-reveal) a logo. */
-  .logo-marquee-mask:hover .logo-marquee {
-    animation-play-state: paused;
-  }
-
   /* Soft fade at both edges so logos enter and leave gradually instead of
      being clipped by the viewport. */
   .logo-marquee-mask {
