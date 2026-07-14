@@ -41,7 +41,7 @@ const LogoSlider = () => {
         {t('portfolio.trustedBy')}
       </p>
       <div
-        className={`logo-marquee-mask w-full overflow-hidden transition-opacity duration-1000 ${
+        className={`logo-marquee-mask group w-full overflow-hidden transition-opacity duration-1000 ${
           isInView ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -57,7 +57,7 @@ const LogoSlider = () => {
                 alt={index < logos.length ? logo.alt : ""}
                 loading="lazy"
                 draggable={false}
-                className={`${logo.maxHeight} w-auto max-w-[130px] md:max-w-[170px] object-contain grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100`}
+                className={`${logo.maxHeight} w-auto max-w-[130px] md:max-w-[170px] object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100`}
               />
             </div>
           ))}
