@@ -25,13 +25,19 @@ const Hero = () => {
           <article className="order-1 lg:order-1 lg:col-start-1 lg:row-start-1 lg:self-end text-center lg:text-left">
             <h1
               id="hero-heading"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-5 md:mb-6 leading-tight animate-slide-up"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl font-bold mb-3 sm:mb-5 md:mb-6 leading-[1.15] animate-slide-up"
               style={{
                 animationDelay: '0ms',
                 textShadow: '0 2px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.2)'
               }}
             >
-              {t('hero.title')}
+              {/* Each sentence is its own balanced line so the two clauses stay
+                  parallel and never break into orphan words. */}
+              {t('hero.title').split('\n').map((line, i) => (
+                <span key={i} className="block text-balance">
+                  {line}
+                </span>
+              ))}
             </h1>
             <p
               className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 font-semibold mb-2 sm:mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0 animate-slide-up"
