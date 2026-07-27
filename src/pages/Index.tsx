@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Showreel from "@/components/Showreel";
 import PricingCard from "@/components/PricingCard";
 import ServiceCard from "@/components/ServiceCard";
 import Footer from "@/components/Footer";
@@ -186,6 +187,7 @@ const Index = () => {
       <StickyCtaBar />
       <Header />
       <main id="main-content">
+        <Showreel />
         <Hero />
 
       {/* Stats Section */}

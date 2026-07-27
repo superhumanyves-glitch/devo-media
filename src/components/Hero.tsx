@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ArrowRight, ClipboardCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocalePath } from "@/hooks/useLocalePath";
@@ -9,102 +8,54 @@ const Hero = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const localePath = useLocalePath();
-  
+
   const scrollToPricing = () => {
     document.getElementById('pakketten')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section 
-      className="relative sm:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-24 sm:pt-28 pb-8 sm:pb-12"
+    <section
+      className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-2 sm:pt-4 pb-10 sm:pb-14"
       aria-labelledby="hero-heading"
     >
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-x-12 lg:items-center">
-          {/* Headline + subtitle */}
-          <article className="order-1 lg:order-1 lg:col-start-1 lg:row-start-1 lg:self-end text-center lg:text-left">
-            <h1
-              id="hero-heading"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl font-bold mb-3 sm:mb-5 md:mb-6 leading-[1.15] animate-slide-up"
-              style={{
-                animationDelay: '0ms',
-                textShadow: '0 2px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.2)'
-              }}
-            >
-              {/* Each sentence is its own balanced line so the two clauses stay
-                  parallel and never break into orphan words. */}
-              {t('hero.title').split('\n').map((line, i) => (
-                <span key={i} className="block text-balance">
-                  {line}
-                </span>
-              ))}
-            </h1>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 font-semibold mb-2 sm:mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0 animate-slide-up"
-              style={{
-                animationDelay: '100ms',
-                textShadow: '0 2px 15px rgba(0, 0, 0, 0.3)'
-              }}
-            >
-              {t('hero.subtitle')}
-            </p>
-          </article>
+        {/* The showreel above already carries the headline visually, so the h1
+            stays for SEO and screen readers but is not painted twice. */}
+        <h1 id="hero-heading" className="sr-only">
+          {t('hero.title').split('\n').join(' ')}
+        </h1>
 
-          {/* Animation */}
-          <aside
-            className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center w-full max-w-md mx-auto lg:mx-0 lg:ml-auto flex flex-col items-center gap-3 sm:gap-5 lg:gap-6 animate-fade-in"
-            style={{ animationDelay: '100ms' }}
-            aria-label="Geanimeerde illustratie van videoproductie"
+        <div className="text-center">
+          <div
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-lg mx-auto animate-slide-up"
+            style={{ animationDelay: '200ms' }}
           >
-            <div className="h-[140px] sm:h-[220px] lg:h-[280px] w-full">
-              <DotLottieReact
-                src="https://lottie.host/1037025e-a9f1-48e4-b240-6a8596479358/2t7vm62ITa.lottie"
-                loop
-                autoplay
-                style={{
-                  width: '100%',
-                  height: '100%'
-                }}
-                aria-hidden="true"
-              />
-            </div>
-          </aside>
-
-          {/* Secondary CTAs + assessment note */}
-          <div className="order-3 lg:order-3 lg:col-start-1 lg:row-start-2 lg:self-start text-center lg:text-left">
-            <div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center w-full max-w-lg mx-auto lg:mx-0 animate-slide-up"
-              style={{ animationDelay: '200ms' }}
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={() => navigate(localePath('/video-readiness-assessment'))}
+              className="group gap-2 w-full sm:w-auto text-sm sm:text-base"
+              aria-label={t('hero.ariaAssessment')}
             >
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={() => navigate(localePath('/video-readiness-assessment'))}
-                className="group gap-2 w-full sm:w-auto text-sm sm:text-base"
-                aria-label={t('hero.ariaAssessment')}
-              >
-                <ClipboardCheck className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" /> {t('hero.ctaPrimary')}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={scrollToPricing}
-                className="gap-2 group border-2 border-primary bg-background text-primary font-bold hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base"
-                aria-label={t('hero.ariaPackages')}
-              >
-                {t('hero.ctaSecondary')}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
-            </div>
-            <p
-              className="text-xs sm:text-sm text-foreground font-medium mt-4 sm:mt-6 animate-fade-in"
-              style={{
-                animationDelay: '300ms',
-              }}
+              <ClipboardCheck className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" /> {t('hero.ctaPrimary')}
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={scrollToPricing}
+              className="gap-2 group border-2 border-primary bg-background text-primary font-bold hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base"
+              aria-label={t('hero.ariaPackages')}
             >
-              {t('assessment.cta')}
-            </p>
+              {t('hero.ctaSecondary')}
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Button>
           </div>
+          <p
+            className="text-xs sm:text-sm text-foreground font-medium mt-4 sm:mt-6 animate-fade-in"
+            style={{ animationDelay: '300ms' }}
+          >
+            {t('assessment.cta')}
+          </p>
         </div>
       </div>
     </section>

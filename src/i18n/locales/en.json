@@ -9,6 +9,10 @@
     "contact": "Contact",
     "menu": "Menu"
   },
+  "showreel": {
+    "label": "Devo Media showreel",
+    "play": "Play showreel"
+  },
   "hero": {
     "title": "From attention to action.\nFrom content to growth.",
     "subtitle": "Videos that actually generate leads.",

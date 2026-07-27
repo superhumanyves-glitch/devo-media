@@ -9,6 +9,10 @@
     "contact": "Contact",
     "menu": "Menu"
   },
+  "showreel": {
+    "label": "Devo Media showreel",
+    "play": "Showreel afspelen"
+  },
   "hero": {
     "title": "Van aandacht naar actie.\nVan content naar groei.",
     "subtitle": "Video's die daadwerkelijk leads opleveren.",
